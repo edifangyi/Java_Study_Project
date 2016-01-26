@@ -2376,7 +2376,7 @@ Object类中的方法，适合所有子类
 
  	一般情况下比较两个对象性时比较他的值是否一致，所以要进行重写
 
-	自动生成 ：Source → Generatn hasshCode() and equals()
+	自动生成 ：Source → Generatn hashCode() and equals()
 /////////////////////////////////////////////////////////////////////////////////////////////
 多态 			继承是多态的基础
 
@@ -4256,21 +4256,197 @@ HashMap类
 	HashMap中的entry对象时无序排列的
 	Key值和value值都可以为null，但是一个HashMap只能有一个Key值为null的映射（key值不可重复）
 
-	qweqwe
-
-	qweqwew
-
-	qweqwewqwe
 
 
 
 
 
 
+package com.imooc;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+public class MapTest {
+
+	/**
+	 * 用来承装学生类型对象
+	 */
+	public Map<String, Student> students;
+
+	/**
+	 * 在构造器中初始化students属性
+	 */
+	public MapTest() {
+		this.students = new HashMap<String, Student>();
+	}
+
+	/**
+	 * 测试添加：输入学生ID，判断是否被占用 若未被占用，则输入姓名，创建新学生对象，并且 添加到students中
+	 */
+	public void testPut() {
+		// 创建一个Scanner对象，用来获取输入的学生ID和姓名
+		Scanner console = new Scanner(System.in);
+		int i = 0;
+		while (i < 3) {
+			System.out.println("请输入学生ID：");
+			String ID = console.next();
+			// 判断该ID是否被占用
+			Student st = students.get(ID);
+			if (st == null) {
+				// 提示输入学生姓名
+				System.out.println("请输入学生姓名：");
+				String name = console.next();
+				// 创建新的学生对象
+				Student newStudent = new Student(ID, name);
+				// 通过调用students的put方法，添加ID-学生映射
+				students.put(ID, newStudent);
+				System.out.println("成功添加学生：" + students.get(ID).name);
+				i++;
+			} else {
+				System.out.println("该学生ID已被占用！");
+				continue;
+			}
+		}
+	}
+
+	/**
+	 * 测试Map的keySet方法
+	 */
+	public void testKeySet() {
+		// 通过keySet方法，返回Map中的所有“键”的Set集合
+		Set<String> keySet = students.keySet();
+		// 取得students的容量
+		System.out.println("总共有：" + students.size() + "个学生！");
+		// 遍历keySet，取得每一个键，再调用get方法取得每个键对应的value
+		for (String stuId : keySet) {
+			Student st = students.get(stuId);
+			if (st != null)
+				System.out.println("学生：" + st.name);
+		}
+	}
+
+	/**
+	 * 测试删除Map中的映射
+	 */
+	public void testRemove() {
+		// 获取从键盘输入的待删除学生ID字符串
+		Scanner console = new Scanner(System.in);
+		while (true) {
+			// 提示输入待删除的学生的ID
+			System.out.println("请输入要删除的学生ID！");
+			String ID = console.next();
+			// 判断该ID是否有对应的学生对象
+			Student st = students.get(ID);
+			if (st == null) {
+				// 提示输入的ID并不存在
+				System.out.println("该ID不存在！");
+				continue;
+			}
+			students.remove(ID);
+			System.out.println("成功删除学生：" + st.name);
+			break;
+		}
+	}
+
+	/**
+	 * 通过entrySet方法来遍历Map
+	 */
+	public void testEntrySet() {
+		// 通过entrySet方法，返回Map中的所有键值对
+		Set<Entry<String, Student>> entrySet = students.entrySet();
+		for (Entry<String, Student> entry : entrySet) {
+			System.out.println("取得键：" + entry.getKey());
+			System.out.println("对应的值为：" + entry.getValue().name);
+		}
+	}
+
+	/**
+	 * 利用put方法修改Map中的已有映射
+	 */
+	public void testModify() {
+		// 提示输入要修改的学生ID
+		System.out.println("请输入要修改的学生ID：");
+		// 创建一个Scanner对象，去获取从键盘上输入的学生ID字符串
+		Scanner console = new Scanner(System.in);
+		while (true) {
+			// 取得从键盘输入的学生ID
+			String stuID = console.next();
+			// 从students中查找该学生ID对应的学生对象
+			Student student = students.get(stuID);
+			if (student == null) {
+				System.out.println("该ID不存在！请重新输入！");
+				continue;
+			}
+			// 提示当前对应的学生对象的姓名
+			System.out.println("当前该学生ID，所对应的学生为：" + student.name);
+			// 提示输入新的学生姓名，来修改已有的映射
+			System.out.println("请输入新的学生姓名：");
+			String name = console.next();
+			Student newStudent = new Student(stuID, name);
+			students.put(stuID, newStudent);
+			System.out.println("修改成功！");
+			break;
+		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		MapTest mt = new MapTest();
+		mt.testPut();
+		mt.testKeySet();
+		// mt.testRemove();
+		// mt.testEntrySet();
+		// mt.testModify();
+		// mt.testEntrySet();
+
+	}
+
+}
 
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Contains方法
+ContainsAll方法
+
+
+hasshCode方法
+
+Collections工具类
+sort()排序
+
+Comparable 默认比较规则
+	可比较的
+	实现该接口表示:这个类的实例可以比较大小，可以进行自然排序
+	定义了默认的比较规则
+	其实现类需实现 compareTo()方法
+	compareTo()方法返回正数表示大，负数表示小，0表示相等
+
+
+Comparator 临时比较规则
+	比较工具接口
+	用于定义临时比较规则，而不是默认比较规则
+	其实现类需要 compare()方法
+	Comparator 和 Comparable 都是java集合框架的成员
+
+
+
+
+java集合框架
+	Collection接口
+	Collections工具类
+	Map接口
+	Comparator接口
+	Comparable接口
 
 
 
