@@ -1,3 +1,14 @@
+基础核心 Java SE  面向对象 API JVM
+企业	 Java EE  JSP EJB 服务
+		 JAva ME  移动设备 游戏 通信
+
+JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
+
+	源文件(.java) → 编译器(compiler) → 字节码文件(.class) → 解释器(interpreter)
+/**
+ 
+ */
+
 //在方法体外，类体内声明的变量成为成员变量
 public void method(){
 	int i;
