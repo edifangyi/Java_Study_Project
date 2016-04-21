@@ -706,8 +706,64 @@ JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
 
 
 
+7.Java 中的方法内部类
+
+	方法内部类
+		1、定义在外部方法中。
+		2、只能在本方法中使用。
+		3、在方法内，内部类外声明对象，通过对象调用内部类中的方法和变量。
+
+	//外部类
+	public class HelloWorld {
+	    
+	    private String name = "爱慕课";
+	    
+	    // 外部类中的show方法
+	    public void show() { 
+	    	// 定义方法内部类
+			class MInner {
+				int score = 83;
+				public int getScore() {
+					return score + 10;
+				}
+			}
+	        
+			// 创建方法内部类的对象
+	        MInner mi = new MInner();        
+	        // 调用内部类的方法
+			int newScore = mi.getScore();       
+			System.out.println("姓名：" + name + "\n加分后的成绩：" + newScore);
+		}
+	    
+		// 测试方法内部类
+		public static void main(String[] args) {
+	        
+			// 创建外部类的对象
+	        
+	        HelloWorld mo = new HelloWorld();
+	        // 调用外部类的方法
+			mo.show();
+		}
+	}
 
 
+	姓名：爱慕课
+	加分后的成绩：93
+
+	一定要注意哦：由于方法内部类不能在外部类的方法以外的地方使用，因此方法内部类不能使用访问控制符和 static 修饰符。
+
+/**
+ 
+ */
+Java中的继承
+
+	1、继承就是类与类的一种关系，Java中的继承是单继承，也就是一个类只有一个父类
+	
+	2、继承的好处：子类拥有父类的所有属性和方法（父类属性和方法修饰符不能是private）；实现代码复用；
+	
+	3、语法规则：class 子类 extends 父类{...}
+	
+	Eclipse创建Java类的选项里，superclass可以选择父类(可能需要手动输入搜索；
 
 
 
@@ -715,6 +771,9 @@ JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
 /**
  
  */
+
+
+
 
 //在方法体外，类体内声明的变量成为成员变量
 public void method(){
@@ -2999,7 +3058,7 @@ public class HelloWorld {
 继承是类与类的一种关系，是一种"is a"关系
 
 狗是动物，狗是继承动物   狗类是动物类的子类，派生类
-							动物类是狗类的父类、基类
+						 动物类是狗类的父类、基类
 注：java中的继承是单继承
 		只有一个父类
 
