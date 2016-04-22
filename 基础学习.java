@@ -1356,9 +1356,119 @@ tel2.message();	→通过语音来发短信
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+接口
+
+1.接口概念
+	接口可以理解为一种特殊的类，由全局常量和公共的抽象方法所组成
+
+	类是一种具体实现体，而接口定义了某一批类所需要遵守的规范，接口不关心这些类的内部数据，也不关心
+	这些类里方法的实现细节，它只规定这些类里面必须提供某些方法
+
+2.接口定义
+	和类定义不同，定义接口不使用 class 关键字，而是使用 interface 关键字
+
+3.接口定义基本语法
+
+		abstract
+[修饰符] ↑ interface 接口名[extends 父接口1,父接口2···] {
+	零个到多个常量定义			
+	零个到多个抽象方法的定义
+}
+
+接口就是用类被继承、被实现的，修饰符一般建议用public 
+注意：不能使用 private 和 protected 修饰接口
+
+
+3.接口定义
+	常量：
+		接口中的属性是常量，即使定义时不添加
+		public static final 修饰符，系统也会自动加上
+	方法：
+		接口中的方法只能是抽象方法，总是使用，即使定义时不添加
+		public abstract 修饰符，系统也会自动加上
+
+		接口中方法不能有方法体，同时方法的访问修饰符不能是 private 和 protected
 
 
 
+4.使用接口
+	一个类可以实现一个或多个接口，实现接口的使用 implements 关键字。java中一个类只能继承一个父类，是不够灵活的，
+	通过实现多个接口可以做补充
+
+
+继承父类实现接口的语法为：
+
+[修饰符] class 类名 extends 父类 implements 接口1, 接口2,···{
+	类体部分//如果继承了抽象类，需要实现继承的抽象方法；要实现接口的抽象方法
+}
+
+如果要继承父类，继承父类必须在实现接口之前
+
+//智能手机 SmartPhone 与 PSP 具有相同的玩游戏功能
+
+//创建一个接口，新建New → Interface → neme：通常在前面加一个I，以区分类
+public [系统自动添加 abstract ,有和没有，没有区别,通常不写] interface  IPlayGame {
+	public [系统自动添加 abstract ,有和没有，没有区别，通常不写] void playGame();
+}
+
+
+public class SmartPhone extends Telphone [添加]→（ implements IPlayGame ） {
+	public void call() {
+		System.out.println("通过语音来打电话");
+	}
+
+	public void message() {
+		System.out.println("通过语音来发短信");
+	}
+
+	public void playGame() {
+		System.out.println("具有玩游戏的功能");
+	}
+}
+
+//创建Psp这个类，但是跟手机没有继承关系，但是具有游戏的特性所以添加接口
+//在创建类的窗口里选择 Imterface 选择接口，自动创建
+public class Psp implements IPlayGame {
+	public void playGame() {
+		System.out.println("具有玩游戏的功能");
+	}
+}
+
+//测试类
+IPlayGame ip1 = new SmartPhone();
+ip1.playGame;
+IPlayGame ip2 = new Psp();
+ip2.playGame;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+接口在使用过程中，还经常与匿名内部类配合使用
+匿名内部类就是没有名字的内部类，多用于关注实现而不关注实现类的名称
+
+语法格式：
+	Interface i = new Interface() {
+		public void method() {
+			System.out.println("匿名内部类实现接口的方式");
+		}
+	}
+
+//测试类
+//
+//方法1
+IPlayGame ip3 = new IPlayGame() {
+	public void playGame() {
+		System.out.println("匿名内部类实现接口的方式1");
+	}
+}； //注意有一个分号的结束
+
+ip3.playGame();
+
+//方法2
+new IPlayGame() {
+	public void playGame() {
+		System.out.println("匿名内部类实现接口的方式2");
+	}
+}.playGame();  //注意，通过一个点直接调用方法
 
 
 /**
@@ -1366,7 +1476,1805 @@ tel2.message();	→通过语音来发短信
  */
 
 
+UML  Java入门第二季 4-7
 
+1.UML概念
+	Unified Modeling Language (UML)
+	又称统一建模语言或标准建模语言
+
+	是一个支持建模化和软件系统开发的图形语言
+	为软件开发的所有阶段提供模型化和可视化支持
+
+2.UML图示
+	UML 2.2一共定义了14种图示（diagrams）
+
+3.用例图（The Use Case Diagram）
+	以例图能够以可视化的方式，表达系统如何满足所收集的业务规则，以及特定的用户需求等信息
+
+							小人	  Restauran（simplified）
+						(Food Critic) 	  → Eat Food
+										  → Pay for Food
+										  → Drink Wine
+										    Cook Food	← 	小人（Chef）
+
+  序列图（The Sequence Diagram）
+  	序列图用于按照交互发生的一系列顺序，显示对象之间的这些交互
+
+				  	用户		柜台窗口	点账窗口	取钱		账户后台
+				  	· 				· 			· 		  · 		   ·
+				  	·  表明身份		· 			·         · 		   ·
+				  	·—————————→ █ 	· 			·	      · 		   ·
+				  	·  			█	·		请求取钱 				   ·
+				  	· 			█———————————————————————→ █ 		   ·
+				  	· 				·			·		  █ 确认并取款 ·
+				  	· 				·			·		  █	——————————→█
+				  	· 				·			· 授权合法█ 		   ·
+				  	· 		发布货币			█ ←———————█			   ·
+				  	·←——————————————————————————█		  · 		   ·
+				  	· 				· 			· 		  · 		   ·
+
+  类图（The Class Diagram）
+  	UML类图、业务逻辑和所有支持结构一同被用于定义
+  	全部的代码结构
+
+				▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  		类名	▏		Animal 			  ▕ 
+  				▏▔▔▔▔▔▔▔▔▔▔▔▔▔▏
+  		属性	▏- name : java.lang.String ▏- 表示私有的
+  				▏- age  : int 				▏
+  				▏▔▔▔▔▔▔▔▔▔▔▔▔▔▏
+  		方法能力▏+ eat () : void			▏+ 表示公有的   返回值类型是void
+  				▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+  							   △（空的箭头）
+  							   ↑ 表示继承
+  				▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  				▏			  Dog 			▏
+  				▏▁▁▁▁▁▁▁▁▁▁▁▁▁▏
+  				▏▁▁▁▁▁▁▁▁▁▁▁▁▁▏
+  				▏+《Override》eat():void ▕ 子类方法不满意，要重写父类的方法的《Override》
+  				▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+
+
+//父类
+package imooc;
+
+public class Person {
+	public void say() {
+		System.out.println("人类具有说话的能力");
+	}
+}
+//创建一个子类
+
+package imooc;
+
+public class American extends Person {
+	public void say() {
+		System.out.println("美国人说英语");
+	}
+}
+
+package imooc;
+
+public class Chinese extends Person{
+	public void say() {
+		System.out.println("中国人说中国话");
+	}
+}
+
+//测试类
+package imooc;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Chinese p = new Chinese();
+		American p2 = new American();
+		
+		p.say();
+		p2.say();
+
+		//父类的引用指向子类的对象，多态语法，必须有继承关系
+		Person p = new Chinese();
+		Person p2 = new American();
+		
+		p.say();
+		p2.say();
+
+		//抽象类
+		APerson p = new Chinese();
+		APerson p2 = new American();
+		
+		p.say();
+		p2.say();
+
+	}
+
+}
+
+
+//抽象类
+package imooc;
+
+public abstract class APerson {
+	public abstract void say();
+}
+
+//修改子类，让他们继承抽象类
+package imooc;
+
+public class American extends APerson {
+}
+public class Chinese extends APerson{
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////、、
+项目练习
+一、项目背景介绍
+	根据所学知识，编写一个控制台版的“答答租车系统”
+	功能：
+	1、展示所有可租车辆
+	2、选择车型、租车辆
+	3、展示租车清单，包含：总金额、总载货量及其车型、总在人量及其车型
+二、项目分析
+	1、数据模型分析
+		1.通过对现实世界的事与物主要特性的分析、抽象，为信息系统的实施提供数据存取额数据结构以及相应的约束。
+		2.数据结构组成：操作（方法）、属性
+	2、业务模型分析
+		1.在设计应用程序之前，应该明确该应用程序必须执行哪些任务。
+			分析业务需求是应用程序开发中最重要的步骤之一。
+			确认业务需求的目的在于创建一个能同时满足零售商和消费者需要的解决方案
+		2.答答租车系统：选车，租车天数，统计金额，载客和货量
+	3、显示和流程分析
+		1.显示：用户可以看到的信息提示界面
+		2.流程：显示信息额执行过程、步骤
+		3.答答租车系统中，要以命令行的方式显示提示信息和输出结果信息，要考虑其样式，用户输入的数据不同，信息该如何
+		提示、如何处理并显示出结果，这部分知识囊括了显示与流程的内容。
+		例：请选择车辆 → 请输入序号 → 输出总金额···
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+异常
+Throwable 类
+
+	1.Error类		直接挂掉
+
+	2.Exception类		主要讨论这个，编码、环境、用户操作输入出现问题
+		1.RuntimeException （非检查异常） 运行时异常
+			a.NullPointerException(空指针异常)
+			b.ArrayIndexOutOfBoundsException(数组下标越界异常)
+			c.ClassCastException(类型转换异常)
+			d.ArithmeticException(算术异常)
+			···
+		2.检查异常
+			a.IOException(文件异常)
+			b.SQLException
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+处理异常
+try-catch以及try-catch-finally
+
+	try {
+		//一些会抛出异常的方法
+	} catch (Exception) {
+		//处理该异常的代码块
+	}
+
+
+例如：
+	try {
+		System.out.print("请输入你的年龄：");
+		Scanner input = new Scanner(System.in);
+		int age = input.nextInt();
+		System.out.println("十年后你" + (age + 10) +"岁");
+	} catch (InputMismatchException e) {
+		System.out.println("你应该输入整数！！！");
+	}
+	System.out.println("程序结束");
+
+展示：
+	请输入你的年龄：hello
+	你应该输入整数！！！
+	程序结束
+
+
+
+	顺序： 子类 → 父类
+	try {
+		//一些会抛出异常的方法
+	} catch (Exception) {
+		//处理该异常的代码块
+	} catch (Exception2) {
+		//处理该异常的代码块
+	} ··· (n个Exception) {
+		//处理该异常的代码块
+	} finally {
+		//最终将要执行的一些代码
+	}
+
+
+package com.imooc;
+
+public class TryCatchTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TryCatchTest tcTest = new TryCatchTest();
+		int result = tcTest.test();
+		System.out.println("test()方法，执行完毕！返回值为：" + result);
+		int result2 = tcTest.test2();
+		System.out.println("test2()方法，执行完毕！返回值为：" + result2);
+		int result3 = tcTest.test3();
+		System.out.println("我想大声告诉你！test3执行完了 result：：：："+ result3);
+
+	}
+	
+	/**
+	 * divier(除数)
+	 * result(结果)
+	 * try-cath捕获while循环
+	 * 每次循环，divider减一，result=result+10/divider
+	 * 如果：捕获异常，打印输出“抛出异常了！！！！”，返回-1
+	 * 否则：返回resul
+	 * @return
+	 */
+	public int test() {
+		int divider = 10;
+		int result =100;
+		try {
+			while(divider > -1) {
+				divider--;
+				result = result + 100/divider; 
+			}
+			return result;
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("循环抛出抛出异常了！！！！");
+			return -1;
+		}
+	}
+	/**
+	 * divier(除数)
+	 * result(结果)
+	 * try-cath捕获while循环
+	 * 每次循环，divider减一，result=result+10/divider
+	 * 如果：捕获异常，打印输出“抛出异常了！！！！”，返回 result = 999
+	 * 否则：返回resul
+	 * finally:打印输出“这是Ifinally！！！哈哈哈！！！”，同时打印输出result
+	 * @return
+	 */
+	public int test2() {
+		int divider = 10;
+		int result =100;
+		try {
+			while(divider > -1) {
+				divider--;
+				result = result + 100/divider; 
+			}
+			return result;
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("循环抛出抛出异常了！！！！");
+			return result = 999;
+		} finally {
+			System.out.println("这是Ifinally！！！哈哈哈！！！result返回值：" + result);
+		}
+	}
+	/**
+	 * divier(除数)
+	 * result(结果)
+	 * try-cath捕获while循环
+	 * 每次循环，divider减一，result=result+10/divider
+	 * 如果：捕获异常，打印输出“抛出异常了！！！！”
+	 * 否则：返回resul
+	 * finally:打印输出“这是Ifinally！！！哈哈哈！！！”，同时打印输出result
+	 * ，最后返回返回 result = 1111作为结果
+	 * @return
+	 */
+	public int test3() {
+		int divider = 10;
+		int result =100;
+		try {
+			while(divider > -1) {
+				divider--;
+				result = result + 100/divider; 
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("循环抛出抛出异常了！！！！");
+		} finally {
+			System.out.println("这是finally！！！哈哈哈！！！result返回值：" + result);
+		}
+		System.out.println("我是test3！，，我运行结束");
+		return result = 1111;
+	}
+	
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////、
+///
+java中的异常抛出
+throw - 将产生的异常抛出（动作）
+
+throws - 声明将要抛出何种类型的异常（声明）
+		public void 方法名(参数列表)
+						throws 异常列表 {
+							//调用会抛出异常的方法或者:
+							throws new Exception();
+						}
+
+public void divide(int one, int two) throws Exception {
+	if(two == 0)
+		throws new Exception("两数相除，除数不能为0！");
+	else
+		System.out.println("两数相除，结果为:" + one/two);
+}
+
+
+
+
+public void computer() {
+	/*
+	此处省略····代码·····
+	 */
+	try {
+		divide(5, 0);
+	} catch (Exception e) {
+		System.out.println(e.getMessage());
+	}
+}
+
+
+public void computer() throws Exception {
+	/*
+	此处省略····代码·····
+	 */
+	divide(5, 0);
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////、
+
+throw与throws的区别
+
+ throws语句　  
+  throws总是出现在一个函数头中，用来标明该成员函数可能抛出的各种异常。如果你想明确地抛出一个RuntimeException，
+  你必须用throws语句来声明它的类型。  
+   
+ throw语句　  
+  throw总是出现在函数体中，用来抛出一个异常。程序会在throw语句后立即终止，它后面的语句执行不到，然后在包含它的
+  所有try块中（可能在上层调用函数中）从里向外寻找含有与其匹配的catch子句的try块。
+
+
+try {
+			test1();
+		} catch (DrunkException e) {
+			
+			RuntimeException newExc = 
+				new RuntimeException(e);    //直接将当前e异常 通过构造方法创建并传给 newExc
+			throw newExc;				//抛出当前异常
+		}
+
+=================================================================
+		try {
+			test1();
+		} catch (DrunkException e) {
+
+			RuntimeException newExc = new RuntimeException("司机一滴酒，亲人两行泪~~");   
+
+			newExc.initCause(e);			//调用 initCause()方法并传入try语句块中的异常
+			throw newExc;						//抛出当前异常
+		}
+
+RuntimeException(String message)用指定的详细消息构造一个新的运行时异常。
+initCause() 此方法通常从构造方法中调用，或者在创建 throwable 后立即调用。
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////、
+自定义异常
+class 自定义异常类 extends 异常类型 {
+
+}
+
+例如
+
+package com.imooc;
+
+public class DrunkException extends Exception{
+	public DrunkException() {
+		
+	}
+	public DrunkException(String message) {
+		super(message);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////、
+java中的异常链
+
+
+package com.imooc;
+
+public class ChainTest {
+	/*
+	 * test1()：抛出“喝大了”异常
+	 * test2()：调用test1()，捕获“喝大了”异常，并且包装成运行时异常，继续抛出main方法中，调用test2()，，
+	 * 尝试捕获test2()方法抛出的异常
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChainTest ct = new ChainTest();
+		try {
+			ct.test2();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+	public void test1() throws DrunkException {
+		throw new DrunkException("喝车别开酒");
+	}
+	public void test2() {
+		try {
+			test1();
+			
+		} catch (DrunkException e) {
+			// TODO: handle exception
+			RuntimeException newExc = new RuntimeException("司机一滴酒，亲人两行泪···");
+			newExc.initCause(e);
+			throw newExc;
+		}
+	}
+
+}
+
+//////////////
+改一下test2()
+
+	public void test2() {
+		try {
+			test1();
+			
+		} catch (DrunkException e) {
+			// TODO: handle exception
+			RuntimeException newExc = new RuntimeException(e);
+
+			throw newExc;
+		}
+	}
+
+
+
+
+
+实际应用中的经验与总结
+
+1.处理运行时异常时，采用逻辑去合理规避同时辅助try-catch处理
+2.在多重catch块后面，可以加在一个 catch(Exception) 来处理可能会被遗漏的异常
+3.对于不确定的代码，也可以加上try-catch，处理潜在的异常
+4.尽量去处理异常，切忌只是简单的调用 prinStackTrace() 去打印输出
+5.具体如何处理异常，要根据不同的业务需求和异常类型去决定
+6.尽量添加finally语句块去释放占用的资源
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////、
+
+
+
+String 类的常用方法：
+
+	方法 											说明
+int length()									返回当前字符串的长度
+int indexOf(int ch)								查找ch字符在该字符串中第一次出现的位置
+int indexOf(String str)							查找str子字符串在该字符串中第一次出现的位置
+int lastIndexOf(int ch)							查找ch字符在该字符串中最后一次出现的位置
+int lastIndexOf(String ch)						查找str子字符串在该字符串中最后出现的位置
+String substring(int beginIndex)				获取从beginIndex位置开始到结束的字符串
+String substring(int beginIndex, int endIndex)	获取从beginIndex位置开始到enIndex位置的子字符串
+String trim()									返回去除了前后空格的字符串
+boolean equals(Object obj)						将该字符串与指定对象比较，返回true或false 
+String toLowerCase()							将字符串转换为小写
+String toUpperCase()							将字符串转换为大写
+char charAt(int index)							获取字符串中指定位置的字符
+String[] split(String regex, int limit)			将字符串分割为子字符串，返回字符串数组
+byte[] getBytes()								将该字符串转换为byte数组
+
+
+
+//定义一个字符串“学习 JAVA 编程”。
+String str = "学习 JAVA 编程";
+
+//打印出字符串长度
+System.out.println(str.length());
+
+//查找字符‘编’的位置
+char c = '编';
+System.out.println(str.indexOf());
+
+//查找字符串'JAVA'的位置
+System.out.println(str.indexOf("JAVA"));
+
+//查找字符串‘imooc’的位置，如果找不到返回-1
+System.out.println(str.indexOf("imooc"));
+
+//按空格把字符串拆分成一个数组，并输出数组元素
+String[] arr = str.split(" ");
+System.out.println(Arrays.toString(arr));
+System.out.println();
+
+//获取索引位置[3,,7)之间的子串
+System.out.println(str.substring(3, 7));
+
+//将字符串转化为小写
+System.out.println(str.toLowerCase());
+
+//获取索引位置为1的字符串
+System.out.println(str.charAt(1));
+
+//获取索引位置为i的字符
+String s = "aljlkdsflkjsadjfklhasdkjlflkajdflwoiudsafhaasdasd";
+			// 出现次数
+					int num = 0;
+			        
+			         // 循环遍历每个字符，判断是否是字符 a ，如果是，累加次数
+					for (int i = 0;i<s.length() ;i++                         )
+					{
+			            // 获取每个字符，判断是否是字符a
+						if (   s.charAt(i) == 'a' ) {
+			                // 累加统计次数
+							num++; 
+						}
+					}
+//将字符串转换为byte[]，并打印输出
+byte[] b =str.getBytes();
+for (int i = 0; i <b.length; i++) {
+	System.out.print(b[i] + " ");	
+}
+
+
+//将另外一个字符串“学习 JAVA 编程”进行比较
+String str2 = new String("学习 JAVA 编程");
+System.out.println("str和str2的内存地址相同？" + (str == str2));
+System.out.println("str和str2的内容相同？" + str.equals(str2));
+
+
+输出：
+	10
+	8
+	3
+	-1
+	[学习, JAVA, 编程]
+
+	JAVA
+	学习 java 编程
+	习
+	-47 -89 -49 -80 32 74 65 86 65 32 -79 -32 -77 -52 
+	str和str2的内存地址相同？false
+	str和str2的内容相同？true
+
+
+1. 字符串 str 中字符的索引从0开始，范围为 0 到 str.length()-1
+
+2. 使用 indexOf 进行字符或字符串查找时，如果匹配返回位置索引；如果没有匹配结果，返回 -1
+
+3. 使用 substring(beginIndex , endIndex) 进行字符串截取时，包括 beginIndex 位置的字符，不包括 endIndex 位置的字符
+
+4. 那么，“==” 和 equals() 有什么区别呢？
+
+	==: 判断两个字符串在内存中首地址是否相同，即判断是否是同一个字符串对象
+
+	equals(): 比较存储在两个字符串对象中的内容是否一致
+
+	PS：字节是计算机存储信息的基本单位，1 个字节等于 8 位， gbk 编码中 1 个汉字字符存储需要 2 个字节，1 个英文字符存储需要 1 个字节。
+	所以我们看到上面的程序运行结果中，每个汉字对应两个字节值，如“学”对应 “-47 -89” ，而英文字母 “J” 对应 “74” 。同时，我们还发现汉字
+	对应的字节值为负数，原因在于每个字节是 8 位，最大值不能超过 127，而汉字转换为字节后超过 127，如果超过就会溢出，以负数的形式显示。
+	（关于编码，我们在后面课程中会详细介绍，小小期待哦~~）
+
+
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Java文件名
+		String fileName = "HelloWorld.java"; 
+        // 邮箱
+		String email = "laurenyang@imooc.com";
+		
+		// 判断.java文件名是否正确：合法的文件名应该以.java结尾
+        /*
+        参考步骤：
+        1、获取文件名中最后一次出现"."号的位置
+        2、根据"."号的位置，获取文件的后缀
+        3、判断"."号位置及文件后缀名
+        */
+        //获取文件名中最后一次出现"."号的位置
+		int index = fileName.lastIndexOf(".");
+        
+        // 获取文件的后缀
+		String prefix = fileName.substring(index + 1, fileName.length());
+        
+		// 判断必须包含"."号，且不能出现在首位，同时后缀名为"java"
+		if ( index != -1 && index != 0 && prefix.equals("java")) {
+			System.out.println("Java文件名正确");
+		} else {
+			System.out.println("Java文件名无效");
+		}
+
+        // 判断邮箱格式是否正确：合法的邮箱名中至少要包含"@", 并且"@"是在"."之前
+         /*
+        参考步骤：
+        1、获取文件名中"@"符号的位置
+        2、获取邮箱中"."号的位置
+        3、判断必须包含"@"符号，且"@"必须在"."之前
+        */
+	    // 获取邮箱中"@"符号的位置
+		int index2 = email.indexOf('@');
+        
+        // 获取邮箱中"."号的位置
+		int index3 = email.indexOf('.');
+        
+		// 判断必须包含"@"符号，且"@"必须在"."之前
+		if (index2 != -1 && index3 > index2) {
+			System.out.println("邮箱格式正确");
+		} else {
+			System.out.println("邮箱格式无效");
+		}
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+认识 Java 中的 StringBuilder 类
+在Java中，除了可以使用 String 类来存储字符串，还可以使用 StringBuilder 类或 StringBuffer 类存储字符串，那么它们
+之间有什么区别呢？
+
+String 类具有是不可变性。如
+	String str = "hello";
+	System.out.println(str + "world");
+	System.out.println(str);
+运行结果：  helloworld
+			hello
+
+
+从运行结果中我们可以看到，程序运行时会额外创建一个对象，保存 "helloworld"。当频繁操作字符串时，就会额外产生很多
+临时变量。使用 StringBuilder 或 StringBuffer 就可以避免这个问题。至于 StringBuilder 和 StringBuffer ，它们基本相
+似，不同之处，StringBuffer 是线程安全的，而 StringBuilder 则没有实现线程安全功能，所以性能略高。因此一般情况下，
+如果需要创建一个内容可变的字符串对象，应优先考虑使用 StringBuilder 类。
+
+那么如何定义 StringBuilder 类的对象呢？ 我们来看下面的代码：
+	StringBuilder str1 = new StringBuilder();
+							//创建一个空的StringBuilder对象
+	StringBuilder str2 = new StringBuilder("imooc");
+							//创建一个字符串"imooc"
+	System.out.println(str2);
+
+运行结果：  imooc；
+
+
+StringBuilder 类提供了很多方法来操作字符串：
+
+
+	方法 								说明
+StringBuilder append(参数)			追加内容到当前 StringBuilder 对象的末尾
+StringBuilder insert(位置，参数) 	将内容插入到 StringBuilder 对象的指定位置
+String toString()					将 Stringbuilder 对象转化为 String 对象
+int length()						获取字符串的长度
+
+
+在下面的示例代码中，创建了 StringBuilder 对象，用来存储字符串，并对其做了追加和插入操作。这些操作修改了 str 对象的值，
+而没有创建新的对象，这就是 StringBuilder 和 String 最大的区别。
+
+	StringBuilder str = new StringBuilder("hello");
+	str.append(" imooc");//在字符串后面追加字符串
+	str.append(520);//在字符串后面追加整数
+	System.out.println("字符串长度：" + str.length());
+	System.out.println("插入前：" + str);
+
+	str.insert(11, '!');//在指定位置插入内容
+	string str2 = str.toString();//z转换为String对象
+	System.out.println("插入后：" + str2);
+
+运行结果：
+			字符串长度：14
+			插入前：hello imooc520
+			插入后：hello imooc!520
+
+
+	// 创建一个空的StringBuilder对象
+    StringBuilder str = new StringBuilder();
+	// 追加字符串
+	str.append("jaewkjldfxmopzdm");
+    // 从后往前每隔三位插入逗号
+	for (int i = str.length() - 3; i>0 ; i = i -3 ) {
+         str.insert(i, ',');  
+    }
+    // 将StringBuilder对象转换为String对象并输出
+	System.out.print(str.toString());
+
+运行效果： j,aew,kjl,dfx,mop,zdm
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+基本数据类型是不具备对象的特性的，比如基本类型不能调用方法、功能简单。。。，为了让基本数据类型也具备对象的特性， 
+Java 为每个基本数据类型都提供了一个包装类，这样我们就可以像操作对象那样来操作基本数据类型。 
+	
+	基本类型	对应的包装类
+	byte 			Byte
+	short  			Short
+	int 			Integer		
+	long 			Long
+	float 			Float
+	double 			Double
+	char 			Character
+	boolean 		Boolean
+
+
+
+包装类主要提供了两大类方法：
+
+	1. 将本类型和其他基本类型进行转换的方法
+
+	2. 将字符串和本类型及包装类互相转换的方法
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Integer 包装类的构造方法：
+
+Integer(int value) 	创建一个 Integer 对象，表示指定的int值
+Integer(String s)	创建一个 Integer 对象，表示String参数所指示的int值
+
+如下代码所示：
+int i = 2;	//定义int类型变量，值为2
+Integer m = new Integer(5);	//定义 Integer 包装类对象，值为5
+Integer n = new Integer("8");//定义 Integer 包装类对象，值为8
+
+Integer 包装类的常用方法：
+
+	返回值 			方法名 				解释
+	byte 			byteValue()			将该Integer转为byte类型
+	int 			intValue()			转为int类型
+	long 			longValue() 		转为long类型
+	float 			floatValue()		转为float类型
+	double 			doubleValue()		转为doublle类型
+	static int  	parseInt(String s)	将字符串转换为int类型
+	String 			toString()			转为doublle类型
+	static Integer	valueOf(String s)	将字符串转换为Integer类型
+
+
+
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        
+		// 定义int类型变量，值为86
+		int score1 = 86; 
+        
+		// 创建Integer包装类对象，表示变量score1的值
+		Integer score2=new Integer(score1);
+        
+		// 将Integer包装类转换为double类型
+		double score3=score2.doubleValue();
+        
+		// 将Integer包装类转换为float类型
+		float score4=score2.floatValue();
+        
+		// 将Integer包装类转换为int类型
+		int score5 =score2.intValue();
+
+		System.out.println("Integer包装类：" + score2);
+		System.out.println("double类型：" + score3);
+		System.out.println("float类型：" + score4);
+		System.out.println("int类型：" + score5);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+基本类型和包装类之间经常需要互相转换，以 Integer 为例（其他几个包装类的操作雷同哦）：
+Integer a = new Integer(3); //创建Integer包装类对象，值为3
+int b = a + 5;// 将对象和基本类型下进行运算
+
+在 JDK1.5 引入自动装箱和拆箱的机制后，包装类和基本类型之间的转换就更加轻松便利了。
+
+那什么是装箱和拆箱呢？我们分别来看下
+
+1.装箱：把基本类型转换成包装类，使其具有对象的性质，又可分为手动装箱和自动装箱
+
+int i =10l //定义一个int基本类型值
+Integer x = new Integer(i);	//手动装箱
+Integer y = i; // 自动装箱
+
+2.拆箱：和装箱相反，把包装类对象转换成基本类型的值，又可分为手动拆箱和自动拆箱
+Integer j = new Integer(8); //定义一个Integer包装类对象，值为8
+int m = j.intValue(); //手动拆箱为int类型
+int n = j; //自动拆箱为int类型
+
+
+ 定义double类型变量
+		double a = 91.5;
+         // 手动装箱
+		Double b = new Double(a);    
+        // 自动装箱
+		Double c = a;
+        System.out.println("装箱后的结果为：" + b + "和" + c);
+        // 定义一个Double包装类对象，值为8
+		Double d = new Double(87.0);   
+        // 手动拆箱
+		double e = d.doubleValue();
+        // 自动拆箱
+		double f = d;
+         System.out.println("拆箱后的结果为：" + e + "和" + f);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////、
+Java 中基本类型和字符串之间的转换
+在程序开发中，我们经常需要在基本数据类型和字符串之间进行转换。
+
+其中，基本类型转换为字符串有三种方法：
+
+1. 使用包装类的 toString() 方法
+
+2. 使用String类的 valueOf() 方法
+
+3. 用一个空字符串加上基本类型，得到的就是基本类型数据对应的字符串
+
+//将基本类型转换为字符串
+	int c = 10;
+	double d = 78.5;
+	String str1 = Integer.toString(c); 	方法1
+	String str1 = Double.toString(d);
+
+	String str2 = String.valueOf(c);	方法2
+	String str2 = String.valueOf(d);
+
+	String str3 = c + "";				方法3
+	String str3 = m + "";
+
+PS：其他基本类型与字符串的相互转化这里不再一一列出，方法都类似
+
+将字符串转换为基本类型的两种方法
+String str = “1800.20”；
+	1.调用包装类的parseXxx静态方法
+		Double a = Double.parseDouble(str);
+	2.调用包装类的 valueOf()方法转换为基本类型的包装类，会自动拆箱
+		Double b = Double.valueOf(str);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+使用 Date 和 SimpleDateFormat 类表示时间
+
+在程序开发中，经常需要处理日期和时间的相关数据，此时我们可以使用 java.util 包中的 Date 类。这个类最主要的作用就是
+获取当前时间，我们来看下 Date 类的使用：
+
+	Date d = new Date(); // 使用默认的构造方法创建Date对象
+	System.out.println(d);	//输出Date对象，表示当期时间
+
+使用 Date 类的默认无参构造方法创建出的对象就代表当前时间，我们可以直接输出 Date 对象显示当前的时间，显示的结果如下：
+
+Wed Jun 11 09:22:30 CST 2015
+Wed 代表 Wednesday (星期三)， Jun 代表 June (六月)， 11 代表 11 号， CST 代表 China Standard Time (中国标准时间，也就是北京时间，东八区)。
+
+此时就到了 java.text 包中的 SimpleDateFormat 类大显身手的时候了！！可以使用 SimpleDateFormat 来对日期时间进行格式化，
+如可以将日期转换为指定格式的文本，也可将文本转换为日期。
+
+
+1. 使用 format() 方法将日期转换为指定格式的文本
+	//创建Date对象，表示当期时间
+	Date d = new Date();
+	//创建SimpleDateFormat对象，指定目标格式
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	//调用format()方法，格式化时间，转换唯一指定格式字符串
+	String today = sdf.format(d);
+	//输出
+	System.out.println(today);
+
+运行结果： 2014-06-11  09:55:48
+
+
+代码中的 “yyyy-MM-dd HH:mm:ss” 为预定义字符串， 
+yyyy 表示四位年， MM 表示两位月份， dd 表示两位日期， 
+HH 表示小时(使用24小时制)， mm 表示分钟， ss 表示秒，
+这样就指定了转换的目标格式，最后调用 format() 方法将时间转换为指定的格式的字符串。
+
+
+
+
+2. 使用 parse() 方法将文本转换为日期
+	//创建日期格式字符串
+	String day = "2014年02月14日10:30:25";
+	//创建SimpleDateFormat对象
+	SimpleDateFormat df = new SimpleDateFormat("yyy年MM月dd日 HH:mm:ss");
+	//调用parse()将字符串转换为日期
+	Date date = df.parse(day);
+	//输出转换后的时间
+	System.out.println("当前时间：" + date);
+
+代码中的 “yyyy年MM月dd日 HH:mm:ss” 指定了字符串的d日期格式，调用 parse() 方法将文本转换为日期。
+
+运行结果： Fir Feb 14 10:30:25 CST 2014
+
+
+
+
+
+
+一定要注意哦：
+
+1、 调用 SimpleDateFormat 对象的 parse() 方法时可能会出现转换异常，即 ParseException ，因此需要进行异常处理
+
+2、 使用 Date 类时需要导入 java.util 包，使用 SimpleDateFormat 时需要导入 java.text 包
+
+package com.imooc;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
+
+public class hkiiqjwhd {
+	public static void main(String[] args) throws ParseException{
+		String day="2015年05月04日 20:15:12";
+		SimpleDateFormat dre=new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+		Date today=dre.parse(day);
+		System.out.println(today);
+	}
+}
+
+
+public class hkiiqjwhd {
+	public static void main(String[] args){
+		String day="2015年05月04日 20:15:12";
+		SimpleDateFormat dre=new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+		
+		try{						//parse 可以预知会出现异常，所以必须处理可能会出现的异常要用try catch语句包裹
+			Date today=dre.parse(day);
+			System.out.println(today);	
+		} catch(ParseException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Calendar 类的应用
+
+Date 类最主要的作用就是获得当前时间，同时这个类里面也具有设置时间以及一些其他的功能，但是由于本身设计的问题，
+这些方法却遭到众多批评，不建议使用，更推荐使用 Calendar 类进行时间和日期的处理。
+
+java.util.Calendar 类是一个抽象类，可以通过调用 getInstance() 静态方法获取一个 Calendar 对象，此对象已由当前
+日期时间初始化，即默认代表当前时间，如 Calendar c = Calendar.getInstance();
+
+那么如何使用 Calendar 获取年、月、日、时间等信息呢？我们来看下面的代码：
+
+
+Calendar c = Calendar.getInstance(); //创建Canlendar对象
+int year = c.get(Calendar.YEAR);//获取年
+int month = c.get(Calendar.MONTH) +1 ;//获取月份，0表1月份
+int day = c.get(Calendar.DAY_OF_MONTH);	//获取日期
+int hour = c.get(Calendar.HOUR_OF_DAY);	//获取小时
+int minute = c.get(Calendar.MINUTE);	//获取分钟
+int second = c.get(Calendar.SECOND);	//获取秒
+
+System.out.println("当前时间：" + year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second);
+
+1.	调用 Calendar 类的 getInstance() 方法获取一个实例，然后通过调用 get() 方法获取日期时间信息，
+	参数为需要获得的字段的值， Calendar.Year 等为 Calendar 类中定义的静态常量。
+
+
+
+2.	Calendar 类提供了 getTime() 方法，用来获取 Date 对象，完成 Calendar 和 Date 的转换，
+	还可通过 getTimeInMillis() 方法，获取此 Calendar 的时间值，以毫秒为单位。如下所示：
+
+
+Date date = c.getTime(); //将Calendar对象转换为Date对象
+long time = c.getTimeInMillis(); //获取当前毫秒数
+System.out.println("当前时间：" + date);
+System.out.println("当前毫秒数：" + tiime);
+
+
+输出：
+	当前时间：2016-1-12 19:25:10
+	当前时间：Tue Jan 12 19:25:10 CST 2016
+	当前毫秒数：1452597910615
+
+
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+public class HelloWorld {
+    
+    public static void main(String[] args) {
+		// 创建Canlendar对象
+		Calendar c = Calendar.getInstance();
+        
+		// 将Calendar对象转换为Date对象
+		Date date = c.getTime();
+        
+		// 创建SimpleDateFormat对象，指定目标格式
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
+		// 将日期转换为指定格式的字符串
+		String now = sdf.format(date);
+		System.out.println("当前时间：" + now);
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+使用 Math 类操作数据
+
+Math 类位于 java.lang 包中，包含用于执行基本数学运算的方法， Math 类的所有方法都是静态方法，所以使用该类中的方法时，
+可以直接使用类名.方法名，如： Math.round();
+
+常用的方法
+
+返回值 			方法名 			解释
+long 			round()			返回四舍五入后的整数
+double 			floor()			返回小于参数的最大整数
+double 			ceil()			返回大于参数的最小整数
+double 			random()		返回[0,1)之间的随机数浮点数
+
+
+double a = 12.81; //定义一个double类型变量
+int b = (int) a; //将double类型强制转换为int类型，去掉小数点
+System.out.println("强制类型转换：" + b);
+
+long c = Math.round(a);//调用round方法，进行四舍五入
+System.out.println("四舍五入：" + c);
+
+double d = Math.floor(a);//调用floor方法，返回小于参数的最大整数
+System.out.println("floor：" + d);
+
+double e = Math.ceil(a);//调用ceil方法，返回大于参数的最小值
+System.out.println("ceil：" + e);
+
+double x = Math.random();//调用random方法，返回[0,1)之间的随机数浮点数
+System.out.println("随机数：" + e);
+
+int y = (int)(Math.random() * 99); //返回[0,99)之间的随机整数
+System.out.println("[0,99)之间的随机整数：" + y);
+
+
+
+强制类型转换：12
+四舍五入：13
+floor：12.0
+ceil：13.0
+随机数：13.0
+[0,99)之间的随机整数：22
+
+
+
+public class HelloWorld {
+    
+    public static void main(String[] args) {
+        
+        // 定义一个整型数组，长度为10
+		int[] nums = new it[10];
+        
+        //通过循环给数组赋值
+		for (int i = 0; i < nums.length; i++) {
+            // 产生10以内的随机数
+			int x = (int)(Math.random() * 10);
+            
+			nums[i] = x;// 为元素赋值
+		}
+        
+		// 使用foreach循环输出数组中的元素
+		for ( int nums: nums ) {
+			System.out.print(num + " ");
+		}
+	}
+}public class HelloWorld {
+    
+    public static void main(String[] args) {
+        
+        // 定义一个整型数组，长度为10
+		int[] nums = new it[10];
+        
+        //通过循环给数组赋值
+		for (int i = 0; i < nums.length; i++) {
+            // 产生10以内的随机数
+			int x = (int)(Math.random() * 10);
+            
+			nums[i] = x;// 为元素赋值
+		}
+        
+		// 使用foreach循环输出数组中的元素
+		for ( int nums: nums ) {
+			System.out.print(num + " ");
+		}
+	}
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+集合框架
+	java中的集合类：是一种工具类，就像是容器，存储任意数量的具有共同属性的对象
+
+	集合的作用
+		在类的内部，对数据进行组织；
+		简单而快速的搜索大数量的条目
+		有的集合接口，提供了一系列排列有序的元素并且可以在序列中间快速的插入或者删除有关元素
+		有的集合接口，提供了映射关系，可以通过关键字（key）去快速查找到对应的唯一对象，而这个关键字可以是任意类型
+
+	与数组的对比——为何选择集合而不是数组
+		数组的长度固定，集合长度可变
+		数组只能通过下标访问元素，类型固定，而有的集合可以通过任意乐享查找所映射的具体对象
+
+	java集合框架体系结构
+	Collection
+		List（序列）
+			ArraysList
+		Queue（队列）
+			LinkedList（列表）（Collection也指向它）
+		Set（集）
+			HashSet（哈希集）
+	Map（内部<Key, Value>两个对象为一个映射去存储数据，这样一个映射就是 Entry类(键值对) 实例）
+		HashMap
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Collection接口、子接口以及实现类
+
+Collection接口
+	是List、Set和Queue接口的父接口
+	定义了可用于操作List\Set\Queue的方法——增删改查
+
+	List接口及其实现类————ArrayList
+		list是元素有序并且可以重复的集合，被称为序列
+		List可以精确的控制每个元素的插入位置，或删除某个位置元素
+		ArraysList——数组序列，是List的一个重要实现类
+		ArraysList底层是由数组实现的
+			.add()
+			.addAll()
+			.remove()
+			.removeAll()
+Set接口及其实现类
+	Set是元素无序并且不可以重复的集合，被称为集
+	HashSet——哈希集，是Set的一个重要实现类
+			.add()
+			.addAll()
+			.remove()
+			.removeAll()
+
+
+泛型集合中，不能添加泛型规定的类型及其子类型以外的对象，否则会报错！
+public List<Course> coursesToSelect;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+package com.imooc.collection;
+
+public class ChildCourse extends Course {
+
+}
+////////////////////////////////////////////////////////////////////////////////////////
+package com.imooc.collection;
+
+/**
+ * 课程类
+ * @author Administrator
+ *
+ */
+public class Course {
+
+	public String id;
+	
+	public String name;
+	
+	public Course(String id, String name) {
+		this.id = id ;
+		
+		this.name = name;
+	}
+	
+	public Course() {
+		
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+package com.imooc.collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * 备选课程类
+ * @author Administrator
+ *
+ */
+public class ListTest {
+
+	/**
+	 * 用于存放备选课程的List
+	 */
+	public List coursesToSelect;
+	
+	public ListTest() {
+		this.coursesToSelect = new ArrayList();
+	}
+	
+	/**
+	 * 用于往coursesToSelect中添加备选课程
+	 */
+	public void testAdd() {
+		//创建一个课程对象，并通过调用add方法，添加到备选课程List中
+		Course cr1 = new Course("1" , "数据结构");
+		coursesToSelect.add(cr1);
+		Course temp = (Course) coursesToSelect.get(0);
+		System.out.println("添加了课程：" + temp.id + ":" + temp.name); 
+		
+		
+		Course cr2 = new Course("2", "C语言");
+		coursesToSelect.add(0, cr2);
+		Course temp2 = (Course) coursesToSelect.get(0);
+		System.out.println("添加了课程：" + temp2.id + ":" + temp2.name);
+		
+		coursesToSelect.add(cr1);
+		Course temp0 = (Course) coursesToSelect.get(2);
+		System.out.println("添加了课程：" + temp.id + ":" + temp.name); 
+		
+		
+		//以下方法会抛出数组下标越界异常
+//		Course cr3 = new Course("3", "test");
+//		coursesToSelect.add(4, cr3);
+		
+		Course[] course = {new Course("3", "离散数学"), new Course("4", "汇编语言")};
+		coursesToSelect.addAll(Arrays.asList(course));
+		Course temp3 = (Course) coursesToSelect.get(2);
+		Course temp4 = (Course) coursesToSelect.get(3);
+		
+		System.out.println("添加了两门课程：" + temp3.id + ":" + 
+				temp3.name + ";" + temp4.id + ":" + temp4.name);
+		
+		Course[] course2 = {new Course("5", "高等数学"), new Course("6", "大学英语")};
+		coursesToSelect.addAll(2, Arrays.asList(course2));
+		Course temp5 = (Course) coursesToSelect.get(2);
+		Course temp6 = (Course) coursesToSelect.get(3);
+		System.out.println("添加了两门课程：" + temp5.id + ":" + 
+				temp5.name + ";" + temp6.id + ":" + temp6.name);
+		
+	}
+	
+	/**
+	 * 取得List中的元素的方法
+	 * @param args
+	 */
+	public void testGet() {
+		int size = coursesToSelect.size();//长度
+		System.out.println("有如下课程待选：");
+		for(int i= 0 ; i < size; i++) {
+			Course cr = (Course) coursesToSelect.get(i);
+			System.out.println("课程：" + cr.id + ":" + cr.name);
+		}
+	}
+	
+	/**
+	 * 通过迭代器来遍历List
+	 * @param args
+	 */
+	public void testIterator() {
+		//通过集合的iterator方法，取得迭代器的实例
+		Iterator<Course> it = coursesToSelect.iterator();
+		System.out.println("有如下课程待选(通过迭代器访问)：");
+		while(it.hasNext()) {
+			Course cr = it.next();
+			System.out.println("课程：" + cr.id + ":" + cr.name);
+		}
+	}
+	
+	/**
+	 * 通过for each方法访问集合元素
+	 * @param args
+	 */
+	public void testForEach() {
+		System.out.println("有如下课程待选(通过for each访问)：");
+		for (Object obj : coursesToSelect) {
+			Course cr = (Course) obj;
+			System.out.println("课程：" + cr.id + ":" + cr.name);
+		}
+	}
+	
+	/**
+	 * 修改List中的元素
+	 * @param args
+	 */
+	public void testModify() {
+		coursesToSelect.set(4, new Course("7", "毛概"));
+	}
+	
+	/**
+	 * 删除List中的元素
+	 * @param args
+	 */
+	public void testRemove() {
+//		Course cr = (Course) coursesToSelect.get(4);
+		System.out.println("即将删除4位置和5位置上的课程！");
+		Course[] courses = {(Course) coursesToSelect.get(4), (Course) coursesToSelect.get(5)};
+		coursesToSelect.removeAll(Arrays.asList(courses));
+		//		coursesToSelect.remove(4);
+		System.out.println("成功删除课程！");
+		testForEach();
+	}
+	
+	/**
+	 * 往List中添加一些奇怪的东西
+	 * @param args
+	 */
+	public void testType() {
+		System.out.println("能否往List中添加一些奇怪的东西呢！？");
+		coursesToSelect.add("我不是课程，我只是一个无辜的字符串！！");
+	}
+	
+	public static void main( String[] args) {
+		ListTest lt = new ListTest();
+		lt.testAdd();
+
+		lt.testGet();
+		lt.testIterator();
+		lt.testForEach();
+		lt.testModify();
+		lt.testForEach();
+		lt.testRemove();
+
+		
+//		lt.testType();
+//		lt.testForEach();
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+package com.imooc.collection;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * 学生类
+ * @author Administrator
+ *
+ */
+public class Student {
+
+	public String id;
+	
+	public String name;
+	
+	public Set<Course> courses;
+
+	public Student(String id, String name) {
+		this.id = id;
+		this.name = name;
+		this.courses = new HashSet<Course>();
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+package com.imooc.collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class SetTest {
+
+	public List<Course> coursesToSelect;
+
+	public SetTest() {
+		coursesToSelect = new ArrayList<Course>();
+	}
+
+	/**
+	 * 用于往coursesToSelect中添加备选课程
+	 */
+	public void testAdd() {
+		// 创建一个课程对象，并通过调用add方法，添加到备选课程List中
+		Course cr1 = new Course("1", "数据结构");
+		coursesToSelect.add(cr1);
+		Course temp = (Course) coursesToSelect.get(0);
+		// System.out.println("添加了课程：" + temp.id + ":" + temp.name);
+
+		Course cr2 = new Course("2", "C语言");
+		coursesToSelect.add(0, cr2);
+		Course temp2 = (Course) coursesToSelect.get(0);
+		// System.out.println("添加了课程：" + temp2.id + ":" + temp2.name);
+
+		// coursesToSelect.add(cr1);
+		// Course temp0 = (Course) coursesToSelect.get(2);
+		// System.out.println("添加了课程：" + temp.id + ":" + temp.name);
+
+		// 以下方法会抛出数组下标越界异常
+		// Course cr3 = new Course("3", "test");
+		// coursesToSelect.add(4, cr3);
+
+		Course[] course = { new Course("3", "离散数学"), new Course("4", "汇编语言") };
+		coursesToSelect.addAll(Arrays.asList(course));
+		Course temp3 = (Course) coursesToSelect.get(2);
+		Course temp4 = (Course) coursesToSelect.get(3);
+
+		// System.out.println("添加了两门课程：" + temp3.id + ":" +
+		// temp3.name + ";" + temp4.id + ":" + temp4.name);
+
+		Course[] course2 = { new Course("5", "高等数学"), new Course("6", "大学英语") };
+		coursesToSelect.addAll(2, Arrays.asList(course2));
+		Course temp5 = (Course) coursesToSelect.get(2);
+		Course temp6 = (Course) coursesToSelect.get(3);
+		// System.out.println("添加了两门课程：" + temp5.id + ":" +
+		// temp5.name + ";" + temp6.id + ":" + temp6.name);
+
+	}
+
+	/**
+	 * 通过for each方法访问集合元素
+	 * 
+	 * @param args
+	 */
+	public void testForEach() {
+		System.out.println("有如下课程待选(通过for each访问)：");
+		for (Object obj : coursesToSelect) {
+			Course cr = (Course) obj;
+			System.out.println("课程：" + cr.id + ":" + cr.name);
+		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		SetTest st = new SetTest();
+		st.testAdd();
+		st.testForEach();
+		// 创建一个学生对象
+		Student student = new Student("1", "小明");
+		System.out.println("欢迎学生：" + student.name + "选课！");
+		// 创建一个Scanner对象，用来接收从键盘输入的课程ID
+		Scanner console = new Scanner(System.in);
+
+		for (int i = 0; i < 3; i++) {
+			System.out.println("请输入课程ID");
+			String courseId = console.next();
+			for (Course cr : st.coursesToSelect) {
+				if (cr.id.equals(courseId)) {
+					student.courses.add(cr);
+					/**
+					 * Set中，添加某个对象，无论添加多少次， 最终只会保留一个该对象（的引用）， 并且，保留的是第一次添加的那一个
+					 */
+					// student.courses.add(null);
+					student.courses.add(cr);
+				}
+			}
+		}
+		st.testForEachForSet(student);
+	}
+
+	public void testForEachForSet(Student student) {
+		// 打印输出，学生所选的课程！
+		System.out.println("共选择了：" + student.courses.size() + "门课程！");
+		for (Course cr : student.courses) {
+			System.out.println("选择了课程：" + cr.id + ":" + cr.name);
+		}
+	}
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package com.imooc.collection;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TestGeneric {
+
+	/**
+	 * 带有泛型――Course，的List类型属性
+	 */
+	public List<Course> courses;
+	
+	public TestGeneric() {
+		this.courses = new ArrayList<Course>();
+	}
+	
+	/**
+	 * 测试添加
+	 */
+	public void testAdd() {
+		Course cr1 = new Course("1","大学语文");
+		courses.add(cr1);
+		//泛型集合中，不能添加泛型规定的类型及其子类型以外的对象，否则会报错！
+//		courses.add("能否添加一些奇怪的东西呢？？");
+		Course cr2 = new Course("2","Java基础");
+		courses.add(cr2);
+	}
+	
+	/**
+	 * 测试循环遍历
+	 */
+	public void testForEach() {
+		for (Course cr : courses) {
+			System.out.println(cr.id + ":" + cr.name);
+		}
+	}
+	
+	/**
+	 * 泛型集合可以添加泛型的子类型的对象实例
+	 */
+	public void testChild() {
+		ChildCourse ccr = new ChildCourse();
+		ccr.id = "3";
+		ccr.name = "我是子类型的课程对象实例~~";
+		courses.add(ccr);
+	}
+	
+	/**
+	 * 泛型不能使用基本类型
+	 */
+	public void testBasicType() {
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		System.out.println("基本类型必须使用包装类作为泛型！" + list.get(0));
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		TestGeneric tg = new TestGeneric();
+		tg.testAdd();
+		tg.testForEach();
+		tg.testChild();
+		tg.testForEach();
+		tg.testBasicType();
+	}
+
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Map 接口
+	Map 提供了一种映射关系，其中的元素是以键值对（key-value）的形式存储的，能够实现根据key快速查找value
+	Map 中的键值对以Entry类型的对象实例形式存在
+	键（key值）不可重复，value值可以
+	每个键最多只能映射到一个值（key值）
+	Map 接口提供了分别返回key值集合、value值集合以及Entry（键值对）集合的方法
+	Map 支持泛型，形如：Map<K,,V>
+		put(K key, V value) 
+			将指定的值与此映射中的指定键关联
+		remove(Object key)方法
+			如果存在一个键的映射关系，则将其从此映射中移除
+		keySet()
+			返回此映射中包含的键的 Set 视图
+		values()
+		 	返回此映射中包含的值 Collection 视图
+		entrySet()
+			返回此映射中包含的映射关系 Set 视图
+HashMap类
+	HashMap是Map的一个重要实现类，也是最常用的，基于哈希表实现
+	HashMap中的entry对象时无序排列的
+	Key值和value值都可以为null，但是一个HashMap只能有一个Key值为null的映射（key值不可重复）
+
+
+
+
+
+
+
+package com.imooc;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
+public class MapTest {
+
+	/**
+	 * 用来承装学生类型对象
+	 */
+	public Map<String, Student> students;
+
+	/**
+	 * 在构造器中初始化students属性
+	 */
+	public MapTest() {
+		this.students = new HashMap<String, Student>();
+	}
+
+	/**
+	 * 测试添加：输入学生ID，判断是否被占用 若未被占用，则输入姓名，创建新学生对象，并且 添加到students中
+	 */
+	public void testPut() {
+		// 创建一个Scanner对象，用来获取输入的学生ID和姓名
+		Scanner console = new Scanner(System.in);
+		int i = 0;
+		while (i < 3) {
+			System.out.println("请输入学生ID：");
+			String ID = console.next();
+			// 判断该ID是否被占用
+			Student st = students.get(ID);
+			if (st == null) {
+				// 提示输入学生姓名
+				System.out.println("请输入学生姓名：");
+				String name = console.next();
+				// 创建新的学生对象
+				Student newStudent = new Student(ID, name);
+				// 通过调用students的put方法，添加ID-学生映射
+				students.put(ID, newStudent);
+				System.out.println("成功添加学生：" + students.get(ID).name);
+				i++;
+			} else {
+				System.out.println("该学生ID已被占用！");
+				continue;
+			}
+		}
+	}
+
+	/**
+	 * 测试Map的keySet方法
+	 */
+	public void testKeySet() {
+		// 通过keySet方法，返回Map中的所有“键”的Set集合
+		Set<String> keySet = students.keySet();
+		// 取得students的容量
+		System.out.println("总共有：" + students.size() + "个学生！");
+		// 遍历keySet，取得每一个键，再调用get方法取得每个键对应的value
+		for (String stuId : keySet) {
+			Student st = students.get(stuId);
+			if (st != null)
+				System.out.println("学生：" + st.name);
+		}
+	}
+
+	/**
+	 * 测试删除Map中的映射
+	 */
+	public void testRemove() {
+		// 获取从键盘输入的待删除学生ID字符串
+		Scanner console = new Scanner(System.in);
+		while (true) {
+			// 提示输入待删除的学生的ID
+			System.out.println("请输入要删除的学生ID！");
+			String ID = console.next();
+			// 判断该ID是否有对应的学生对象
+			Student st = students.get(ID);
+			if (st == null) {
+				// 提示输入的ID并不存在
+				System.out.println("该ID不存在！");
+				continue;
+			}
+			students.remove(ID);
+			System.out.println("成功删除学生：" + st.name);
+			break;
+		}
+	}
+
+	/**
+	 * 通过entrySet方法来遍历Map
+	 */
+	public void testEntrySet() {
+		// 通过entrySet方法，返回Map中的所有键值对
+		Set<Entry<String, Student>> entrySet = students.entrySet();
+		for (Entry<String, Student> entry : entrySet) {
+			System.out.println("取得键：" + entry.getKey());
+			System.out.println("对应的值为：" + entry.getValue().name);
+		}
+	}
+
+	/**
+	 * 利用put方法修改Map中的已有映射
+	 */
+	public void testModify() {
+		// 提示输入要修改的学生ID
+		System.out.println("请输入要修改的学生ID：");
+		// 创建一个Scanner对象，去获取从键盘上输入的学生ID字符串
+		Scanner console = new Scanner(System.in);
+		while (true) {
+			// 取得从键盘输入的学生ID
+			String stuID = console.next();
+			// 从students中查找该学生ID对应的学生对象
+			Student student = students.get(stuID);
+			if (student == null) {
+				System.out.println("该ID不存在！请重新输入！");
+				continue;
+			}
+			// 提示当前对应的学生对象的姓名
+			System.out.println("当前该学生ID，所对应的学生为：" + student.name);
+			// 提示输入新的学生姓名，来修改已有的映射
+			System.out.println("请输入新的学生姓名：");
+			String name = console.next();
+			Student newStudent = new Student(stuID, name);
+			students.put(stuID, newStudent);
+			System.out.println("修改成功！");
+			break;
+		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		MapTest mt = new MapTest();
+		mt.testPut();
+		mt.testKeySet();
+		// mt.testRemove();
+		// mt.testEntrySet();
+		// mt.testModify();
+		// mt.testEntrySet();
+
+	}
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Contains方法
+ContainsAll方法
+
+
+hasshCode方法
+
+Collections工具类
+sort()排序
+
+Comparable 默认比较规则
+	可比较的
+	实现该接口表示:这个类的实例可以比较大小，可以进行自然排序
+	定义了默认的比较规则
+	其实现类需实现 compareTo()方法
+	compareTo()方法返回正数表示大，负数表示小，0表示相等
+
+
+Comparator 临时比较规则
+	比较工具接口
+	用于定义临时比较规则，而不是默认比较规则
+	其实现类需要 compare()方法
+	Comparator 和 Comparable 都是java集合框架的成员
+
+
+
+
+java集合框架
+	Collection接口
+	Collections工具类
+	Map接口
+	Comparator接口
+	Comparable接口
 
 
 
