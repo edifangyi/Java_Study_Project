@@ -3,6 +3,8 @@
 		 JAva ME  移动设备 游戏 通信
 
 JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
+JDK( Java Development Kit ) ：java开发工具包
+JRE( Java Runtime Environment)：java运行环境
 
 	源文件(.java) → 编译器(compiler) → 字节码文件(.class) → 解释器(interpreter)
 /**
@@ -15,7 +17,7 @@ JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
 
 2.  标识符不能是 Java 关键字和保留字（ Java 预留的关键字，以后的升级版本中有可能作为关键字），但可以包含关键字和保留字。如：不可以使用 void 作为标识符，但是 Myvoid 可以
 
-3.  标识符是严格区分大小写的。 所以涅，一定要分清楚 imooc 和 IMooc 是两个不同的标识符哦！
+3.  标识符是严格区分大小写的。 所以，一定要分清楚 imooc 和 IMooc 是两个不同的标识符哦！
 
 4.  标识符的命名最好能反映出其作用，做到见名知意。
 
@@ -30,7 +32,6 @@ JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
 		 int     num=18;
 		 double     price=120.5;
 		 boolean     isOK=true;
-
 
 
 6.Java 中变量的使用规则
@@ -662,7 +663,7 @@ JVM( Java Virtual Machine ) ：跨平台通过 JVM实现的
 
 6.Java 中的静态内部类
 
-	静态内部类是 static 修饰的内部类，这种内部类的特点是：
+	静态内部类是 52 修饰的内部类，这种内部类的特点是：
 
 		1、 静态内部类不能直接访问外部类的非静态成员，但可以通过 new 外部类().成员 的方式访问 
 
