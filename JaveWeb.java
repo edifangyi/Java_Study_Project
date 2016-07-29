@@ -2120,7 +2120,7 @@ day06
 
 	*** 属性约束（只能在复杂元素上面）
 		* <attribute name="p11" type="string" use="required"></attribute>
-		</complexType>
+		在之前</complexType>写
 	
 	** 复杂的schema
 	*** 多个schema使用名称空间进行区分 xmlns:名称
@@ -2139,6 +2139,42 @@ day06
 		</employee>
 	</company>
 
+company.xsd
+	<?xml version="1.0" encoding="UTF-8"?>
+	<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/company" 
+	elementFormDefault="qualified">
+		<element name="company">
+			<complexType>
+				<sequence>
+					<element name="employee">
+						<complexType>
+							<sequence>
+								<!-- 引用任何一个元素 -->
+								<any></any>
+								<!-- 员工名称 -->
+								<element name="name"></element>
+							</sequence>
+							<!-- 为employee元素添加属性 -->
+							<attribute name="age" type="int"></attribute>
+						</complexType>
+					</element>
+				</sequence>
+			</complexType>
+		</element>
+	</schema>
+
+department.xsd
+	<?xml version="1.0" encoding="UTF-8"?>
+	<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/department" 
+	elementFormDefault="qualified">
+		<!-- 部门名称 -->
+		<element name="name" type="string"></element>
+	</schema>
+
+==================================================================================================
+
 2、sax解析的原理
 	* 使用jaxp的sax方式解析xml
 	** SAXParser
@@ -2151,14 +2187,85 @@ day06
 	*** 解析到文本内容时候，执行characters方法，使用string构造返回文本内容
 	*** 解析到结束标签时候，执行endElement方法，参数qName，返回结束标签名称
 
+	public class TestSax {
+
+		public static void main(String[] args) throws Exception, SAXException {
+			//创建解析器工厂
+			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+			//创建解析器
+			SAXParser saxParser = saxParserFactory.newSAXParser();
+			//执行parse方法
+			saxParser.parse("src/person.xml", new MyHandler1());
+				
+		}
+	}
+
+==================================================================================================	
+	
 	* 打印整个xml文档
 
+	//打印整个文档
+	class MyHandler extends DefaultHandler {
+
+		@Override
+		public void startElement(String uri, String localName, String qName,
+				Attributes attributes) throws SAXException {
+			System.out.print("<"+qName+">");
+		}
+
+		@Override
+		public void characters(char[] ch, int start, int length)
+				throws SAXException {
+			System.out.print(new String(ch,start,length));
+		}
+		
+		@Override
+		public void endElement(String uri, String localName, String qName)
+				throws SAXException {
+			System.out.print("</"+qName+">");
+		}
+		
+	}
+==================================================================================================
 	* 得到所有name标签的值
 		* 定义一个成员变量 boolean
 		* 判断，如果解析到name标签时候，把布尔类型修改成true
 		* 判断如果true，打印文本内容
 		* 如果执行到结束name标签时候，把设置成false
-	
+
+
+	//得到所有name标签的文本内容
+	class MyHandler1 extends DefaultHandler {
+
+		boolean flag = false;
+		@Override
+		public void startElement(String uri, String localName, String qName,
+				Attributes attributes) throws SAXException {
+			if("name".equals(qName)) {
+				flag = true;
+			}
+		}
+
+		@Override
+		public void characters(char[] ch, int start, int length)
+				throws SAXException {
+			if(flag == true) {
+				System.out.println(new String(ch,start,length));
+			}
+		}
+		
+		@Override
+		public void endElement(String uri, String localName, String qName)
+				throws SAXException {
+			if("name".equals(qName)) {
+				flag = false;
+			}
+		}
+		
+	}
+
+
+==================================================================================================	
 	* 得到第一个name标签的文本的值
 		* 定义一个成员变量 int idx = 1
 		* 每次解析完成之后name标签，需要在结束的位置把idx+1，
@@ -2166,6 +2273,39 @@ day06
 		*** if(flag == true && idx==2) {}
 		*** flag值要是true同时idx的值是2，这两个条件同时满足 && 
 
+
+			//得到第一个name的值
+	class MyHandler1 extends DefaultHandler {
+
+		boolean flag = false;
+		int idx = 1;
+		@Override
+		public void startElement(String uri, String localName, String qName,
+				Attributes attributes) throws SAXException {
+			if("name".equals(qName)) {
+				flag = true;
+			}
+		}
+
+		@Override
+		public void characters(char[] ch, int start, int length)
+				throws SAXException {
+			if(flag == true && idx==2) {//改这个，得到第二个name
+				System.out.println(new String(ch,start,length));
+			}
+		}
+		
+		@Override
+		public void endElement(String uri, String localName, String qName)
+				throws SAXException {
+			if("name".equals(qName)) {
+				flag = false;
+				idx++;
+			}
+		}
+		
+	}
+==================================================================================================
 3、dom4j的简介
 	* dom4j是dom4j组织开发针对xml解析器。dom4j不是javase的一部分
 	** 要想使用dom4j，首先引入dom4j的jar包
@@ -2192,48 +2332,105 @@ day06
 
 	*** dom4j解析 也会分配树形结构 （把dom方式和sax方式结合在一起）
 	*** 解析的过程，从上到下，一层一层的进行解析
-
+==================================================================================================
 4、使用dom4j实现查询的操作
 	* 查询所有的name标签的文本的内容
 	* 步骤
-	/*
-	 * 1、得到解析器
-	 * 2、执行read方法，得到document
-	 * 3、得到根节点 document.getRootElement();
-	 * 4、得到多个p1节点 elements(QName qName) 
-	 * 5、遍历list集合，得到每一个p1标签
-	 * 6、得到p1下面的name标签  element(String name) 
-	 * 7、得到name文本内容 getText方法
-	 * */
-
+	//查询所有的name标签的文本的内容
+	public static void listNames() throws Exception {
+		/*
+		 * 1、得到解析器
+		 * 2、执行read方法，得到document
+		 * 3、得到根节点
+		 * 4、得到多个p1节点 elements(QName qName) 
+		 * 5、遍历list集合，得到每一个p1标签
+		 * 6、得到p1下面的name标签element(String name) 
+		 * 7、得到name文本内容
+		 * */
+		//得到解析器
+//		SAXReader saxReader = new SAXReader();
+//		//得到document
+//		Document document = saxReader.read("src/person.xml");
+		
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到所有的p1
+		List<Element> p1s = root.elements("p1");
+		//遍历list集合
+		for (Element p1 : p1s) {
+			//得到p1下面的name标签
+			Element name1 = p1.element("name");
+			//得到name的文本内容
+			String s = name1.getText();
+			System.out.println(s);
+		}
+	}
+==================================================================================================
 
 	* 查询第一个name标签的值
 	* 步骤
-	/*
-	 * 1、得到解析器
-	 * 2、执行read方法，得到document
-	 * 3、得到根节点
-	 * 
-	 * 4、得到第一个p1标签  element("p1") 
-	 * 5、得到第一个p1下面的name标签 element("name") 
-	 * 6、得到name的文本内容getText()
-	 * */
 
+	//查询第一个name标签的值
+	public static void listName1() throws Exception {
+		/*
+		 * 1、得到解析器
+		 * 2、执行read方法，得到document
+		 * 3、得到根节点
+		 * 
+		 * 4、得到第一个p1标签  element("p1") 
+		 * 5、得到第一个p1下面的name标签 element("name") 
+		 * 6、得到name的文本内容getText()
+		 * */
+		//得到解析器
+//		SAXReader saxReader = new SAXReader();
+//		//得到document
+//		Document document = saxReader.read("src/person.xml");
+		
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到第一个p1标签
+		Element p1 = root.element("p1");
+		//得到第一个name标签
+		Element name1 = p1.element("name");
+		//得到name的文本内容
+		System.out.println(name1.getText());
+	}
+	
+==================================================================================================
 	 * 查询第二个name标签的值
 	 * 步骤
-	/*
-	 * 1、得到解析器
-	 * 2、执行read方法，得到document
-	 * 3、得到根节点
-	 * 
-	 * 4、得到第二个p1标签
-	 * 	** 首先得到所有的p1标签，返回list集合
-	 *  **　获取第二个值 使用 get(1) :list集合下标从0开始
-	 * 5、得到第二个p1下面的name标签 element("name") 
-	 * 6、得到name的文本内容getText()
-	 * */
+	//查询第二个name标签的值
+	public static void listName2() throws Exception {
+		/*
+		 * 1、得到解析器
+		 * 2、执行read方法，得到document
+		 * 3、得到根节点
+		 * 
+		 * 4、得到第二个p1标签
+		 * 	** 首先得到所有的p1标签，返回list集合
+		 *  **　获取第二个值 使用 get(1) :list集合下标从0开始
+		 * 5、得到第二个p1下面的name标签 element("name") 
+		 * 6、得到name的文本内容getText()
+		 * */
+		//得到解析器
+//		SAXReader saxReader = new SAXReader();
+//		Document document = saxReader.read("src/person.xml");
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到所有的p1标签
+		List<Element> list1 = root.elements("p1");
+		//得到第二个p1标签 使用get方法
+		Element p12 = list1.get(1);
+		//得到第二个p1下面的name标签
+		Element name2 = p12.element("name");
+		//得到name的值
+		System.out.println(name2.getText());
+	}
 
-
+==================================================================================================
 	* 可以把通用性比较高的代码封装到一个工具类里面
 	** 提高开发效率，利于程序维护
 	//封装得到document的方法
@@ -2245,6 +2442,29 @@ day06
 		return document;
 	}
 
+
+	public class Dom4jUtils {
+
+		//封装得到document的方法
+		public static Document getDocument1() throws Exception {
+			//得到解析器
+			SAXReader saxReader = new SAXReader();
+			//得到document
+			Document document = saxReader.read("src/person.xml");
+			return document;
+		}
+		
+		//封装回写xml的方法
+		public static void xmlWriter1(Document document) throws Exception {
+			//格式化操作
+			OutputFormat format = OutputFormat.createPrettyPrint();
+			XMLWriter writer = new XMLWriter(new FileOutputStream("src/person.xml"), format);
+			writer.write(document);
+			//关闭流
+			writer.close();
+		}
+	}
+==================================================================================================
 5、使用dom4j实现增加标签的操作
 	* 在第一个p1标签末尾添加 <sex>nv</sex>
 
@@ -2267,34 +2487,96 @@ day06
 		writer.close();
 	 * */
 
+			//在第一个p1标签末尾添加 <sex>nv</sex>
+	public static void addSex() throws Exception {
+		/*
+		 * 1、使用工具类得到document
+		 * 2、得到根节点
+		 * 3、得到第一个p1标签
+		 * 4、在p1上面直接添加 addElement("标签名称")
+		 * 5、在添加之后的标签上面添加内容  setText方法
+		 * 6、回写xml
+		 * */
+		//得到document
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到第一个p1标签
+		Element p1 = root.element("p1");
+		//在p1上面添加标签 sex
+		Element sex = p1.addElement("sex");
+		//在标签上面添加内容
+		sex.setText("nv");
+		//回写xml
+		Dom4jUtils.xmlWriter1(document);
+	}
+
+==================================================================================================
+
 	* 在第一个p1下面的 <age>100</age>  之前添加标签 <sch>ecit.edu.cn</sch>
 	* 步骤
-	/*
-	 * 1、使用工具类得到document
-	 * 2、得到根节点
-	 * 3、得到第一个p1标签
+	//在第一个p1下面的 <age>100</age>  之前添加标签 <sch>ecit.edu.cn</sch>
+	public static void addBeforeAge() throws Exception {
+		/*
+		 * 1、使用工具类得到document
+		 * 2、得到根节点
+		 * 3、得到第一个p1标签
+		 * 4、得到p1下面的所有的子标签 elements()，返回list集合
+		 * 5、在第二个位置添加一个标签 sch
+		 * 	** 在list里面在特定位置添加元素的方法  add(int index, E element) 
+		 *  ** 创建元素 DocumentHelper工具类
+		 * 6、回写xml
+		 * */
+		//得到document
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到第一个p1标签
+		Element p1 = root.element("p1");
+		//得到p1下面的所有的子标签
+		List<Element> list = p1.elements();
+		//创建标签
+		Element sch = DocumentHelper.createElement("sch");
+		//在sch上面创建文本
+		sch.setText("ecit.edu.cn");
+		list.add(1, sch);
+		//回写xml
+		Dom4jUtils.xmlWriter1(document);
+	}
+	
 
-	 * 4、得到p1下面的所有的子标签 elements()，返回list集合
-
-	 * 5、在第二个位置添加一个标签 sch
-	        ** 创建元素 DocumentHelper工具类 
-		****使用方法createElement方法创建标签，在创建之后的标签上面执行setText方法
-	 * 	** 在list里面在特定位置添加元素的方法  add(int index, E element) ，开始从0    
-	 * 6、回写xml
-	 * */
+==================================================================================================
 
 6、使用dom4j实现修改标签内容的操作
 	* 修改第一个p1下面的<sex>nv</sex>的值nan
 
-	* 步骤
-	/*
-	 * 1、得到document
-	 * 2、得到根节点
-	 * 3、得到第一个p1标签
-	 * 4、得到第一个p1标签下面的sex标签
-	 * 5、修改sex的值 使用方法setText方法
-	 * 6、回写xml
-	 * */
+	//修改第一个p1下面的<sex>nv</sex>的值nan
+		public static void modifySex() throws Exception {
+			/*
+			 * 1、得到document
+			 * 2、得到根节点
+			 * 3、得到第一个p1标签
+			 * 4、得到第一个p1标签下面的sex标签
+			 * 5、修改sex的值 使用方法setText方法
+			 * 6、回写xml
+			 * */
+			//得到document
+			Document document = Dom4jUtils.getDocument1();
+			//得到根节点
+			Element root = document.getRootElement();
+			//得到第一个p1标签
+			Element p1 = root.element("p1");
+			//得到sex标签
+			Element sex = p1.element("sex");
+			//修改sex的文本内容
+			sex.setText("nan");
+			//回写xml
+			Dom4jUtils.xmlWriter1(document);
+		}
+
+
+	
+==================================================================================================
 
 7、使用dom4j实现删除标签的操作
 	* 删除：使用父节点删除
@@ -2304,16 +2586,32 @@ day06
 	* 删除第一个p1标签下面的<sex>nan</sex> 
 
 	* 步骤
-	/*
-	 * 1、得到document
-	 * 2、得到根节点
-	 * 3、得到第一个p1标签
-	 * 4、得到p1下面的sex标签
-	 * 5、使用sex的父标签删除 sex标签
-		** 可以使用getParent()方法得到
-		** 在父标签上面执行 remove(要删除标签)方法删除
-	 * 6、回写xml
-	 * */
+	//删除第一个p1标签下面的<sex>nan</sex>
+	public static void deleteSex() throws Exception {
+		/*
+		 * 1、得到document
+		 * 2、得到根节点
+		 * 3、得到第一个p1标签
+		 * 4、得到p1下面的sex标签
+		 * 5、使用sex的父标签删除 sex标签
+		 * 6、回写xml
+		 * */
+		//得到document
+		Document document = Dom4jUtils.getDocument1();
+		//得到根节点
+		Element root = document.getRootElement();
+		//得到第一个p1标签
+		Element p1 = root.element("p1");
+		//得到p1下面的sex标签
+		Element sex = p1.element("sex");
+		//使用sex的父标签删除
+		//得到sex的父标签   sex.getParent();
+		p1.remove(sex);
+		//回写xml
+		Dom4jUtils.xmlWriter1(document);
+	}
+
+==================================================================================================
 
 8、使用dom4j得到标签上面的属性的值
 	* 得到person标签上面的id1的属性的值
@@ -2325,6 +2623,23 @@ day06
 	 * 3、得到person上面的属性的值 
 		使用方法 attributeValue("属性的名称")：得到属性的值
 	 * */
+	//得到person标签上面的id1的属性的值
+	public static void getAttribute1() throws Exception {
+		/*
+		 * 1、得到document
+		 * 2、得到根节点 person
+		 * 3、得到person上面的属性的值 
+		 * */
+		//得到document
+		Document document = Dom4jUtils.getDocument1();
+		//得到person标签 （根节点）
+		Element person = document.getRootElement();
+		//得到person上面的属性值
+		String a1 = person.attributeValue("id1");
+		System.out.println(a1);
+	}
+
+==================================================================================================
 
 9、使用dom4j实现对xml的crud操作的方法总结
 	* 得到根节点 getRootElement();
@@ -2357,7 +2672,11 @@ day06
 		* 格式化的操作 OutputFormat
 		* new XMLWriter("文件流","Format") 
 		* 把document写到文件使用 write(document)
-		* 关闭流 close()	
+		* 关闭流 close()
+
+
+==================================================================================================
+	
 
 10、使用XPath对象xml做操作
 	* XPath是一种书写形式，通过这种书写形式可以直接得到某个标签
@@ -2408,6 +2727,52 @@ day06
 	System.out.println(name1.getText());
 
 	* 写项目时候，首先把需要的jar包导入到项目中
+
+
+==================================================================================================
+
+	public class TestXpath {
+
+
+		public static void main(String[] args) throws Exception {
+	//		getNames();
+			getName1();
+		}
+		
+		//得到属性名称是id2，并且属性值是BBB标签 下面的name标签的文本内容
+		public static void getName1() throws Exception {
+			/*
+			 * 1、得到document
+			 * 2、 得到属性名称是id2，并且属性值是BBB标签  //p1[@id2='BBB']/name
+			 * */
+			//得到document
+			Document document = Dom4jUtils.getDocument1();
+			//得到属性名称是id2，并且属性值是BBB标签
+			Node name1 = document.selectSingleNode("//p1[@id2='BBB']/name");
+			System.out.println(name1.getText());
+		}
+		
+		//获取所有name元素的文本内容
+		public static void getNames() throws Exception {
+			/*
+			 * 1、得到document
+			 * 2、得到所有的name标签 selectNodes("xpath"); xpath: //name
+			 * 
+			 * */
+			//得到document
+			Document document = Dom4jUtils.getDocument1();
+			//得到所有的name的元素
+			List<Node> list = document.selectNodes("//name");
+			//遍历list，得到每一个name标签
+			for (Node node : list) {
+				//得到文本内容
+				System.out.println(node.getText());
+			}
+		}
+
+	}
+
+==================================================================================================
 
 11、实现简单学生管理系统
 	* 使用xml当做数据库，实现最基本crud操作
