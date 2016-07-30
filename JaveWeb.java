@@ -2830,3 +2830,449 @@ department.xsd
 
  * 
  */
+
+
+
+day08
+
+昨天内容回顾
+	1、tomcat安装
+	** 前提条件：jdk，配置JAVA_HOME
+	** 端口冲突
+
+	2、目录结构
+	** conf：配置文件
+	** webapps：项目
+
+	3、动态网站的目录结构
+	** WEB-INF
+	*** web.xml
+	*** classes
+	*** lib
+	
+	4、在tomcat中部署项目有几种方式
+	** 在webapps下面创建
+	** 使用myeclipse部署
+	** 配置虚拟路径
+
+	5、配置虚拟路径的两种方式
+	** 在server.xml进行配置
+	** 找到catalina/localhost 创建xml文件，访问，通过xml文件名称进行访问
+
+	6、网站访问的过程
+
+	7、http协议的请求组成
+	** 请求行
+	** 请求头
+		** 重要头信息
+		** referer User-Agent If-Modified-Since
+	** 请求体
+
+	8、http协议的响应组成
+	** 响应行
+		*** 状态码
+		200 302 304 404 500 503
+	** 响应头
+		** 重要头信息
+		*** Location Refresh Last-Modified
+	** 响应体
+		** 在页面显示的内容
+
+1、servlet的快速入门
+	* 什么是servlet？通过文档（不是jdk文件，而是javaee的文档）
+	** servlet就是一个java程序，可以接收和响应来自客户端的请求。
+
+	** 实现servlet？
+	*** 实现Servlet接口
+	*** 继承GenericServlet类
+	*** 继承HttpServlet类
+
+	*** 如果实现Servlet接口，需要把接口里面的所有方法都实现
+	**** 但是如果使用继承类的方式，不需要把类里面的所有的方法都实现
+
+	* 第一个servlet程序。向页面输出内容 hello servlet
+	** 使用记事本开发一个servlet程序
+
+	** 开发步骤
+	（1）继承GenericServlet类实现servlet
+	（2）向页面输出内容：使用service方法里面参数response向页面输出
+	（3）部署到tomcat里面，通过配置让服务器知道不是一个普通的java程序，而是一个servlet
+	** 找到文件 web.xml
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>cn.itcast.servlet.Hello</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+2、servlet的执行过程
+	* 画图分析执行过程
+
+	* 根据地址栏输入的地址找到servlet配置文件中url-pattern里面相同地址
+	* 找到地址对应的servlet名称
+	* 找到另外一个servlet标签里面和servlet名称相同的servlet
+	* 找到servlet包类的路径，最终使用反射使用servlet里面的方法执行
+
+3、servlet的生命周期
+	* 什么是生命周期：从出生到死亡全过程
+	* servlet的生命周期：servlet从创建到销毁全过程
+
+	* servlet接口里面有五个方法，有三个方法是与servlet生命周期相关的方法
+	** init方法，servlet创建时候执行这个方法，servlet在第一次访问时候创建，创建一次
+	** service方法，每次请求时候都会执行这个方法，执行多次
+	** destroy方法，销毁servlet时候执行这个方法，关闭服务器时候销毁servlet，执行一次
+
+4、接口的继承关系
+
+	ServletRequest  HttpServletRequest
+	ServletResponse HttpServletResponse
+
+	** HttpServletRequest和HttpServletResponse是ServletRequest和ServletResponse子接口
+
+	** HttpServletRequest和HttpServletResponse这两个接口专注于http协议的接口
+	** ServletRequest和ServletResponse针对任何的网络的协议
+	** sun公司设计这些接口时候最开始时候野心的，未来互联网发展可能不只是http协议，可能还有其他协议，但是目前只有http
+
+5、Servlet开发注意细节
+	（1）GenericServlet里面init有参数的方法和没有参数init方法关系
+	** init有参数的方法最终也会执行init没有参数的方法，所以直接使用init没有参数的方法就可以了
+	
+	（2）HttpServlet里面service方法和doXX方法
+	** 根据提交的方式执行相应的doXX方法，比如提交方式是get，执行doGet方法；比如提交方式post，执行doPost方法
+	** 直接实现doXX就可以了，实现doGet和doPost方法就可以了
+
+	*** 在实际开发一般都是使用继承HttpServlet实现servlet，直接实现doGet和doPost方法
+
+	（3）简化编程
+	** 无论什么提交方式，都会执行到这个代码
+	*** 在doPost方法里面调用doGet方法 ： this.doGet(request, response);
+
+	（4）Servlet启动时候创建
+	** 想要servlet在服务器启动时候创建，而不是第一次访问时候创建
+	*** 如果在创建servlet时候需要做很多事情，比如读文件，读数据库，这个时候谁第一次访问肯定会很慢
+
+	** 需要进行配置，配置servlet启动时候创建
+	** 在web.xml中找到要启动的servlet，<load-on-startup>正整数的值</load-on-startup>
+	*** 要求： 正整数的值，没有固定的范围，但是这个值不要写成 1，不能和默认servlet冲突
+
+	** 具体配置
+	  <servlet>
+		<servlet-name>servletDemo1</servlet-name>
+		<servlet-class>cn.itcast.servlet.ServletDemo1</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	（5）修改servlet模板
+	*** 在资料里面文档
+
+6、url-pattern配置
+	* 有三种配置
+
+	* 第一种：完全路径匹配
+		** 使用 / 开头 /hello  /aa/hello
+	* 第二种：目录匹配
+		** 使用 / 开头 /aa/ *  / *
+
+	* 第三种：扩展名匹配
+		** 不使用/开头 *.action *.do 
+	
+	* 如果在配置文件里面配置了多个url-pattern，最终只能有一个执行
+	** 匹配优先级： 完全路径匹配 > 目录匹配 > 扩展名匹配
+
+	* 把ppt上面的几个练习掌握就可以了
+
+7、开发中的路径问题
+	* 相对路径（和html一样）
+	** 在同一级目录下面
+		*** 直接写文件的名称
+		*** <img src="w01.png"/>
+
+	** 在下一级目录
+		*** <img src="img1/w01.png"/>
+
+	** 在上一层目录 ../
+		*** <img src="../img/w01.png"/>
+	
+	** 相对路径缺点：如果图片变化了位置，每次写的路径都不一样
+
+
+	* 绝对路径（一般开发中都使用绝对路径）
+
+	** 第一种写法：http://127.0.0.1/day08/img/w01.png
+
+	** 第二种写法：(经常使用的写法)
+		* 直接访问页面 http://127.0.0.1 /day08/html/my1.html
+		* 直接访问图片 http://127.0.0.1 /day08/img/w01.png
+		** 直接 /day08/img/w01.png
+	
+	* 路径分类有两类
+	** 第一类：客户端路径 :带项目名称 /day08/img/w01.png，一般使用重定向
+
+	** 第二类：服务器端路径：不需要带项目名称
+		*** 在服务器内部进行的访问的操作，经常使用在转发操作
+		*** 不需要带项目名称 /img/w01.png
+
+8、ServletConfig对象使用	
+	* 第一个作用：获取初始化参数
+	** 配置初始化参数，只能在当前配置的servlet里面使用，不能再其他的servlet里面使用
+	* 配置初始化参数：
+	** 在web.xml中找到要配置servlet，
+	*** <init-param>
+		<param-name>url</param-name>
+		<param-value>192.0.0.1</param-value>
+	   </init-param>
+
+	** 方法
+	*** getInitParameter(String name) ：获取初始化参数的值
+	*** 代码
+		//得到servletconfig对象
+		ServletConfig config =  getServletConfig();
+		//执行 getInitParameter(String name) 
+		String url = config.getInitParameter("url");
+
+	*** getInitParameterNames() ：获取所有的初始化参数的名称
+	*** 代码
+		//得到servletconfig对象
+		ServletConfig config =  getServletConfig();
+		//执行 getInitParameterNames()所有初始化参数的名称
+		Enumeration<String> enumeration =  config.getInitParameterNames();
+		//遍历
+		while(enumeration.hasMoreElements()) {
+			//得到每一个初始化参数的名称
+			String name1 = enumeration.nextElement();
+			//得到初始化参数的值
+			String value1 = config.getInitParameter(name1);
+			System.out.println(name1+" :: "+value1);
+		}
+
+	* 第二个作用：得到当前运行的servlet的名称 <servlet-name>servletDemo1</servlet-name>
+	** getServletName() 
+	** 代码
+		//得到servletconfig对象
+		ServletConfig config =  getServletConfig();
+		//得到servlet名称
+		String servletname = config.getServletName();
+		System.out.println("name: "+servletname);
+
+	* 第三个作用：得到ServletContext对象，直接使用 getServletContext()
+	** getServletContext() 
+
+	* 如果想要使用，得到ServletConfig对象，直接使用 getServletConfig()方法
+
+9、servletContext对象（***）
+	* 启动tomcat服务器，在tomcat里面可能有很多的项目，这个时候服务器会为每一个项目创建一个对象servletContext。
+	* 在这个项目里面，如果通过servlet1向servletContext里面存一个值，这个时候在项目里面其他所有的servlet里面都
+	可以取到这个值
+	
+	* servletContext域：在一定的范围以内，做存值和取值操作
+	** servletContext域范围：整个的web项目
+
+	* 存值和取值
+	** 存值：setAttribute(String name, Object object) ：两个参数，第一个参数设置值的名称，第二个参数是值
+	** 取值：getAttribute(String name) ：参数是设置值的名称
+
+	* 创建servlet1，通过servlet1向servletContext里面设置一个值
+	* 创建servlet2，在servlet2取通过servlet1设置的值
+
+	* 得到ServletContext对象，使用getServletContext()方法
+
+10、通过servletContext对象读取全局的初始化参数
+	* 全局的初始化参数：所有的servlet里面都可以使用
+	* 配置全局初始化参数
+	** 在web.xml中，但是不能配置在任何的一个servlet里面
+	** <context-param>
+		<param-name>url</param-name>
+		<param-value>192.0.0.1</param-value>
+	 </context-param>
+
+	* 方法：
+	** getInitParameter(String name) ：得到全局初始化参数的值
+	*** 代码
+		//得到servletContext对象
+		ServletContext context = getServletContext();
+		//得到username的值
+		String username = context.getInitParameter("username");
+		System.out.println("username: "+username);
+
+	** getInitParameterNames() ：得到所有的全局初始化参数的名称
+	*** 代码
+		//得到servletContext对象
+		ServletContext context = getServletContext();
+		//得到所有的全局初始化参数的名称
+		Enumeration<String> enumeration = context.getInitParameterNames();
+		//遍历
+		while(enumeration.hasMoreElements()) {
+			//每一个全局初始化参数的名称
+			String namev = enumeration.nextElement();
+			//得到值
+			String valuev = context.getInitParameter(namev);
+			System.out.println(namev+" :: "+valuev);
+		}
+
+11、练习：使用servletContext域对象统计网站的访问次数
+	* 实现步骤：
+	* 创建一个servlet11，增加次数操作
+	* 创建一个servlet12，读取次数
+
+	* 在count的servlet里面首先初始化一个值，在init方法里面初始化
+	** //得到servletContext对象
+	ServletContext context = getServletContext();
+	// 向servletContext里面设置一个值 count 0
+	context.setAttribute("count", 0);
+
+	* 首先从servletContext里面取出count的值
+	* 把这个值+1
+	* 把这个+1之后的值放回到servletContext里面
+	** 	//得到servletContext对象
+		ServletContext context = getServletContext();
+		//获取servletContext里面的count的值
+		int count = (Integer) context.getAttribute("count");
+		//把+1之后的值放回servletContext里面
+		context.setAttribute("count", count+1);
+
+	* 在show的servlet里面获取count的值（访问的次数）
+	** //得到servletContext对象
+	ServletContext context = getServletContext();
+	//得到servletContext里面的值
+	int count = (Integer) context.getAttribute("count");
+
+12、使用传统方式读取web项目中的文件
+	* properties文件格式
+	** 读取数据 url username 
+	** 里面的格式类似key value形式
+	**      url=localhost
+		username=tom
+		password=123456
+		ip=172.11.1.3
+	
+	** 读取properties文件
+	*** 使用到一个类 Properties，在java.util 包里面
+	*** load(InputStream inStream) 加载文件流
+	*** 字节流和字符流 ： 字符流只能操作文本文件，如果是图片不能操作，一般都是字节流
+	*** getProperty(String key) 得到配置文件里面值，参数是名称
+
+	 **classes/db.properties路径是一个相对路径，相对jvm路径
+	 * web项目，jvm什么时候创建，tomcat启动时候创建jvm。
+	 * tomcat在bin目录里面startup.bat启动
+
+13、使用servletContext对象读取web项目中的文件
+	* 方法
+	** InputStream getResourceAsStream(String path) ：得到文件的输入流
+
+	* 读取src下面的文件
+	** 使用getResourceAsStream("文件的路径")
+	*** 首先第一个位置是固定 / : 理解为项目的名称，后面的部分是文件在tomcat里面具体的路径
+	** 	//得到servletContext对象
+		ServletContext context = getServletContext();
+		//使用getResourceAsStream(String path) 读取文件输入流
+		// 首先第一个位置是固定 /，后面的部分文件在tomcat里面具体的路径		
+		InputStream in = context.getResourceAsStream("/WEB-INF/classes/db.properties");
+
+
+	* 读取包下面的文件
+	** 使用getResourceAsStream("文件的路径")
+	*** 首先第一个位置是固定 / : 理解为项目的名称，后面的部分是文件在tomcat里面具体的路径
+	** 	//得到servletContext对象
+		ServletContext context = getServletContext();
+		//得到文件流
+		//路径：首先第一个位置固定的 / 
+		//后面的部分是文件在tomcat里面的具体的路径
+		InputStream in = context.getResourceAsStream("/WEB-INF/classes/cn/itcast/read/db1.properties");
+
+	
+	* 读取webroot下面的文件
+	** 使用getResourceAsStream("文件的路径")
+	*** 首先第一个位置是固定 / : 理解为项目的名称，后面的部分是文件在tomcat里面具体的路径
+		//得到servletContext对象
+		ServletContext context = getServletContext();
+		//读取文件流
+		//第一个位置 /
+		//后面的位置 文件在tomcat里面具体的路径
+		InputStream in = context.getResourceAsStream("/db2.properties");
+
+	* 如果文件放到项目路径下（webroot在同一级目录），文件不能使用servletContext对象读取到
+	** 文件根本没有发布到tomcat里面
+
+	** String getRealPath(String path)  ：得到文件的完全路径 带盘符
+ 
+14、使用传统方式读取web项目中的文件
+	InputStream in = new FileInputStream("完全路径 比如 c:\\a.txt");
+
+	* 需要得到文件的完全路径 带盘符
+	** 需要使用servletContext里面的另外的一个方法 getRealPath(String path) 
+	** 参数传递文件的路径：第一个位置是 /: 项目的名称，后面的部分是文件在tomcat里面具体的路径
+
+	* 	//得到servletContext对象
+		ServletContext context = getServletContext();
+		//得到文件的完全路径 带盘符
+		//第一个位置 /
+		//后面写文件在tomcat里面具体的路径
+		String path = context.getRealPath("/db2.properties");
+		//I:\0518\apache-tomcat-7.0.53\webapps\day08\db2.properties
+//		System.out.println("path: "+path);
+		//使用传统方式读取文件了
+		InputStream in = new FileInputStream(path);
+
+15、反射的原理
+	* 反射是一些通用性比较高的代码，一般使用在框架里面
+
+	* 通过反射得到类里面的所有的内容
+	** 所有内容包含：构造方法（有参数和没有参数），属性，普通方法
+
+	* 画图分析反射的过程
+	* 创建一个java文件，
+	第一步：保存到本地硬盘，
+	第二步：编译成.class文件
+	第三步：使用类加载器加载到内存中（依赖于jvm）
+
+	** class文件在内存中可以使用Class类进行表示
+	** 首先得到Class类
+	** 有三种方式
+	*** 类名.class
+	*** 对象.getClass()
+	*** Class.forName("包类路径")
+
+	** 构造方法使用Constructor类表示
+	** 属性使用Filed类表示
+	** 普通方法使用Method类表示
+
+16、url和uri的区别
+	* url：专门指的是网络地址 比如 http://www.itcast.cn  http://www.baidu.com
+	* uri: 所有的网络地址 比如 test@163.com
+
+17、类的加载器来读文件
+	* 使用类加载器使用范围：读取web项目中classes里面的文件
+	
+	* 得到类加载器
+	** 首先Class类（有三种方式）
+	** 通过Class类里面.getClassLoader()得到类加载器
+	** 在类加载器里面使用方法 getResourceAsStream()得到文件的输入流
+		*** 直接写classes里面的文件的名称
+
+	** 	//得到Class类
+//		Read4.class
+		Class clazz = this.getClass();
+		//得到类加载器
+		ClassLoader classLoader = clazz.getClassLoader();
+		//读取文件
+		InputStream in = classLoader.getResourceAsStream("db.properties");
+
+18、默认servlet
+	* 如果页面出现404问题，由默认的servlet操作
+
+	* 在tomcat的web.xml中找默认的servlet
+
+	* 配置启动时候创建servlet ，使用<load-on-startup>这里面的值不能写成1，会与默认的servlet冲突
+
+	*  <url-pattern>/</url-pattern>
+	** 如果把项目里面的一个servlet里面url-pattern写成／，就会成为一个默认的servlet
+
+	* 在默认的servlet里面配置
+	<init-param>
+            <param-name>listings</param-name>
+            <param-value>false</param-value>
+        </init-param>
+
+	* 需要把listings值设置成true，直接访问项目里面一个文件夹，可以把文件夹里面的所有的内容显示出来
