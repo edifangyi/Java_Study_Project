@@ -3276,3 +3276,576 @@ day08
         </init-param>
 
 	* 需要把listings值设置成true，直接访问项目里面一个文件夹，可以把文件夹里面的所有的内容显示出来
+
+
+/**
+ 
+ */
+
+
+
+day09
+
+上节内容回顾
+	1、servlet的生命周期
+		* init  service  destroy
+	
+	2、url-pattern配置
+		* 完全路径匹配 > 目录 > 扩展名 
+
+今天主要学习 request对象和response对象
+* http操作，服务器会为每次请求创建一个对象request，同时创建响应的对象response
+
+* 请求：在浏览器地址输入一个地址，点击回车，访问到服务器，这个过程称为请求
+* 响应：服务器接受到请求，根据请求返回数据到浏览器进行显示，这个过程称为响应
+
+1、response响应的对象
+	* HttpServletResposne对象，代表一个响应，父接口是ServletResponse 
+	** 通过api文档查看这个对象里面的方法
+
+	* 响应包含三部分
+	** 响应行
+		*** 状态码
+		* setStatus(int sc) 
+		* 比如 setStatus(302);
+
+	** 响应头
+		*** 结构：key value，一个key可以有一个或者多个value
+		* setHeader(java.lang.String name, java.lang.String value) ：第一个参数头的名称 ，第二个值
+		** 针对一个key对应一个value的情况
+		** setHeader("aa","AA");
+		   setHeader("aa","BB");
+		   最终的结果：aa BB
+		 
+		** 针对特殊的类型有设置头的方法
+		* setIntHeader(java.lang.String name, int value)：值是int类型
+		* setDateHeader(java.lang.String name, long date) ：值是毫秒数
+		
+		* addHeader(java.lang.String name, java.lang.String value) ：第一个参数头的名称 ，第二个值
+		** 针对一个key对应多个value的情况
+		** addHeader("cc","CC");
+		   addHeader("cc","QQ");
+		   结果： cc CC,QQ
+
+		** 针对特殊类型的设置头的方法
+		* addIntHeader(java.lang.String name, int value) ：值是int类型
+		* addDateHeader(java.lang.String name, long date) ：值是毫秒数
+
+	** 响应体
+		*** 显示在浏览器里面的内容
+		** 使用字节流和字符流向页面输出内容
+		* getOutputStream() 
+		* getWriter() 
+
+	** 把服务器上面的内容显示到浏览器，这个过程都可以使用response来实现
+
+2、案例一：使用response实现登录的重定向操作
+	* 创建一个登录页面，表单，提交一个servlet里面
+	* 判断用户名和密码是否正确，如果正确向页面输出 success
+	* 如果用户名或者密码错误，重定向到登录页面
+
+	* 重定向 302
+	* 头信息 Location
+
+	* 步骤
+	/**
+	 * 1、得到输入的用户名和密码
+	 * 	* request方法 getParameter("输入项里面的name属性的值")方法
+	 * 2、判断用户名和密码是否正确，比如固定值  admin  123456
+	 * 3、如果用户名和密码都正确，向页面输出一个值 SUCESS
+	 * 4、如果用户名或者密码错误，重定向到登录页面
+	 * 	* 使用 302 设置状态码 setStatus方法
+	 *  * 使用头 Location 设置头方法  setHeader方法
+	 */
+
+	* 代码
+		//重定向到登录页面
+		//设置302状态码
+		response.setStatus(302);
+		response.setHeader("Location", "/day09/response/login.html");
+
+		//简写的方式：实现重定向的操作
+		response.sendRedirect("/day09/response/login.html");
+
+3、案例二：使用response实现页面的定时跳转
+	* 使用 Refresh头
+	** response.setHeader("Refresh","3;url=/day09/.....");
+	* 代码
+	response.setHeader("Refresh", "3;url=/day09/response/login.html");
+
+	* 可以在html页面中使用meta头标签实现
+	** <meta http-equiv="Refresh" content="3;url=/day09/response/login.html">
+
+	* 使用js实现倒计时
+	  	var m = 5;		
+  		function load1() {			
+  			var span1 = document.getElementById("spanid");
+  			span1.innerHTML = m;
+  			m--;
+  		}
+  		setInterval("load1();",1000);
+
+4、案例三：使用Response实现禁用浏览器缓存
+	* 使用到头信息
+	    Cache-Control : no-cache
+	    Pragma : no-cache 
+	    Expires: -1 ：使用什么方法，setDateHeader("",毫秒数)：毫秒数，1970-1-1至今的毫秒数
+	
+	* 这些头信息禁用浏览器缓存的效果，在一些版本低的浏览器里面，ie6
+	* 	response.setHeader("Cache-Control", "no-cache");
+		response.setHeader("Pragma", "no-cache");
+		response.setDateHeader("Expires", -1);
+
+5、response向页面输出中文问题解决
+	* 向页面输出内容 ： 有两种方式，使用字节流和字符流输出
+
+	* 使用字节流向页面输出中文
+	* /**
+	 * 会出现中文乱码？
+	 * * 不一定，和浏览器的默认编码有关
+	 * 
+	 * * 解决乱码问题
+	 * ** 首先设置浏览器的编码
+		response.setHeader("Content-Type", "text/html;charset=utf-8");
+	 * ** 设置字节数组的编码
+		response.getOutputStream().write("字节流中文".getBytes("utf-8"));
+	 * *** 浏览器的编码和字节数组的编码一致
+	 */
+
+	* 使用字符流向页面输出中文
+	* /**
+	 * 使用字符流输出中文会有乱码？
+	 * 一定会有乱码
+	 * 
+	 * * 字符流会产生一个缓冲区，首先会输出的内容先放到缓冲区里面，通过缓冲区进行输出
+	 * * response缓冲区会有一个默认的编码 iso8859-1，但是这个编码不支持中文
+	 * 
+	 * ** 解决方法
+	 * ** 首先设置response缓冲区的编码
+		response.setCharacterEncoding("utf-8");
+	 * ** 设置浏览器的编码
+		response.setHeader("Content-Type", "text/html;charset=utf-8");
+	 * *** 让response缓冲区的编码和浏览器编码一致
+	 */
+
+6、response开发中一些细节问题
+	* 第一个细节问题： 使用字符流向页面输出中文解决，有一种简写方式
+	** //使用一种简写方式 
+	  response.setContentType("text/html;charset=utf-8");
+	
+	* 第二个细节问题：
+	* 字节流和字符流是互斥的，两个流不能在一起使用
+
+	* 第三个细节问题：
+	"text/html;charset=utf-8"，使用分号进行隔开，而不能使用其他的符号
+
+	* 第四个细节问题：
+	* 不能使用字符流直接向页面输出数字
+	** /*
+	 * 使用字符流向页面直接输出一个数字，
+	 * 到utf-8码表查找数字对应的值，把数字对应的字符输出，而不会直接输出数字
+	 */
+	
+	* 第五个细节问题：
+	* 重定向操作时候，简写方式
+	response.sendRedirect("/day09/....");
+
+7、案例四：使用response实现文件的下载
+	* 首先服务器上面有可以下载的文件
+
+	* 下载的步骤
+	** 第一步：得到文件流，输入流
+		* 得到文件的完全路径 使用servletContext对象里面getRealPath方法
+		InputStream in = new FileInputStream("文件完全路径");
+
+	** 第二步：使用输出流把文件输入流写到浏览器
+		OutputStream out = response.getOutputStream() 
+	** 第三步：流对接
+
+	** 设置头信息：Content-Disposition，如果下载的文件是一个图片，如果不设置这个头信息，会把图片直接打开，
+	无论是什么格式的文件，都会提示下载这个文件
+
+	*如果下载的文件名称里面包含中文，这个下载时候显示不能正常显示
+	** 首先在不同的浏览器里面有不同的编码，需要根据不同的浏览器进行相应的处理
+	*** 使用头 User-Agent得到不同的浏览器类型
+	** ie里面采用的编码url编码，火狐采用的编码base64（到day20专门讲解文件的上传和下载）
+
+	** 代码
+		//得到文件的完全路径
+		String path = getServletContext().getRealPath("/img/b.jpg");
+		//		System.out.println(path); c:\tomcat\img\a.jpg
+		//得到文件的名称 使用字符串截取
+		int lens = path.lastIndexOf("\\");
+		String filename = path.substring(lens+1);
+		//设置头信息
+		response.setHeader("Content-Disposition", "attachment;filename="+filename);
+		//得到文件流
+		InputStream in = new FileInputStream(path);
+		//使用输出流写到浏览器
+		OutputStream out = response.getOutputStream();
+		//流对接
+		int len = 0;
+		byte[] b = new byte[1024];
+		while((len=in.read(b))!=-1) {
+			out.write(b, 0, len);
+		}
+		//关闭流
+		in.close();
+	
+8、案例五：使用response实现验证码
+	* 什么是验证码：防止恶意注册，灌水
+
+	* 实现的步骤
+	第一步：生成图片
+	第二步：生成随机的数字和字母
+	第三步：把数字和字母画到图片上
+	第四步：把图片显示到页面上
+	
+	* 实现中文的验证码
+	** 汉字：\u4e00 —— \u9fa5，但是这个范围后面的那些汉字不认识，使用常用汉字的范围
+
+	* 实现看不清换一张
+	** 首先在登陆页面里面增加验证码，使用img标签，src属性值加上验证码的servlet
+	** 创建一个超链接，写一个事件，通过js实现这样操作
+	*** 首先得到img标签，重新请求servlet，使用src属性，
+	*** 产生一个问题：有缓存，在请求的地址后面增加一个随机数
+	** 代码
+		//得到img标签
+		var img1 = document.getElementById("img1");
+		//向src重新设置地址
+		img1.src = "/day09/code?"+new Date().getTime();
+
+
+		/**
+		 * 使用response实现验证码
+		 * @author asus
+		 *
+		 */
+		public class Code extends HttpServlet {
+
+			/**
+			 * 1、生成图片
+			 * 2、生成随机的数字和字母
+			 * 3、把数字和字母画到图片上
+			 * 4、把图片显示到页面上
+			 */
+			public void doGet(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				//生成图片
+				int width = 200;
+				int height = 50;
+				BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_3BYTE_BGR);
+				//生成的图片背景颜色 默认是黑色
+				//得到画笔
+				Graphics2D g2d = (Graphics2D) bufferedImage.getGraphics();
+				//设置颜色
+				g2d.setColor(Color.gray);
+				g2d.fillRect(0, 0, width, height);
+				
+				//生成四个随机的数字和字母
+				String words = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+								Random r = new Random();
+				int x = 30;
+				int y = 30;
+				g2d.setColor(Color.red);
+				//设置字体的样式
+				g2d.setFont(new Font("宋体",Font.BOLD,25));
+				//旋转的效果 
+				//弧度： 角度*3.14/180
+				for(int i=1;i<=4;i++) {
+					//返回字符串里面字符的下标
+					int len = r.nextInt(words.length());
+					
+					//旋转的角度 +-30度
+					int jiaodu = r.nextInt(60)-30;
+					double h = jiaodu*Math.PI/180;
+					//根据位置得到具体字符
+					char ch = words.charAt(len);
+					
+					//实现旋转
+					g2d.rotate(h, x, y);
+					
+					//把生成的字符画到图片
+					g2d.drawString(ch+"", x, y);
+					
+					//再转回来
+					g2d.rotate(-h, x, y);
+					x += 25;
+				}
+				
+				//增加三条干扰线 drawLine(int x1, int y1, int x2, int y2) 
+				int x1,x2,y1,y2;
+				g2d.setColor(Color.green);
+				for(int j=1;j<=3;j++) {
+					x1 = r.nextInt(width);
+					y1 = r.nextInt(height);			
+					x2 = r.nextInt(width);
+					y2 = r.nextInt(height);
+					//把线画到图片
+					g2d.drawLine(x1, y1, x2, y2);
+				}
+			
+				//把图片显示到页面上
+				ImageIO.write(bufferedImage, "jpg", response.getOutputStream());
+			}
+
+			/**
+			 * 
+			 */
+			public void doPost(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				doGet(request, response);
+			}
+			
+			public static void main(String[] args) {
+				String words = "\u9fa5\u9fa4\u9fa3\u9fa2";
+				Random r1 = new Random();
+				int lens = r1.nextInt(words.length());
+				System.out.println(words.charAt(lens));
+			}
+
+		}
+
+--------------------------------------------------------------------------------------------------------------
+
+		  <body>
+		    <h1>登录页面</h1>
+		    <form action="/day09/login" method="post">
+		    	username:<input type="text" name="username"/>
+		    	<br/>
+		    	passwrod:<input type="password" name="password"/>
+		    	<br/>
+		    	code:<input type="text" name="code"/>
+		    	<img id="img1" src="/day09/code"/> <a href="javascript:void(0)" onclick="loadCode();">看不清,换一张</a>
+		    	<br/>
+		    	<input type="submit" value="登录"/>
+		    </form>
+		  </body>
+		  <script type="text/javascript">
+		  	//实现看不清换一张
+		  	function loadCode() {
+				//得到img标签
+				var img1 = document.getElementById("img1");
+				//向src重新设置地址
+				img1.src = "/day09/code?"+new Date().getTime();
+			}
+		  </script>
+
+
+9、request对象
+	* HttpServletRequest，代表请求对象，父接口是 ServletRequest
+
+10、获取到客户机的信息
+	** 获取表单提交方式
+		getMethod() 
+
+	** 获取到请求地址
+		getRequestURL()
+
+	** 获取到请求的项目名称
+		getContextPath() 
+
+	** 获取请求的客户端的ip地址
+		getRemoteAddr() 
+
+
+		/请求方式
+		String method = request.getMethod();
+		//项目名称
+		String path = request.getContextPath();
+		
+		//ip
+		String ip = request.getRemoteAddr();
+		//请求地址
+		System.out.println("url: "+request.getRequestURL());
+		System.out.println("method: "+method);
+		System.out.println("path: "+path);
+		System.out.println("ip: "+ip);
+
+
+
+
+11、获取到请求的头信息
+	* 使用方法getHeader("头信息名称");
+	* 重要的头信息
+	* Referer  User-Agent If-Modified-Since
+	** request.getHeader("Referer");
+	   request.getHeader("User-Agent");
+
+12、获取通过表单提交的数据
+	* 方法
+	** getParameter(java.lang.String name)
+		- 获取表单提交的数据方法，参数输入项name的值
+		- String username = request.getParameter("username");
+
+	** getParameterValues(java.lang.String name)，返回String[]
+		- 针对复选框 ，获取多个提交的数据，参数输入项name的值
+		- //得到复选框里面的所有值
+		String[] loves = request.getParameterValues("love");
+		//Arrays
+		System.out.println(Arrays.toString(loves));
+
+	** getParameterMap() ：返回 Map<java.lang.String,java.lang.String[]>
+		- 获取表单输入项的name的值，和输入的值
+		- //得到输入项name的值，和输入的值
+		Map<String,String[]> map = request.getParameterMap();
+		//遍历map 有两种 
+		//得到所有的key
+		Set<String> keys = map.keySet();
+		//遍历set，得到value ，set遍历有两种方式 
+		for (String key : keys) {
+			//根据key得到value
+			String[] values = map.get(key);
+			System.out.println(key+" :: "+Arrays.toString(values));
+		}
+	
+	** getParameterNames() ： Enumeration<java.lang.String>
+		- 获取所有表单输入项的name的值
+
+	** 在表单输入项里面，输入中文，出现中文乱码
+
+
+
+	//getParameterMap()
+	private void test3(HttpServletRequest request) {
+		//得到输入项name的值，和输入的值
+		Map<String,String[]> map = request.getParameterMap();
+		//遍历map 有两种 
+		//得到所有的key
+		Set<String> keys = map.keySet();
+		//遍历set，得到value ，set遍历有两种方式 
+		for (String key : keys) {
+			//根据key得到value
+			String[] values = map.get(key);
+			System.out.println(key+" :: "+Arrays.toString(values));
+		}
+	}
+	
+	
+	//使用 getParameterValues(java.lang.String name)
+	private void test2(HttpServletRequest request) {
+		//得到复选框里面的所有值
+		String[] loves = request.getParameterValues("love");
+		//Arrays
+		System.out.println(Arrays.toString(loves));
+	}
+	
+	//使用 getParameter(java.lang.String name)
+	private void test1(HttpServletRequest request) {
+
+		String username = request.getParameter("username");
+		System.out.println("username:: "+username);
+		
+//		String love = request.getParameter("love");
+//		System.out.println("love:: "+love);
+	}
+
+
+
+13、获取表单提交中文数据乱码问题解决
+	* 表单提交方式，常用get 和 post
+
+	* 使用post提交中文数据时候乱码问题解决 （设置request缓冲区的编码）
+	** 使用post提交数据，放到请求体里面
+	//post提交中文数据有乱码问题
+	//request获取通过post提交的数据，也会把数据放到request缓冲区里面
+	//response缓冲区默认编码是 iso8859-1，而request缓冲区里面默认编码也是iso8859-1，不支持中文
+	//解决方式：设置request缓冲区的编码
+	request.setCharacterEncoding("utf-8");
+	//获取提交的数据有中文
+	String username = request.getParameter("username");
+	System.out.println("username:: "+username);
+
+	* 使用get提交中文数据时候乱码问题的解决
+	** get提交数据放到浏览器地址栏里面，对中文数据进行url编码。
+	** 三种解决方式：
+	* 在tomcat里面配置
+		** 找到tomcat目录conf下面server.xml，在配置端口地方，最后加 URIEncoding="utf-8"
+	* 首先先对中编码，到servlet里面解码
+	* 使用string构造方法编码转换(重点掌握)
+		* username = new String(username.getBytes("ISO8859-1"),"utf-8");
+	** 代码：String username = request.getParameter("username");
+		username = new String(username.getBytes("iso8859-1"),"utf-8");
+
+===================================================
+（1）向页面输出中文乱码
+	* 字节流
+		** 设置浏览器编码和字节数组的编码一致
+	* 字符流
+		** 设置response缓冲区的编码和浏览器的编码一致
+
+（2）获取表单提交的中文数据乱码
+	* post： 设置request缓冲区的编码
+	* get：三种，使用string构造完成编码转换
+
+
+14、request域
+	* 域：在一定的范围内，存值和取值
+	** servletContext域：整个web项目
+	*** 存值：setAttribute
+	*** 取值：getAttribute
+
+	* request也是一个域对象
+	** 范围: 一次请求
+	*** 存值：setAttribute
+	*** 取值：getAttribute
+
+	* request域对象经常和转发在一起使用
+	** request.getRequestDispatcher("转发的路径 不带项目名称").forward();
+
+
+			request.setAttribute("msg", "itcast");
+			//转发到demo2
+	//		request.getRequestDispatcher("/demo2").forward(request, response);
+			//重定向到demo2
+			response.sendRedirect("/day09/demo2");
+
+
+
+	* 创建一个Demo1，在这个servlet里面向request域设置一个值 msg itcast，转发到Demo2
+	* 在Demo2，获取通过demo1向request域里面设置的值
+			
+
+			response.getWriter().print(request.getAttribute("msg"));
+
+
+
+15、转发和重定向区别
+	* 重定向：
+	** 请求两次，重定向的地址带项目名称
+	* 转发：
+	** 请求一次，转发地址不需要带项目名称
+
+	* 重定向：从一个网站到另外一个网站
+	* 转发：请求里面需要带数据
+
+10、案例六：使用转发完成登录操作
+	* 如果用户名或者密码错误，回到登陆页面，但是携带错误提示在登录页面显示出来
+
+	* 引入知识点 
+	** jsp ：sun公司提供用于开发动态网站的技术 servlet
+
+	** el表达式：获取域对象里面的值
+	*** 语法： ${域对象名称}
+
+	* 创建jsp页面，写登录表单
+	** 转发的代码
+	//向request域里面设置一个值
+	request.setAttribute("msg1", "用户名或者密码错误");
+	//转发到登录页面
+	request.getRequestDispatcher("/request/login.jsp").forward(request, response);
+
+	** 在jsp里面获取域对象的值
+	<h2><font color="red">${msg1}</font></h2>
+
+11、debug调试web项目
+	* 设置断点，单步执行 F6
+
+	* 需要使用debug模式启动tomcat服务器
+	** 点击 debug server
+
+
+
+/**
+
+ */
