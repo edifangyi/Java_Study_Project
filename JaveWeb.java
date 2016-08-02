@@ -3849,3 +3849,379 @@ day09
 /**
 
  */
+
+
+
+day10
+
+昨天内容回顾
+	1、response方法
+	** 响应行：设置状态码 setStatus方法
+	** 响应头：setHeader()
+	** 响应体：字节流和字符流
+
+	2、重定向代码 302+Location
+
+	3、refresh实现页面定时跳转
+
+	4、response向页面输出中文乱码解决
+		* 字节流
+			** 设置浏览器编码和设置字节数组的编码一致
+		* 字符流
+			** 设置response缓冲区的编码和设置浏览器编码一致
+
+	5、文件下载 设置头 Content-Disposition
+
+	6、request获取通过表单提交的数据
+		* getParameter()
+		* getParameterValues()
+		* getParameterMap();
+	
+	7、通过表单提交数据有中文乱码
+		* post：设置缓冲区的编码
+		* get：有三种解决方法
+		** 在tomcat配置文件server.xml中URIEncoding
+		** 先编码，之后再解码
+		** 使用String的构造
+
+	8、request域
+		** 范围：一次请求
+		** 经常和转发一起使用
+		
+
+1、jsp的入门
+	* sun公司提供的用于开发动态网站的技术 servlet jsp
+	* jsp 就是一个servlet，最终会编译成servlet
+	* 使用servlet向页面输出内容，需要使用字节流或者字符流向页面输出
+	** jsp：java server pages，java服务器端的页面
+
+	* jsp包含：html+java代码+jsp自身的指令...
+
+	* jsp的执行过程：jsp最终也会被编译成servlet，什么时候编译？
+	** 访问jsp的时候，编译成servlet
+	** 放到tomcat的work目录
+
+	* 在jsp里面如何嵌入java代码
+	* 有三种方式
+	* 第一种： <%!  %>: 定义的变量是成员变量
+		** <%! int mm = 10; %>
+
+	* 第二种： <%= %>：向页面输出内容 输出固定的值，输出变量
+		** <%="HELLO" %>
+		** 生成到service方法里面
+		** 代码后面不能写;
+		
+	* 第三种： <%   %>
+		**   <%
+				for(int i=0;i<=3;i++) {
+				
+				}
+		    %>
+		** 生成到service方法里面
+	
+	* 在实际开发中，把html代码和java代码混合使用
+	** 使用java代码+html代码实现：在页面显示五行五列表格
+	*     <table border="1" bordercolor="blue">
+    	<!-- 循环五行 -->
+		<% 
+		for(int i=1;i<=5;i++) {
+		%>
+			<tr>
+				<!-- 循环五个单元格 -->  			
+				<%
+					for(int j=1;j<=5;j++) {
+				%>
+						<td>AAAAAA</td>
+				<% 
+					}
+				 %>
+			</tr>
+		<% 
+		}
+		%>
+	    </table>
+
+2、el的入门
+	* el表达式：获取域对象里面的值
+	* 语法：${域对象值的名称}
+
+	*  <!-- 向域对象里面设置值 -->
+  	<%
+  		//向servletContext里面设置值
+  		getServletContext().setAttribute("msg1", "itcast100");
+  		//向request域里面设置值
+  		request.setAttribute("msg2", "itcast200");
+  	 %>
+  	 
+  	 <!-- 使用传统方式获取域对象里面的值 -->
+  	 <%=getServletContext().getAttribute("msg1")%>
+  	 <%=request.getAttribute("msg2") %>
+  	 
+  	 <hr/>
+  	 <!-- 使用el表达式获取 -->
+   	${msg1 }
+   	${msg2 }
+
+	* 如果多个域对象名称是相同的，使用el表达式获取的值是域对象范围小的里面的值
+
+	* 通过下面的方式分别得到不同的域对象里面的值
+	<!-- 使用el表达式获取 -->
+   	${requestScope.msg11 }
+   	${applicationScope.msg11 }
+
+	* 使用el表达式获取域对象里面的值，如果名称不存在，得到空字符串 ""
+
+3、会话管理
+	* 什么是会话：打开浏览器，进行网页的浏览，到关闭浏览器的过程，这个过程称为一次会话
+
+	* 购物信息存到什么地方？
+	* 使用域对象是否可以存储购物信息
+	** servletContext域对象和request域对象
+
+	* request域对象是否可以存储购物信息
+		** 范围：一次请求
+		** 因为request域一次请求有效，最终结算时候，没有任何购物信息
+
+	* servletContext域对象是否可以存储购物信息
+		** 范围：整个web项目
+		*** 因为每个项目都有servletContext域，谁先结算，把域里面的所有的商品都结算
+	
+	* 可以使用会话存储购物信息
+	** 有两种技术
+	*** cookie技术：客户端的技术
+		* 使用cookie存储购物信息：
+		** 首先第一次买东西是九阴真经，到服务器得到九阴真经，把这个值通过cookie返回到浏览器的内存中，
+		** 第二次买六脉神剑，携带者内存中的这个值发送请求，到服务器端得到买的六脉神剑，同时得到携带九阴真经，
+		把这两个值返回到浏览器的内存中
+		** 最终进行结算：把内存中这两个值携带者进行发送，在服务器端得到这两个值，完成结算
+
+	*** session技术：服务器端的技术
+		* 使用session存储购物信息
+		* 买一个电视，到服务器开辟空间，把电视放到空间里面，返回打开这个空间的钥匙，把这把钥匙返回到浏览器的内存中，
+		* 第二次买手电，带着这把钥匙发送请求，在服务器端，拿着这把钥匙打开空间，把手电放到空间里面
+		返回打开这个空间的钥匙，把这把钥匙返回到浏览器的内存中，
+		* 结算：拿着这把钥匙发送请求，到服务器端使用钥匙打开空间，取出商品，完成结算
+
+4、案例一：使用cookie记录用户上次访问时间
+	* 第一次访问，向页面输出 welcome
+	* 第二次访问，把第一次产生的访问时候显示出来
+	* 第三次访问，显示第二次产生访问时间
+	
+	* 实现步骤：
+	** 首先第一次访问，向页面输出一个欢迎信息
+	产生一个访问时间，得到这个时候，使用cookie把时间返回到浏览器的内存中
+	** 第二次访问，带着内存中第一次的时间进行访问，到服务器得到第一次时间，把显示到页面上，
+	产生新的时间，把新的时间通过cookie返回到浏览器的内存中
+	以此类推.....
+
+	** 如何判断是否是第一次访问
+	*** 得到cookie，判断cookie里面是否有时间，如果有，不是第一次，没有是第一次    visit
+
+	*** 方法：
+	** 得到cookie
+	 Cookie[] getCookies() 
+	 ** 	//得到所有cookie
+		Cookie[] cookies = request.getCookies();
+	
+	** 通过cookie把值返回到浏览器的内存中（回写）
+	addCookie(Cookie cookie) 
+
+	** 使用Cookie的构造
+	Cookie(java.lang.String name, java.lang.String value) 
+	*** name：cookie的名称
+	*** value：cookie值
+
+	** 	//创建cookie
+		Cookie cfirst = new Cookie("visit",times);
+		//把times回写到浏览器的内存中
+		response.addCookie(cfirst);
+
+5、cookie的api的使用
+	* getName()：得到cookie名称
+	* getValue(): 得到cookie的值
+
+	* setMaxAge(int expiry) ：设置cookie的有效时长
+	
+	** cookie的分类有两种
+	** 第一种会话级别的cookie，特点浏览器关闭之后，cookie销毁了，在默认的情况下就是会话级别的cookie
+
+	** 第二种持久性的cookie：在一定的范围内cookie会一直有效
+	*** 设置有效时长：使用setMaxAge方法设置 setMaxAge(int expiry)参数：秒
+	*** 设置有效路径：使用setPath(java.lang.String uri)
+	*** 技巧 setPath("/");
+
+	*** 销毁持久性的cookie
+	*** 设置有效时长 0 setMaxAge(0)
+	*** 设置有效路径 保证销毁路径和持久性cookie路径要相同 一般 setPath("/");
+	*** 回写到浏览器的内存中
+
+	* setPath(java.lang.String uri) 
+	** 有效路径：
+	*** 通过这个访问，会携带cookie信息
+	** 比如setPath("/day10");
+	** 在地址栏写一个地址 http://127.0.0.1/day10/aa ， 会携带cookie信息
+	** 在地址栏输入另外一个地址 http://127.0.0.1/day11/bb ，不会携带cookie信息
+
+	* setDomain(java.lang.String pattern) 
+	** 有效域名的路径
+	** 通过这个域名访问，会携带cookie信息
+	** 比如 setDomain("www.sina.com");
+	** 在地址栏输入一个地址 http://www.sina.com ,会携带cookie信息
+	** 在地址栏输入一个地址 http://news.sina.com , 不会携带cookie信息
+	** setDomain(".sina.com");
+	
+6、cookie的细节问题
+	* 一个Cookie只能标识一种信息，它至少含有一个标识该信息的名称（NAME）和设置值（VALUE）。 
+
+	* 一个WEB站点可以给一个WEB浏览器发送多个Cookie，一个WEB浏览器也可以存储多个WEB站点提供的Cookie。
+
+	* 浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB。
+
+	* 如果创建了一个cookie，默认情况下它是一个会话级别的cookie（即存储在浏览器的内存中），
+	用户退出浏览器之后即被删除。若希望浏览器将该cookie存储在磁盘上，则需要使用maxAge和有效路径，
+	并给出一个以秒为单位的时间。
+
+	* 删除持久cookie，可以将cookie最大时效设为0，注意，删除cookie时，path必须一致，否则不会删除
+
+7、案例二：使用cookie记录用户浏览的商品记录
+	* 实现步骤
+	** 创建一个页面，在页面里面点击的商品
+	* 首先使用不同的id区分不同的商品 
+	** 超链接 <a href="/day10/aa?id=1">aa</a>
+	* 第一次购买，在服务器得到商品的id值，把id值回写到浏览器的内存中
+	* 第二次购买，带着第一次回写的id进行访问，在服务器端获取id值（第二次买的商品的id和第一次的id），
+	把这两个id值回写到浏览器的内存中
+	以此类推....
+
+	* 如果判断是否是第一次购买？ his
+	** 首先得到所有cookie  
+	** 遍历cookie数组，判断是否有与his名称相同的cookie，有相同的cookie的名称不是第一次，否则是第一次
+
+	*** 判断商品的id值，是否已经存在于cookie里面，如果存在的话，不需要回写，不存在才需要回写到浏览器的内存中
+
+	* 实现清空浏览记录
+	** 销毁cookie，清空浏览记录
+	** 销毁持久性的cookie
+	** 具体的步骤
+	** 创建一个和要销毁的cookie相同的名称的cookie	
+		Cookie c1 = new Cookie("his","");
+	** 设置有效时长 0
+		setMaxAge(0)
+	** 设置有效路径 
+		setPath("/")
+	** 把cookie回写到浏览器的内存中
+	* 代码
+		//创建相同的名称的cookie
+		Cookie c1 = new Cookie("his","");
+		//设置有效时长 0
+		c1.setMaxAge(0);
+		//设置有效路径
+		c1.setPath("/");
+		//把cookie回写到浏览器的内存中
+		response.addCookie(c1);
+
+
+8、session的简介
+	* session是服务器端技术
+	** session在服务器开辟一个空间，返回一把打开这个空间的钥匙，
+	*** 把这把钥匙返回到浏览器的内存中，使用技术cookie
+	*** session基于cookie来实现的
+
+	* session创建
+	 通过request里面的getSession() 方法创建session，返回的是HttpSession
+
+	* session也是一个域对象
+	** 范围：会话里面
+	** 存值：setAttribute
+	** 取值：getAttribute
+
+	* 一个浏览器独占一个session对象
+	* 创建第一个servlet1，得到session，打印session的id，向session域里面设置一个值，
+	超链接到servlet2里面
+	* 创建第二个servlet2，得到session，打印session的id，获取session域里面设置的值
+
+9、案例三：使用session实现简单的购物车
+	* 创建一个商品列表
+	* 步骤：
+	/**
+	 * 0、根据id，得到商品名称，使用数组
+	 * 1、判断是否第一次购物
+	 * 2、如果是第一次购物，创建购物车，把商品名称和数量1放到购物车
+	 * 3、如果不是第一次购物，
+	 *  *** 判断购物车里面是否存在相同名称的商品，
+	 *  **** 如果存在，把商品原有数量+1，放到购物车
+	 *  **** 如果不存在，把商品名称和数量1放到购物车
+	   4、把购物车放到session里面
+	 */
+
+=====================================================
+	list set map操作
+	** list和set的区别
+	** 在list有 ArrayList  LinkedList  Vector
+
+	** map特点key-value存储
+	*** HashMap的结构
+
+10、session创建和销毁
+	* session创建 ，执行request方法getSession创建
+	* session销毁有三种方式
+	** 第一种方式：非正常关闭服务器
+	** 第二种方式：session有一个默认的过期时间 30分钟
+	    <session-config>
+		<session-timeout>30</session-timeout>
+	    </session-config>
+	** 第三种方式：调用session方法进行销毁（一般使用这种方式）
+		invalidate()
+	
+	* 清空购物车的功能
+	* 代码
+		//得到session
+		HttpSession session = request.getSession();
+		//销毁session
+		session.invalidate();
+
+11、案例四：使用session实现验证码的校验
+	* 域对象存值和取值
+	** request域对象不能放验证码
+	** servletContext域对象不能放验证码
+	* 可以使用session域对象放验证码
+
+	* 步骤：
+	** 页面输入框，输入验证码
+	** 每次生成的验证码放到session里面
+	** 判断输入的验证码和session里面的验证码是否相同
+	*** 如果不相同，校验失败
+
+	** //得到输入的验证码
+		request.setCharacterEncoding("utf-8");
+		String codeInput = request.getParameter("code");
+		//得到session里面的验证码
+		String codeSession = (String) request.getSession().getAttribute("code");
+		//判断这两个验证码是否相同
+		if(!codeInput.equals(codeSession)) {//不相同
+			//设置一个值到request
+			request.setAttribute("msg12", "验证码错误");
+			//转发到登录页面
+			request.getRequestDispatcher("/session/login.jsp").forward(request, response);
+			return;
+		}
+
+12、禁用cookie之后session的使用
+	* session技术也是基于cookie，
+	** 回写浏览器一把钥匙 jsessionid=qwwe233445
+
+	* 禁用cookie之后使用session
+	*在地址后面;jsessionid=sessionid的值
+
+	* response. encodeRedirectURL(java.lang.String url) 
+	用于对sendRedirect方法后的url地址进行重写。
+
+	* response. encodeURL(java.lang.String url)
+	用于对表单action和超链接的url地址进行重写 
+
+	* 在一般网站中，如果禁用了cookie，直接不让登录
+
+
+/**
+
+ */
