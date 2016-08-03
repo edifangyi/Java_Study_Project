@@ -4036,6 +4036,80 @@ day10
 		//把times回写到浏览器的内存中
 		response.addCookie(cfirst);
 
+--------------------------------------------------------------------------------------------
+
+		/**
+		 * 记录用户上次的访问时间
+		 * @author asus
+		 *
+		 */
+		public class CookieDemo1 extends HttpServlet {
+
+			/**
+			 * 	** 首先第一次访问，向页面输出一个欢迎信息
+			*产生一个访问时间，得到这个时候，使用cookie把时间返回到浏览器的内存中
+			** 第二次访问，带着内存中第一次的时间进行访问，到服务器得到第一次时间，把显示到页面上，
+			*产生新的时间，把新的时间通过cookie返回到浏览器的内存中
+			*以此类推.....
+			 */
+			public void doGet(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				//得到所有cookie
+				Cookie[] cookies = request.getCookies();
+				//判断是否是第一次访问 visit
+				Cookie cookie = findCookie(cookies,"visit");
+				//如果是第一次
+				if(cookie == null) {//第一次
+					response.getWriter().write("welcome");
+				} else {
+					//得到上次访问的值
+					String times1 = cookie.getValue();
+					response.getWriter().write(times1);			
+				}
+				//产生新的时间
+				Date date = new Date();
+				String times = date.toLocaleString();
+				
+				//创建cookie
+				Cookie cfirst = new Cookie("visit",times);
+				//设置有效时长    60*60
+				cfirst.setMaxAge(3600);
+				//设置有效路径
+				cfirst.setPath("/");
+				//把times回写到浏览器的内存中
+				response.addCookie(cfirst);
+			}
+
+			//判断cookie里面是否有名称是visit的cookie
+			private Cookie findCookie(Cookie[] cookies, String name) {
+				
+				if(cookies == null) {
+					return null;
+				}
+				
+				for (Cookie cookie : cookies) {
+					//判断cookie里面是否有与name相同名称的cookie
+					if(name.equals(cookie.getName())) {
+						return cookie;				
+					}
+				}
+				return null;
+			}
+
+			/**
+			 * 
+			 */
+			public void doPost(HttpServletRequest request, HttpServletResponse response)
+					throws ServletException, IOException {
+				doGet(request, response);
+			}
+
+		}
+
+--------------------------------------------------------------------------------------------------
+
+
+
 5、cookie的api的使用
 	* getName()：得到cookie名称
 	* getValue(): 得到cookie的值
@@ -4151,7 +4225,7 @@ day10
 	 *  *** 判断购物车里面是否存在相同名称的商品，
 	 *  **** 如果存在，把商品原有数量+1，放到购物车
 	 *  **** 如果不存在，把商品名称和数量1放到购物车
-	   4、把购物车放到session里面
+	 *  4、把购物车放到session里面
 	 */
 
 =====================================================
