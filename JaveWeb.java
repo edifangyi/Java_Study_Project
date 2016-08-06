@@ -3406,9 +3406,9 @@ day09
 	 * 
 	 * * 解决乱码问题
 	 * ** 首先设置浏览器的编码
-		response.setHeader("Content-Type", "text/html;charset=utf-8");
+	*	response.setHeader("Content-Type", "text/html;charset=utf-8");
 	 * ** 设置字节数组的编码
-		response.getOutputStream().write("字节流中文".getBytes("utf-8"));
+	*	response.getOutputStream().write("字节流中文".getBytes("utf-8"));
 	 * *** 浏览器的编码和字节数组的编码一致
 	 */
 
@@ -3422,9 +3422,9 @@ day09
 	 * 
 	 * ** 解决方法
 	 * ** 首先设置response缓冲区的编码
-		response.setCharacterEncoding("utf-8");
+	*	response.setCharacterEncoding("utf-8");
 	 * ** 设置浏览器的编码
-		response.setHeader("Content-Type", "text/html;charset=utf-8");
+	*	response.setHeader("Content-Type", "text/html;charset=utf-8");
 	 * *** 让response缓冲区的编码和浏览器编码一致
 	 */
 
@@ -3446,16 +3446,17 @@ day09
 	 * 到utf-8码表查找数字对应的值，把数字对应的字符输出，而不会直接输出数字
 	 */
 	
+	
 	* 第五个细节问题：
 	* 重定向操作时候，简写方式
 	response.sendRedirect("/day09/....");
 
 7、案例四：使用response实现文件的下载
-	* 首先服务器上面有可以下载的文件
-
-	* 下载的步骤
+	* 首先服务器
 	** 第一步：得到文件流，输入流
-		* 得到文件的完全路径 使用servletContext对象里面getRealPath方法
+		* 得到文上面有可以下载的文件
+
+	* 下载的步骤件的完全路径 使用servletContext对象里面getRealPath方法
 		InputStream in = new FileInputStream("文件完全路径");
 
 	** 第二步：使用输出流把文件输入流写到浏览器
