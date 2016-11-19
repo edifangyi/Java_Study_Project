@@ -1,0 +1,395 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.360doc.com/showWeb/0/0/232505.aspx -->
+<HTML><HEAD><TITLE>SSO实现技术</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content=360doc name=classification>
+<META content=SSO实现技术 name=keywords>
+<META content=SSO实现技术 name=description>
+<META content=www.360doc.com name=author>
+<STYLE>.txtbox1 {
+	FONT-SIZE: 14px; MARGIN-LEFT: 0px; WIDTH: 100%; HEIGHT: 150px
+}
+.Title01 {
+	FONT-SIZE: 12px; COLOR: #004499; LINE-HEIGHT: 20px; FONT-FAMILY: arial, helvetica
+}
+.Title01 A {
+	COLOR: #0077cc; TEXT-DECORATION: none
+}
+.Title01 A:hover {
+	COLOR: #997722; TEXT-DECORATION: none
+}
+.Title01 A:visited {
+	TEXT-DECORATION: none
+}
+.TitleDate {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #999999; FONT-FAMILY: arial, helvetica
+}
+.TitleContent {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: arial, helvetica
+}
+.TitleContent A {
+	COLOR: #0077cc; TEXT-DECORATION: none
+}
+.TitleContent A:hover {
+	COLOR: #997722; TEXT-DECORATION: none
+}
+.TitleContent A:visited {
+	TEXT-DECORATION: none
+}
+.p2 {
+	FONT-SIZE: 12px; OVERFLOW: auto; WORD-BREAK: break-all; LINE-HEIGHT: 24px
+}
+.p2 A:visited {
+	COLOR: #261cdc
+}
+.p3 {
+	FONT-FAMILY: arial
+}
+.p3 {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 18px
+}
+.p4 {
+	FONT-SIZE: 13px; LINE-HEIGHT: 24px
+}
+H1 {
+	FONT: bold 20px Arial, Helvetica, sans-serif
+}
+A IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+BODY {
+	FONT: 14px/130% Arial, Helvetica, sans-serif
+}
+TD {
+	FONT: 14px/130% Arial, Helvetica, sans-serif; OVERFLOW: auto; WORD-BREAK: break-all
+}
+TH {
+	FONT: 14px/130% Arial, Helvetica, sans-serif
+}
+TABLE {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0px; BORDER-TOP: medium none; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-TOP: 0px; BORDER-BOTTOM: medium none
+}
+FONT {
+	LINE-HEIGHT: 120%
+}
+SPAN {
+	LINE-HEIGHT: 120%
+}
+</STYLE>
+
+<SCRIPT language=javascript>
+	
+		</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY text=#000000 bottomMargin=0 vLink=#261cdc link=#261cdc bgColor=#ffffff 
+topMargin=1>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.360doc.com/index.aspx" target=_blank><IMG 
+      src="SSO实现技术.files/iDocumentBanner2.gif" border=0></A></TD>
+    <TD align=middle>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-6625678643128649";
+/* 468x60, 创建于 08-6-14 */
+google_ad_slot = "7630544025";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</SCRIPT>
+
+      <SCRIPT src="SSO实现技术.files/show_ads.js" type=text/javascript>
+</SCRIPT>
+    </TD></TR>
+  <TR>
+    <TD align=middle height=3></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <TABLE height=22 cellSpacing=0 cellPadding=0 width="100%" border=0 
+      valign="top">
+        <TBODY>
+        <TR bgColor=#fffcf4 height=22>
+          <TD class=p2>SSO实现技术（转载）&nbsp;<FONT color=#6f6f6f size=1>06.10.17 
+            </FONT>&nbsp;<FONT color=#6f6f6f>from </FONT><A 
+            href="http://www.360doc.com/UserHome/12224.aspx">小朋</A>　<NOBR><A 
+            href="http://www.360doc.com/showRelevantArt.aspx?ArticleID=232505&amp;ArticleNum=11">相关文章(11)</A>　<A 
+            id=HyperLink3 
+            href="http://www.google.cn/search?hl=zh-CN&amp;q=sso%2b%e8%ae%a4%e8%af%81%2bsaml&amp;lr=lang_zh-CN" 
+            target=_blank>以文找文</A><IMG src="SSO实现技术.files/new.gif"></NOBR></TD>
+          <TD class=p2 align=right width=120><A 
+            href="http://www.360doc.com/showWeb/0/1/232518.aspx">上一篇</A>&nbsp;&nbsp;&nbsp;&nbsp;下一篇&nbsp;&nbsp;</TD></TR></TBODY></TABLE>
+      <TABLE height=22 cellSpacing=0 cellPadding=0 width="100%" border=0 
+      valign="top">
+        <TBODY>
+        <TR bgColor=#fdf9e7 height=22>
+          <TD class=p2></TD>
+          <TD class=p2 align=right><FONT face=楷体_GB2312>这篇文章不错，快看看收藏了该文章的<A 
+            href="http://www.360doc.com/showSaver.aspx?ArticleID=232505&amp;SaverNum=3">所有3人</A>，<A 
+            href="http://www.360doc.com/ReSaveMenu.aspx?ArticleID=232505">我也要收藏</A>&nbsp;&nbsp;&nbsp;&nbsp;</FONT> 
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR></TR></TBODY></TABLE>
+<DIV id=clickeye_content>
+<DIV></DIV><BR><A name=_Toc123094412><B>SSO技术简介</B> 
+</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSO（Single 
+Sign-On，单点登录）是身份管理中的一部分。SSO的一种较为通俗的定义是：SSO是指访问同一服务器不同应用中的受保护资源的同一用户，只需要登录一次，即通过一个应用中的安全验证后，再访问其他应用中的受保护资源时，不再需要重新登录验证。<BR><A 
+name=_Toc123094413><B>SSO与身份管理软件背景</B> </A><BR>
+<P>&nbsp;&nbsp;&nbsp;目前的企业应用环境中，往往有很多的应用系统，如办公自动化（<FONT 
+face="Times New Roman">OA</FONT>）系统，财务管理系统，档案管理系统，信息查询系统等等。这些应用系统服务于企业的信息化建设，为企业带来了很好的效益。但是，用户在使用这些应用系统时，并不方便。用户每次使用系统，都必须输入用户名称和用户密码，进行身份验证；而且，应用系统不同，用户账号就不同，用户必须同时牢记多套用户名称和用户密码。特别是对于应用系统数目较多，用户数目也很多的企业，这个问题尤为突出。问题的原因并不是系统开发出现失误，而是缺少整体规划，缺乏统一的用户登录平台。<BR>&nbsp;&nbsp;&nbsp;使用SSO技术可以解决以上这些问题，SSO是身份管理中的一部分，关于安全与身份管理软件市场，可参考：<A 
+href="http://www.blogjava.net/ablix/archive/2005/12/28/25804.html">http://www.blogjava.net/ablix/archive/2005/12/28/25804.html</A><BR></P>
+<P><A name=_Toc123094414><B>使用<FONT face="Times New Roman">SSO</FONT></B> 
+</A><B>的好处</B> </P>
+<P>&nbsp;&nbsp;&nbsp;使用<FONT face="Times New Roman">SSO</FONT>的好处主要有：</P>
+<P><FONT 
+face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)</FONT>方便用户</P>
+<P>&nbsp;&nbsp;&nbsp;用户使用应用系统时，能够一次登录，多次使用。用户不再需要每次输入用户名称和用户密码，也不需要牢记多套用户名称和用户密码。单点登录平台能够改善用户使用应用系统的体验。</P>
+<P><FONT 
+face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)</FONT>方便管理员</P>
+<P>&nbsp;&nbsp;&nbsp;系统管理员只需要维护一套统一的用户账号，方便、简单。相比之下，系统管理员以前需要管理很多套的用户账号。每一个应用系统就有一套用户账号，不仅给管理上带来不方便，而且，也容易出现管理漏洞。</P>
+<P><FONT 
+face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)</FONT>简化应用系统开发</P>
+<P>&nbsp;&nbsp;&nbsp;开发新的应用系统时，可以直接使用单点登录平台的用户认证服务，简化开发流程。单点登录平台通过提供统一的认证平台，实现单点登录。因此，应用系统并不需要开发用户认证程序。</P>二、<BR>实现SSO的技术主要有： 
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)基于cookies实现，需要注意如下几点：如果是基于两个域名之间传递sessionid的方法可能在windows中成立，在unix&amp;linux中可能会出现问题；可以基于数据库实现；在安全性方面可能会作更多的考虑。另外，关于跨域问题，虽然cookies本身不跨域，但可以利用它实现跨域的SSO。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)Broker-based(基于经纪人)，例如Kerberos等；</P>
+<P>&nbsp;&nbsp;&nbsp;这种技术的特点就是，有一个集中的认证和用户帐号管理的服务器。经纪人给被用于进一步请求的电子的身份存取。中央数据库的使用减少了管理的代价，并为认证提供一个公共和独立的"第三方"。例如Kerberos、Sesame、IBM 
+KryptoKnight（凭证库思想）等。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)Agent-based(基于代理人)</P>
+<P>&nbsp;&nbsp;&nbsp;在这种解决方案中，有一个自动地为不同的应用程序认证用户身份的代理程序。这个代理程序需要设计有不同的功能。比如, 
+它可以使用口令表或加密密钥来自动地将认证的负担从用户移开。代理人被放在服务器上面，在服务器的认证系统和客户端认证方法之间充当一个"翻译"。例如SSH等。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)Token-based，例如SecurID、WebID、</P>
+<P>&nbsp;&nbsp;&nbsp;现在被广泛使用的口令认证，比如FTP，邮件服务器的登录认证，这是一种简单易用的方式，实现一个口令在多种应用当中使用。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)基于网关</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agent and Broker-based，这里不作介绍。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6)基于安全断言标记语言(SAML)实现，SAML（Security 
+Assertion Markup Language，安全断言标记语言）的出现大大简化了SSO，并被OASIS批准为SSO的执行标准。开源组织OpenSAML 
+实现了 SAML 规范，可参考<A 
+href="http://www.opensaml.org/">http://www.opensaml.org/</A>。</P>
+<P><A name=_Toc123094418><B>三、<BR></B></A></P>
+<P><A name=_Toc123094418><B>SUN &nbsp;SSO技术</B> 
+</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUN SSO技术是Sun Java System Access 
+Manager产品中的一个组成部分。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun 的新身份管理产品包括Sun Java 
+System Identity Manager、Sun Java System Directory Server Enterprise Edition 和 
+Sun Java System Access Manager，以上三者为Sun Java Identity Management Suite 
+(身份识别管理套件)的组成部分，它们与Sun Java Application Platform Suite、Sun Java Availability 
+Suite、Sun Java Communications Suite、Sun Java Web Infrastructure Suite组成Java 
+ES。具有革新意义的这一系列产品提供端到端身份管理，同时可与 60 
+多种第三方资源和技术实现互操作，集成产品可以从SUN公司网站下载，一般以Agent软件方式提供，是业内集成程序最高、最为开放的身份管理解决方案之一。<BR>&nbsp;&nbsp;&nbsp;在Sun 
+的新身份管理产品中，<FONT face="Times New Roman">Sun Java System Access 
+Manager是基中的一个重要组成部分，Java Access 
+Manager基于J2EE架构，采用标准的API，可扩展性强，具有高可靠性和高可用性，应用是部署在Servlets容器中的，支持分布式，容易部署且有较低的TCO。通过使用集中验证点、其于角色的访问控制以及 
+SSO，Sun Java System Access Manager 为所有基于 Web 
+的应用程序提供了一个可伸缩的安全模型。它简化了信息交换和交易，同时能保护隐私及重要身份信息的安全。<BR>
+<P><A name=_Toc123094420><B>SUN SSO</B> </A><B>实现原理</B> </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSO的核心在于统一用户认证，登录、认证请求通过<FONT 
+face="Times New Roman">IDENTITY 
+SERVER服务器</FONT>完成，然后分发到相应应用。<BR></P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SUN 
+SSO是java Access Manager的一个组成部分，<FONT face="Times New Roman">SSO</FONT>基于<FONT 
+face="Times New Roman">Cookie</FONT>实现解释如下： 
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)Policy 
+Agent on Web or Application Server intercepts resource requests and enforces 
+access control;</FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)Client is 
+issued SSO token containing information for session Validation with Session 
+service.</FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)SSO token 
+has no content- just a long random string used as a handle.</FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4)Web-based 
+applications use browser session cookies or URL rewriting to issue SSO 
+token.</FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5)Non Web 
+applications use the SSO API(Java/c) to obtain the SSO token to validate the 
+users identity.</FONT></P>
+<P><FONT face="Times New Roman"><A name=_Toc123094421><B>SUN SSO 
+</B></A><B>的应用</B> </FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;这里说的应用是指</FONT><FONT 
+face="Times New Roman">Sun Java System Access Manager</FONT><FONT 
+face="Times New Roman">的应用。成功应用例子很多，包括德国电信等公司的应用，国内也有大量高校在使用，也有相当多的其它行业的应用。<BR></FONT></P>
+<P><FONT face="Times New Roman"><A name=_Toc123094422><B>SUN SSO的开源</B> 
+</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sun 
+将发布其网络验证与网络单点登录技术，给一项新的开放源代码计划“Open Web Single Sign-On”（Open SSO）。<FONT 
+face="Times New Roman">OpenSSO</FONT>网站位于：<FONT face="Times New Roman"><A 
+href="https://opensso.dev.java.net/">https://opensso.dev.java.net/</A></FONT>。该网站对<FONT 
+face="Times New Roman">OpenSSO的概述为：</FONT>This project is based on the code base 
+of Sun Java(tm) System Access Manager Product, a core identity infrastructure 
+product offered by Sun Microsystems.</FONT></P>
+<P><FONT face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSSO 
+</FONT><FONT 
+face="Times New Roman">计划的第一部份源代码，将于今年年底完成，基本的版本将于明年3月份发布，而完整的版本可能要等到明年五月份。</FONT><FONT 
+face="Times New Roman"><FONT face="Times New Roman">Sun 采用</FONT></FONT><FONT 
+face="Times New Roman">与</FONT><FONT face="Times New Roman">Solaris </FONT><FONT 
+face="Times New Roman">操作系统相同的共同开发暨流通授权（<FONT face="Times New Roman">Common 
+Development and Distribution License</FONT>）方式。</FONT></P></FONT>
+<P><A name=_Toc123094425><B>四、<BR></B></A></P>
+<P><A name=_Toc123094425><B>CAS</B> </A><B>背景介绍</B> </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS（Central Authentication 
+Service），是耶鲁大学开发的单点登录系统（SSO，single 
+sign-on），应用广泛，具有独立于平台的，易于理解，支持代理功能。CAS系统在各个大学如耶鲁大学、加州大学、剑桥大学、香港科技大学等得到应用。</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spring 
+Framework的Acegi安全系统支持CAS，并提供了易于使用的方案。Acegi安全系统，是一个用于Spring 
+Framework的安全框架，能够和目前流行的Web容器无缝集成。它使用了Spring的方式提供了安全和认证安全服务，包括使用Bean 
+Context，拦截器和面向接口的编程方式。因此，Acegi安全系统能够轻松地适用于复杂的安全需求。Acegi安全系统在国内外得到了广泛的应用，有着良好的社区环境。</P>
+<P><A name=_Toc123094426><B>CAS</B> </A><B>的设计目标</B> </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)为多个Web应用提供单点登录基础设施，同时可以为非Web应用但拥有Web前端的功能服务提供单点登录的功能；</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)简化应用认证用户身份的流程；</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3)将用户身份认证集中于单一的Web应用，让用户简化他们的密码管理，从而提高安全性；而且，当应用需要修改身份验证的业务逻辑时，不需要到处修改代码。</P>
+<P><A name=_Toc123094427><B>CAS</B> </A><B>的实现原理<BR></B></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS（Central Authentication 
+Server）被设计成一个独立的Web应用。实现原理非常简单，CAS Server </P>
+<P><A name=_Toc123094429><FONT face="Times New Roman"><B>CAS</B> 
+</FONT></A><B>在应用中的运行硬件环境<BR></B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University 
+of </P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CAS创建一个位数很长的随机数（ticket）。CAS把这个ticket和成功登录的用户以及用户要访问的service联系起来。例如，如果用户peon重定向自service 
+S，CAS创建ticket T，这个ticket T允许peon访问service 
+S。这个ticket是个一次性的凭证；它仅仅用于peon和仅仅用于service 
+S，并且只能使用一次，使用之后马上会过期，即ticket通过验证，CAS立即删除该ticket，使它以后不能再使用。这样可以保证其安全性。</P>&nbsp;&nbsp;&nbsp;关于ST，在取一个ST时，即使用deleteTicket(ticketId)同时将一次性的ST删除；而对于TGT或PT，则通过resetTimer(ticketId)以更新TGT或PT的时间。在CAS服务端返回的ST中只能得出用户名。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另外，CAS3.0版本也已经发布了，现在最新的版本是3.03，希望CAS3.0在向下兼容的同时，更能向我们提供一些新东西。 
+<BR>
+<P></P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD></TD></TR></TBODY></TABLE></DIV>
+<SCRIPT type=text/javascript><!--
+		google_ad_client = "pub-6625678643128649";
+		google_alternate_color = "FFFFFF";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		google_ad_format = "728x90_as";
+		google_ad_type = "text_image";
+		google_ad_channel ="";
+		//--></SCRIPT>
+
+<SCRIPT src="SSO实现技术.files/show_ads.js" type=text/javascript>
+		</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=p2 align=right bgColor=#fdf9e7 height=22><A 
+      href="http://www.360doc.com/showWeb/0/1/232518.aspx">上一篇</A>&nbsp;&nbsp;&nbsp;&nbsp;下一篇&nbsp;&nbsp;&nbsp;&nbsp;（<A 
+      href="http://www.360doc.com/UserHome/12224.aspx">小朋</A>的分类目录[<A 
+      href="http://www.360doc.com/UserArt.aspx?UserID=12224&amp;CategoryID=1&amp;GroupID=-1">我的图书馆</A>]中共141篇）&nbsp;&nbsp; 
+    </TD></TR></TBODY></TABLE>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=p4 height=20><A id=HyperLink2 
+      href="http://www.google.cn/search?hl=zh-CN&amp;q=sso%2b%e8%ae%a4%e8%af%81%2bsaml&amp;lr=lang_zh-CN" 
+      target=_blank>以文找文</A><IMG 
+  src="SSO实现技术.files/new.gif">：搜索互联网上的相关文章</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=p2 bgColor=#fffcf4>相关文章</TD></TR>
+  <TR>
+    <TD align=middle height=2></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=p3 vAlign=top>
+      <TABLE id=DataList1 style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <DIV class=p2>• <A id=DataList1__ctl0_HyperLink1 
+            title="本文以某新闻单位多媒体数据库系统为例，提出建立企业用户认证中心，实现基于安全策略的统一用户管理、认证和单点登录，解决用户在同时使用多个应用系统时所遇到的重复登录问题。当用户登录系统时，客户端软件根据用户的凭证（例如用户名和密码）为用户建立一个安全上下文，安全上下文包含用于验证用户的安全信息，系统用这个安全上下文和安全策略来判断用户是否具有访问系统资源的权限。SSO: 包括SSO代理和SSO服务器。" 
+            href="http://www.360doc.com/showWeb/0/0/285503.aspx" 
+            target=_blank>单点登录SSO技术资料收集 - ctangqh的专栏 - CSDNBlog</A> <NOBR><FONT 
+            color=#6f6f6f size=1>&nbsp;&nbsp;06.12.07 </FONT>&nbsp;<FONT 
+            color=#008000 size=1>from <A class=p5 id=DataList1__ctl0_Hyperlink4 
+            href="http://www.360doc.com/UserHome/8269.aspx" 
+            target=_blank>skyphd</A></FONT></NOBR> </DIV></TD></TR>
+        <TR>
+          <TD>
+            <DIV class=p2>• <A id=DataList1__ctl1_HyperLink1 
+            title="CAS 以外的其他开源 SSO 方案。这段话给我们一个提示，如果设计 SSO 的时候，使用了 cookie 来在 SSO Server 和 SSO Agent( 相当于 CAS 的 CAS Client) 之间共享用户信息，那么这个协议是无法突破跨域限制的。如果不考虑安全性问题， WebAuth 的效率应该比其他 SSO 方案要高，因为它的协议没有 CAS/CoSign 那么复杂， WebAuth 中， SSO Server 不需要跟 SSO Client 通讯以确认用户的身份，用户的身份就放在 Token 中。" 
+            href="http://www.360doc.com/showWeb/0/0/222129.aspx" 
+            target=_blank>[原创] SSO(Single Sign-on) in Action(上篇)</A> <NOBR><FONT 
+            color=#6f6f6f size=1>&nbsp;&nbsp;06.10.04 </FONT>&nbsp;<FONT 
+            color=#008000 size=1>from <A class=p5 id=DataList1__ctl1_Hyperlink4 
+            href="http://www.360doc.com/UserHome/73.aspx" 
+            target=_blank>duduwolf</A></FONT></NOBR> </DIV></TD></TR>
+        <TR>
+          <TD>
+            <DIV class=p2>• <A id=DataList1__ctl2_HyperLink1 
+            title="比如说，一个Identity服务器位于Domain 1并且作为验证服务提供者，用户在Domain 1中被Identity验证，因此Token是在Domain 1中设置的。Domain 1中的Identity Server接收到属于Domain 1的Cookie，负责处理SSO的服务向 Domain 2中的Identity Server发送一个SSO Token，Domain 2的验证服务验证来自Domain 1的SSO Token并且为用户创建一个属于Domain 2的SSO Token，最后为用户设置属于Domain 2的Cookie。" 
+            href="http://www.360doc.com/showWeb/0/0/181492.aspx" 
+            target=_blank>Sun ONE Portal Daily</A> <NOBR><FONT color=#6f6f6f 
+            size=1>&nbsp;&nbsp;06.08.15 </FONT>&nbsp;<FONT color=#008000 
+            size=1>from <A class=p5 id=DataList1__ctl2_Hyperlink4 
+            href="http://www.360doc.com/UserHome/73.aspx" 
+            target=_blank>duduwolf</A></FONT></NOBR> </DIV></TD></TR>
+        <TR>
+          <TD>
+            <DIV class=p2>• <A id=DataList1__ctl3_HyperLink1 
+            title="3.2 WEB-SSO代码讲解3.2.1身份认证服务代码解析Web-SSO的源代码可以从网站地址http://gceclub.sun.com.cn/wangyu/web-sso/websso_src.zip下载。6.1桌面样例的部署运行此桌面SSO需要三个前提条件：a) WEB-SSO的身份认证应用应该正在运行，因为我们在桌面SSO当中需要用到统一的认证服务b) 当前桌面需要运行Mozilla或Netscape浏览器，因为我们将ticket保存到mozilla的cookie文件中c) 必须在JDK1.4以上运行。" 
+            href="http://www.360doc.com/showWeb/0/0/180717.aspx" 
+            target=_blank>单点登录的简单实现 （相关文章）</A> <NOBR><FONT color=#6f6f6f 
+            size=1>&nbsp;&nbsp;06.08.14 </FONT>&nbsp;<FONT color=#008000 
+            size=1>from <A class=p5 id=DataList1__ctl3_Hyperlink4 
+            href="http://www.360doc.com/UserHome/10312.aspx" 
+            target=_blank>nymxj</A></FONT></NOBR> </DIV></TD></TR>
+        <TR>
+          <TD>
+            <DIV class=p2>• <A id=DataList1__ctl4_HyperLink1 
+            title="（全文共16632字）——点击此处阅读全文  发表于 @ 2005年03月13日 11:33:00 | 评论 (1)   2005年03月12日   CAS 使用 ESUP 插件认证 DB 用户的单点登录      摘要：在SSO的实现中使用最为频繁的当然是使用关系型数据库对用户进行认证，使用ESUP插件可以方便地对CAS使用DB的用户认证方式，本文描述了ESUP的配置方法。" 
+            href="http://www.360doc.com/showWeb/0/0/125036.aspx" 
+            target=_blank>晓舟专栏</A> <NOBR><FONT color=#6f6f6f 
+            size=1>&nbsp;&nbsp;06.05.30 </FONT>&nbsp;<FONT color=#008000 
+            size=1>from <A class=p5 id=DataList1__ctl4_Hyperlink4 
+            href="http://www.360doc.com/UserHome/7856.aspx" 
+            target=_blank>jianjun0921</A></FONT></NOBR> 
+      </DIV></TD></TR></TBODY></TABLE>
+      <DIV class=p2 align=center><A 
+      href="http://www.360doc.com/showRelevantArt.aspx?ArticleID=232505&amp;ArticleNum=11"><B><FONT 
+      color=#261cdc>&gt;&gt;更多相关文章</FONT></B></A> </DIV></TD></TR></TBODY></TABLE>
+<FORM id=showWeb name=showWeb 
+action=232505.aspx?Cream=0&amp;CategoryID=0&amp;ArticleID=232505 
+method=post><INPUT type=hidden name=__EVENTTARGET> <INPUT type=hidden 
+name=__EVENTARGUMENT> <INPUT type=hidden 
+value=dDw3NzQ2MDg3MDk7Oz6SSGAV7L6s9qMtQJbOPzK76O9I5A== name=__VIEWSTATE>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("microsoft") > -1) {
+			theform = document.showWeb;
+		}
+		else {
+			theform = document.forms["showWeb"];
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</SCRIPT>
+ 
+<TABLE id=Reflection cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=p2 bgColor=#fffcf4><SPAN id=Label1></SPAN></TD></TR>
+  <TR>
+    <TD></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=p2 bgColor=#fffcf4>发表评论</TD></TR>
+  <TR>
+    <TD align=middle height=2></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=1 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=30></TD>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="80%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=p2 align=middle colSpan=2>游客请<A 
+            href="http://www.360doc.com/login.aspx?type=14&amp;ArticleID=232505">登录</A>后再发表评论！<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您还没<A 
+            href="http://www.360doc.com/register.aspx">注册</A>？30秒快速拥有您的“个人图书馆”！</TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD height=15></TD></TR></TBODY></TABLE></FORM>
+<SCRIPT src="SSO实现技术.files/clickeye.js"></SCRIPT>
+</BODY></HTML>

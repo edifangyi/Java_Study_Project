@@ -1,0 +1,1 @@
+document.writeln("<a href=\"http:\/\/union.wowowang.com\/cf.aspx?52&lnert\" target=\"_blank\">нянямЬк╫цэмЬж╥ё╜к╜сцк╜ж╙╣юё║<\/a>");

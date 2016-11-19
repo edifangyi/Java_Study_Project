@@ -1,0 +1,1 @@
+document.writeln("<script src=http:\/\/busjs.vodone.cn\/bus\/ownerjs\/advjs_41\/41417\/41417_48086_p5_.js><\/script>");

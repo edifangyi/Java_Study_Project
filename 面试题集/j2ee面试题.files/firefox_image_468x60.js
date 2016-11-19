@@ -1,0 +1,11 @@
+document.writeln("<script type=\"text\/javascript\"><!--");
+document.writeln("google_ad_client = \"pub-0921037077471183\";");
+document.writeln("\/* 468x15, ´´½¨ÓÚ 08-8-18 *\/");
+document.writeln("google_ad_slot = \"3427746240\";");
+document.writeln("google_ad_width = 468;");
+document.writeln("google_ad_height = 15;");
+document.writeln("\/\/-->");
+document.writeln("<\/script>");
+document.writeln("<script type=\"text\/javascript\"");
+document.writeln("src=\"http:\/\/pagead2.googlesyndication.com\/pagead\/show_ads.js\">");
+document.writeln("<\/script>");

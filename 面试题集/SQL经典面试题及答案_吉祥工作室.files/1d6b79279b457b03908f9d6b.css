@@ -1,0 +1,357 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #f3f3f5; BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/ef626500b1e2f49fe950cde2.jpg) #fefefe no-repeat; OVERFLOW-X: hidden; SCROLLBAR-HIGHLIGHT-COLOR: #fff; CURSOR: url('http://www.qcici.com/shubiao/arrow.cur'); SCROLLBAR-SHADOW-COLOR: #d4d4d4; COLOR: #5a1f01; SCROLLBAR-3DLIGHT-COLOR: #d4d4d4; SCROLLBAR-ARROW-COLOR: #d4d4d4; SCROLLBAR-TRACK-COLOR: #f3f3f5; SCROLLBAR-DARKSHADOW-COLOR: #fff; SCROLLBAR-BASE-COLOR: #f3f3f5
+}
+BODY A {
+	COLOR: #d91101; TEXT-DECORATION: none
+}
+BODY A:link {
+	COLOR: #d91101
+}
+BODY A:visited {
+	COLOR: #d91101; TEXT-DECORATION: none
+}
+BODY A:hover {
+	CURSOR: url('http://www.qcici.com/shubiao/adidas.cur'); COLOR: #ff0000; TEXT-DECORATION: underline
+}
+DIV.line {
+	BORDER-TOP: #ddd 1px solid
+}
+#header {
+	BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/4190d946810770116b63e5e9.jpg) no-repeat 50% 0%; HEIGHT: 380px
+}
+#header DIV.lc {
+	
+}
+#header DIV.rc {
+	
+}
+#header DIV.tit {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FILTER: glow (color= #FFFF00,strength=4); LEFT: 80px; COLOR: #ff0000; LINE-HEIGHT: 50px; FONT-FAMILY: ; TOP: -35px
+}
+#header DIV.tit A.titlink {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+#header DIV.tit A.titlink:visited {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+#header DIV.desc {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; FILTER: glow (color= #FFFF00,strength=3); LEFT: 118px; COLOR: #ffff00; LINE-HEIGHT: 50px; TOP: 140px
+}
+#tabline {
+	DISPLAY: none; TOP: 242px
+}
+#tab {
+	MARGIN-LEFT: 110px; TOP: 208px; TEXT-ALIGN: right
+}
+#tab A.on {
+	FONT-SIZE: 12px; COLOR: #d61202; TEXT-ALIGN: right
+}
+#tab A.on:link {
+	FONT-SIZE: 12px; COLOR: #d61202; TEXT-ALIGN: right
+}
+#tab A.on:visited {
+	FONT-SIZE: 12px; COLOR: #d61202; TEXT-ALIGN: right
+}
+#tab SPAN {
+	DISPLAY: none
+}
+#tab A {
+	PADDING-RIGHT: 20px; TEXT-ALIGN: right
+}
+#tab A:link {
+	FONT-SIZE: 12px; COLOR: #d61202; TEXT-DECORATION: none
+}
+#tab A:visited {
+	FONT-SIZE: 12px; COLOR: #d61202; TEXT-DECORATION: none
+}
+#tab A:hover {
+	COLOR: #ff0000
+}
+#tab2 {
+	COLOR: #4c4c4c; TOP: -120px
+}
+#tab2 SPAN {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+#tab2 A {
+	FONT-SIZE: 12px; COLOR: #4c4c4c
+}
+#tab2 A:link {
+	FONT-SIZE: 12px; COLOR: #4c4c4c
+}
+.stage {
+	WIDTH: 970px; TEXT-ALIGN: center; no-repeat: 
+}
+.stagepad {
+	MARGIN: 0px auto; WIDTH: 970px; POSITION: relative; TOP: -120px
+}
+#layout {
+	MARGIN: 0px auto; WIDTH: 970px! important; POSITION: relative; TOP: -120px
+}
+#layout TD.c1t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c2t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c2t3 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t1 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t3 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c3t5 {
+	PADDING-BOTTOM: 10px
+}
+#layout TD.c1t1 {
+	
+}
+#layout TD.c2t1 {
+	
+}
+#layout TD.c2t3 {
+	
+}
+#layout TD.c2t2 {
+	
+}
+#layout TD.c3t1 {
+	
+}
+#layout TD.c3t3 {
+	
+}
+#layout TD.c3t5 {
+	
+}
+.mod {
+	MARGIN-BOTTOM: 10px
+}
+.modhandle {
+	CURSOR: move
+}
+.modth {
+	HEIGHT: 27px
+}
+.modhead {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modbox {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.modopt {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+.modtit {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffff75
+}
+A.modtit {
+	COLOR: #ffff75; PADDING-TOP: 15px
+}
+A.modtit:visited {
+	COLOR: #ffff75
+}
+.modtitlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffff75
+}
+A.modtitlink {
+	COLOR: #ffff75; TEXT-DECORATION: none
+}
+A.modtitlink:visited {
+	COLOR: #ffff75; TEXT-DECORATION: none
+}
+A.modtitlink:hover {
+	COLOR: #ffff75; TEXT-DECORATION: underline
+}
+.modact {
+	FONT-SIZE: 12px; COLOR: #ffff00; TEXT-DECORATION: none
+}
+A.modact:link {
+	COLOR: #ffff00; TEXT-DECORATION: none
+}
+A.modact:visited {
+	COLOR: #4c4c4c
+}
+.modlabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000
+}
+.c2t1 .modtit {
+	COLOR: #ffff75
+}
+.c2t3 .modtit {
+	COLOR: #ffff75
+}
+.modtl {
+	BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/57799c4a49bb883b09f7eff0.jpg) no-repeat 0% 100%; WIDTH: 89px; HEIGHT: 32px
+}
+.modtc {
+	BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/9598aa31237e7d01ebc4afc4.jpg) repeat-x 0% 100%; LEFT: 30px; HEIGHT: 32px
+}
+.modtr {
+	BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/ef39563552f3290990ef39c7.jpg) no-repeat 0% 100%; WIDTH: 29px; HEIGHT: 32px
+}
+.modbox {
+	BORDER-RIGHT: #ffbb3d 1px solid; BACKGROUND: #fff4c7; BORDER-LEFT: #ffbb3d 1px solid; BORDER-BOTTOM: #ffbb3d 1px solid
+}
+.c2t3 .modbl {
+	
+}
+.c2t3 .modbc {
+	
+}
+.c2t3 .modbr {
+	
+}
+#mod_bloglist .modtit {
+	COLOR: #ffff75
+}
+#m_blog DIV.tit {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 35px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/9bd054d6624d503707088bc3.jpg) no-repeat 0% 25%; PADDING-BOTTOM: 0px; COLOR: #890000; PADDING-TOP: 30px; FONT-FAMILY: Tahoma; HEIGHT: 50px; TEXT-ALIGN: left
+}
+#m_blog DIV.tit A {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #890000; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:visited {
+	COLOR: #890000; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.tit A:hover {
+	COLOR: #888
+}
+#m_blog SPAN.modtit {
+	COLOR: #888
+}
+#m_blog DIV.date {
+	BORDER-TOP: #e9bbbd 1px solid; FONT-SIZE: 11px; MARGIN: -22px 0px 8px 33px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-ALIGN: right
+}
+#m_blog DIV.cnt {
+	FONT-SIZE: 12px; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #5a1f01; LINE-HEIGHT: 20px
+}
+#m_blog {
+	LINE-HEIGHT: 200%! important
+}
+#m_blog DIV.cnt {
+	FONT-SIZE: 12px; COLOR: #5a1f01; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma
+}
+#m_blog DIV.cnt A {
+	FONT-SIZE: 12px; COLOR: #5a1f01; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:visited {
+	FONT-SIZE: 12px; COLOR: #5a1f01; LINE-HEIGHT: 20px; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.cnt A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #b9976e; LINE-HEIGHT: 20px; TEXT-DECORATION: underline
+}
+#m_blog DIV.cnt PRE {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 10px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-LEFT: 10px; BORDER-LEFT: #cccccc 8px solid; LINE-HEIGHT: 22px; MARGIN-RIGHT: 10px; FONT-FAMILY: Tahoma
+}
+#m_blog DIV.more {
+	PADDING-RIGHT: 28px! important; MARGIN: 0px 12px 0px 0px; HEIGHT: 50px! important; TEXT-ALIGN: right
+}
+#m_blog DIV.more A {
+	FONT-SIZE: 12px; BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/ef626500b1c5f49fe950cdcf.jpg) no-repeat; WIDTH: 100px! important; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; HEIGHT: 50px! important; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:visited {
+	COLOR: #4c4c4c; TEXT-DECORATION: none
+}
+#m_blog DIV.more A:hover {
+	TEXT-DECORATION: underline
+}
+#m_blog DIV.opt {
+	BACKGROUND: url(http://hiphotos.baidu.com/13811669952/pic/item/1d244d2f4031e6201f3089ca.jpg) no-repeat; MARGIN: 0px 12px 12px 0px; HEIGHT: 30px; TEXT-ALIGN: left
+}
+#m_blog DIV.opt {
+	PADDING-LEFT: 30px; FONT-SIZE: 12px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A {
+	FONT-SIZE: 12px; COLOR: #958a5c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_blog DIV.opt A:visited {
+	COLOR: #958a5c
+}
+#m_blog DIV.opt A:hover {
+	COLOR: #4c4c4c; TEXT-DECORATION: underline
+}
+#m_blog DIV.line {
+	BORDER-TOP: #e9bbbd 1px solid; MARGIN: 0px 0px 8px 33px
+}
+#m_blog DIV.none {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 100px; COLOR: #000; PADDING-TOP: 100px
+}
+#mod_profile .modth {
+	
+}
+#m_pro A {
+	COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_pro A:visited {
+	COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-DECORATION: none
+}
+#m_pro A:hover {
+	TEXT-DECORATION: underline
+}
+#m_pro DIV.image {
+	TEXT-ALIGN: center
+}
+#m_pro DIV.act {
+	MARGIN-TOP: 10px; TEXT-ALIGN: center
+}
+#m_pro DIV.user {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-ALIGN: center
+}
+#m_pro DIV.desc {
+	FONT-SIZE: 12px; COLOR: #4c4c4c; FONT-FAMILY: Tahoma; TEXT-ALIGN: center
+}
+#m_pro DIV.line {
+	BORDER-TOP: #0c161f 0px solid; MARGIN-TOP: 17px; LINE-HEIGHT: 17px
+}
+#m_pro TD {
+	FONT-SIZE: 12px; COLOR: #46412d; LINE-HEIGHT: 24px; FONT-FAMILY: Tahoma
+}
+#m_pro .photo .line {
+	
+}
+#m_pro .ref {
+	BORDER-RIGHT: #ddd 0px solid; BORDER-TOP: #ddd 0px solid; MARGIN-TOP: 10px; BORDER-LEFT: #ddd 0px solid; BORDER-BOTTOM: #ddd 0px solid
+}
+#m_pro .ref .tit {
+	PADDING-LEFT: 10px; BACKGROUND: #eee; BORDER-BOTTOM: #ddd 1px solid
+}
+#m_pro .ref .cnt {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+#m_pro .basic TD {
+	FONT-SIZE: 12px; COLOR: #46412d
+}
+#m_pro .basic .tit {
+	FONT-WEIGHT: bold
+}
+#m_pro .basic A:hover {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #261cdc; PADDING-BOTTOM: 1px; COLOR: #fff; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+#m_pro .basic A.nlk:hover {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #196cca; PADDING-TOP: 0px; BACKGROUND-COLOR: #fff; TEXT-DECORATION: underline
+}
+#m_pro .pline {
+	BORDER-TOP: #a6a6a6 0px dashed; MARGIN-TOP: 10px; MARGIN-LEFT: 5px; LINE-HEIGHT: 10px
+}
+#m_pro .pitem {
+	FONT-SIZE: 12px; MARGIN-LEFT: 5px; LINE-HEIGHT: 22px
+}
+#m_pro .pitem .tit {
+	COLOR: #46412d
+}
+#m_pro .pitem A:hover {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #261cdc; PADDING-BOTTOM: 1px; COLOR: #fff; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+#mod_bgmusic .modth {
+	
+}
+#mod_bgmusic {
+	DISPLAY: block; no-repeat: 
+}
+#phx {
+	FILTER: Alpha(Opacity=100, FinishOpacity=10, Style=2, StartX=20, StartY=40, FinishX=0, FinishY=0) gray; WIDTH: 200px; HEIGHT: 32px
+}

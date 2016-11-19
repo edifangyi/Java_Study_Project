@@ -1,0 +1,1 @@
+document.writeln("<br><a href=\"http:\/\/bbs.diybl.com\/register.php\" target=\"_blank\" class=\"redlink\">【到本站论坛,与同行交流】<\/a>")

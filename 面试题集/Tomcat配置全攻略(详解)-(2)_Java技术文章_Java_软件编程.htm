@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0070)http://www.diybl.com/course/3_program/java/javajs/2007104/75913_2.html -->
+<HTML><HEAD><TITLE>Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程</TITLE>
+<META http-equiv=Content-Type content=text/html;charset=gb2312>
+<META content=www.diybl.com,DIY部落版权所有 name=Copyright>
+<META content=Tomcat配置全攻略(详解)_Java技术文章_Java_软件编程 name=keywords>
+<META 
+content="Tomcat配置全攻略(详解)_Java技术文章_这两个指令使用格式如下： WebAppConnection [connection name] [provider] [host:por.." 
+name=description>
+<META content=index,follow name=robots>
+<META content=INDEX,FOLLOW name=GOOGLEBOT><LINK href="article2.css" 
+type=text/css rel=stylesheet><LINK 
+href="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/article2.css" type=text/css 
+rel=stylesheet>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/article.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/1030303.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY><INPUT type=hidden value=75913 name=passage_id><INPUT type=hidden 
+value=1030303 name=catalog_id> 
+<DIV id=wrap>
+<DIV class=top_bar align=center>
+<TABLE cellSpacing=0 width=935>
+  <TBODY>
+  <TR>
+    <TD><A href="http://www.diybl.com/">网站首页</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://news.diybl.com/" target=_blank>新闻首页</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/1_web/">网页设计</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/2_picdesign/">图形动画</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/3_program/">软件编程</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/4_webprogram/">网站开发</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/5_office/">办公软件</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/6_system/">操作系统</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/7_databases/">数据库</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/webjsh/">网络技术</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/comshiti/">认证考试</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/fwzl/">范文资料</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/course/hack/">黑客攻防</A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://www.diybl.com/chm/" target=_blank><FONT 
+      color=red>书籍教程</FONT></A></TD>
+    <TD class=top_bar_sline></TD>
+    <TD><A href="http://bbs.diybl.com/" 
+target=_blank>进入论坛</A></TD></TR></TBODY></TABLE></DIV>
+<TABLE class=adNone id=PublicRelation cellSpacing=0 cellPadding=0 width=950 
+border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=864>
+      <DIV class=logo><A href="http://www.diybl.com/" target=_blank><IMG 
+      height=60 src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/logo.gif" 
+      width=200></A></DIV>
+      <DIV class=ad_f1 id=ad_f1>
+      <SCRIPT 
+      src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f1.js"></SCRIPT>
+      </DIV><!--<div class="top_bar2">-->
+      <UL class=menu>
+        <LI><A href="http://www.diybl.com/course/3_program/java/" 
+        target=_blank><SPAN>Java</SPAN></A>
+        <LI><A href="http://www.diybl.com/course/3_program/java/javaxl/" 
+        target=_blank><SPAN>Java系列教程</SPAN></A>
+        <LI><A href="http://www.diybl.com/course/3_program/java/javashl/" 
+        target=_blank><SPAN>Java实例教程</SPAN></A>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/f76cftksdtk.html" 
+        target=_blank><SPAN>Java技术文章</SPAN></A></LI></UL><!--</div>--></TD>
+    <TD width=6></TD>
+    <TD vAlign=top align=middle width=100>
+      <DIV class=hotNCout>
+      <DIV class=hotNC>
+      <UL>
+        <LI><A 
+        href="javascript:window.external.addFavorite('http://www.diybl.com/','DIY部落');">加入收藏</A> 
+
+        <LI><A href="http://www.diybl.com/map.html" target=_blank>网站地图</A> 
+        <LI><A href="http://www.diybl.com/chm/" target=_blank>书籍教程</A> 
+        <LI><A href="http://www.diybl.com/user/register.asp" 
+        target=_blank>会员注册</A> </LI></UL></DIV></DIV></TD></TR></TBODY></TABLE>
+<DIV class=split style="HEIGHT: 3px"></DIV>
+<DIV class=ad_ftop id=ad_ftop>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_ftop.js"></SCRIPT>
+</DIV>
+<DIV class=subNav>
+<DIV style="FLOAT: right"><INPUT name=wd1> <INPUT onclick=tosearch(document.all.wd1); type=button value=" 千寻搜索 "></DIV><SPAN><A 
+href="http://www.diybl.com/">DIY部落</A> &gt;&gt; <A 
+href="http://www.diybl.com/course/3_program/">软件编程</A> &gt;&gt; <A 
+href="http://www.diybl.com/course/3_program/java/">Java</A> &gt;&gt; <A 
+href="http://www.diybl.com/course/3_program/java/javajs/f76cftksdtk.html">Java技术文章</A> 
+&gt;&gt; 正文</SPAN></DIV>
+<DIV class=split></DIV>
+<DIV class=main>
+<DIV class=lc_blue>
+<DIV class=lcBlk>
+<H1>Tomcat配置全攻略(详解)</H1>
+<DIV class=from_info>http://www.diybl.com/　2007-10-4 　网络　点击:<SPAN 
+style="FONT-WEIGHT: bold; COLOR: #ff0000">
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/p_count.htm" 
+lanuage="javascript"></SCRIPT>
+ </SPAN>　<A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75913_2.html#comment">[ 
+评论 ]</A></DIV>
+<DIV class=artibody>
+<DIV class=ad_f2 id=ad_f2>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f2.js"></SCRIPT>
+</DIV>
+<DIV class=ad_f3 id=ad_f3>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f3.js"></SCRIPT>
+</DIV>文章搜索： <INPUT maxLength=255 size=30 name=wd2> &nbsp;&nbsp; <INPUT onclick=tosearch(document.all.wd2); type=button value=千寻搜索><A 
+class=redlink 
+href="javascript:self.location='/user/chm/rar.asp?c_id=48375'">【点击打包该文章】</A>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/art_top.js"></SCRIPT>
+ 
+<P>这两个指令使用格式如下： <BR><BR>WebAppConnection [connection name] [provider] 
+[host:port]WebAppDeploy [application name] [connection name] [url path]&nbsp; 
+<BR>其中connection 
+name指定连接名，provider只能是warp，port端口与你的tomcat的配置文件server.xml最后几行指定的要保持一致。文件如下： 
+<BR><BR>&lt;Service name="Tomcat-Apache"&gt; &lt;Connector 
+className="org.apache.catalina.connector.warp.WarpConnector"port="8008" 
+minProcessors="5" maxProcessors="75"enableLookups="true"acceptCount="10" 
+debug="0"/&gt;******&lt;/Service&gt; <BR>application name与你在tomcat中部署的应用名一致，url 
+path指定访问这个应用的url。例如上面的例子可以通过http://localhost/examples/来访问tomcat中的examples应用。<BR><BR>(五)：中文问题 
+<BR>一般jsp的乱码问题可以通过在jsp中加入&lt;%@ page contentType="text/html;charset=GB2312" 
+%&gt;来解决，至于servlet的乱码在可以使用servlet2.3中提供的HttpServeletRequest.setCharacterEncoding函数。更详细的中文问题请见JSP/Servlet 
+中的汉字编码问题。 <BR><BR>四：综述 
+<BR>tomcat作为一个servlet(jsp也被编译为servlet执行)容器，其应用前景是非常好的，如果与jboss结合起来，则可以实现sun的j2ee规范(用jboss作ejb服务器)。jboss的官方网站也提供成了tomcat3.2*的jboss以供下载。另外一个开源的应用服务器(enhydra) 
+也是基于tomcat的，其提供了更友好的管理界面，部署应用程序也更简单，功能也更强大。<BR>&nbsp;<BR><BR>
+<P id=TBPingURL></P>
+<DIV class=ad_f10 id=ad_f10>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f10.js"></SCRIPT>
+</DIV>
+<DIV class=ad_f11 id=ad_f11>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f11.js"></SCRIPT>
+</DIV>
+<DIV class=kjy><STRONG>文章整理:</STRONG><A href="http://www.diybl.com/" 
+target=_blank><STRONG><FONT color=#cc0000>DIY部落</FONT></STRONG></A> 
+<STRONG>http://www.diybl.com</STRONG> (本站) 　　<A class=redlink 
+href="javascript:self.location='/user/chm/rar.asp?c_id=75913'">【点击打包该文章】</A></DIV>
+<DIV class=mmses><A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75913.html">[1]</A> 
+[2] </DIV></DIV>
+<DIV class=ad_f4 id=ad_f4>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f4.js"></SCRIPT>
+</DIV>
+<DIV class=mediacontent>如果图片或页面不能正常显示请<A class=redlink 
+onmouseover="this.style.cursor='hand';" 
+onclick="openerror('75913','Tomcat配置全攻略(详解)');">点击这里</A>　站内搜索： <INPUT 
+maxLength=255 size=25 name=wd3> &nbsp;&nbsp;<INPUT onclick=tosearch(document.all.wd3); type=button value=千寻搜索></DIV>
+<DIV style="CLEAR: both" align=center></DIV>
+<DIV class=toollinks>【<A 
+href="javascript:window.external.addFavorite(window.location,'Tomcat配置全攻略(详解)-DIY部落');">收藏此页</A>】【<A 
+href="http://www.diybl.com/course/3_program/java/javajs/f76cftksdtk.html" 
+target=_blank>栏目页面</A>】【<A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75913_2.html#comment">发表评论</A>】【<A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75913_2.html#">返回顶部</A>】【<A 
+href="javascript:window.close()">关闭</A>】 </DIV>
+<DIV class=p_bottom>上一篇文章：<A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75914.html">Tomcat配置全攻略(特设)</A><BR>下一篇文章：<A 
+href="http://www.diybl.com/course/3_program/java/javajs/2007104/75912.html">J2EE面试集绵(附答案)</A></DIV></DIV>
+<DIV style="CLEAR: both; BACKGROUND: #fff; OVERFLOW: hidden; HEIGHT: 8px"></DIV>
+<DIV id=links align=center>
+<TABLE class=xgzt cellSpacing=0 cellPadding=0 width=687>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-LEFT: 5px" bgColor=#e1effa>
+      <H3>推荐文章</H3></TD></TR>
+  <TR>
+    <TD bgColor=#fcfeff>
+      <DIV class="tj_l tj"><NOBR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/200832/102302.html" 
+      target=_blank>自己出的几道关于Spring和Hibernate的面试题</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008515/115950.html" 
+      target=_blank>转贴：java内存的思考与总结</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2007918/71812.html" 
+      target=_blank>jbpm业务日历实例</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008522/117679.html" 
+      target=_blank>prototype中的Hash类的使用</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2007104/75890.html" 
+      target=_blank>Tomecat数据源的配置</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008610/124227.html" 
+      target=_blank>用串口操作手机收发短信总结</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008531/118283.html" 
+      target=_blank>自己实现IoC,AOP容器</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008610/124141.html" 
+      target=_blank>Lucene的使用与优化 </A></DIV>
+      <DIV class="tj_r tj"><NOBR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008623/127639.html" 
+      target=_blank>欧阳俊曦精通WebLogic / II</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/200867/123494.html" 
+      target=_blank>Struts2：struts.xml常用配置解析</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008215/99791.html" 
+      target=_blank>MyEclipse快捷键与插件大全</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/200867/123537.html" 
+      target=_blank>Java 6 RowSet 使用完全剖析</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/20071211/91572.html" 
+      target=_blank>Open Session in View</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/2008525/117811.html" 
+      target=_blank>MyEclipse Hibernate 快速入门中文版与Hibernate的相关配置属性</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/200867/123392.html" 
+      target=_blank>Struts2 + Spring + Hibernate 简单的整合例子（一）</A><BR><A 
+      href="http://www.diybl.com/course/3_program/java/javajs/20071023/79529.html" 
+      target=_blank>破除java神话之原子操作都是线程安全的</A></DIV></NOBR></TD></TR></TBODY></TABLE></DIV>
+<DIV style="CLEAR: both; BACKGROUND: #fff; OVERFLOW: hidden; HEIGHT: 8px"></DIV>
+<DIV class=cleanblock2 
+style="BORDER-RIGHT: #dedfde 1px solid; BORDER-TOP: #dedfde 1px solid; BACKGROUND: #ededed; BORDER-LEFT: #dedfde 1px solid; BORDER-BOTTOM: #dedfde 1px solid">
+<H3>文章评论</H3></DIV>
+<DIV class=cleanblock3><IFRAME class=comm_index name=pindex 
+src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/CA6RWPMN.htm" 
+frameBorder=false width="100%" scrolling=no 
+onload="window.setTimeout('iframe_resize()',1000)" height=0></IFRAME></DIV>
+<DIV style="CLEAR: both; BACKGROUND: #fff; OVERFLOW: hidden; HEIGHT: 8px"></DIV>
+<FORM style="MARGIN-TOP: 0px" 
+action=/user/comment.asp?id=75913&amp;url=http://www.diybl.com/course/3_program/java/javajs/2007104/75913.html 
+method=post>
+<DIV class=comment_1>
+<DIV class=cleanblock2><A name=comment></A>
+<H3>请您留言</H3></DIV>
+<DIV class=cleanblock style="PADDING-RIGHT: 20px; PADDING-LEFT: 20px"><LABEL 
+for=label>昵称: <INPUT onclick=this.focus();this.select() maxLength=20 size=15 
+value=DIY部落网友 name=hypocorism> 　　　　 <A 
+href="http://www.diybl.com/user/register.asp" target=_blank><FONT 
+color=red>注册会员</FONT></A> <A href="http://www.diybl.com/user/login.asp" 
+target=_blank>会员登陆</A> <BR><SPAN style="LINE-HEIGHT: 25px"><A 
+href="http://www.diybl.com/user/chgpage/cata.asp?num=1030303" 
+target=_blank><FONT color=#990000><STRONG>点击这里</STRONG></FONT></A></SPAN> 
+自己制作打包的chm电子书教程 <TEXTAREA style="VERTICAL-ALIGN: text-top; WIDTH: 100%; HEIGHT: 7em" onfocus=showchk(); name=content rows=6></TEXTAREA> 
+<LABEL id=checkCode style="DISPLAY: none">验证: <INPUT maxLength=5 size=8 
+name=loginnum>&nbsp;&nbsp;&nbsp;<IMG id=codeImg 
+style="VERTICAL-ALIGN: middle; CURSOR: pointer; HEIGHT: 18px" 
+onclick="this.src='/user/getcode.asp?t='+Math.random()" alt=验证码,看不清楚?请点击刷新验证码 
+src="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</LABEL> <INPUT class=btn_2k3 style="MARGIN-TOP: 8px" type=submit value=发表评论> 
+</DIV></DIV>
+<DIV class=comment_1 
+style="FLOAT: left; MARGIN-LEFT: 6px; WIDTH: 313px; HEIGHT: 90px">
+<DIV class=cleanblock2>
+<H3>网友推荐文章</H3></DIV>
+<DIV class=cleanblock>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD style="PADDING-RIGHT: 15px">
+      <UL>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200886/134791.html" 
+        target=_blank>Gis之MapXtreme Java</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2008324/106049.html" 
+        target=_blank>JBoss3配置MySql数据库连接</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/20071226/95303.html" 
+        target=_blank>JComboBox与数组、数据库的结合--实例一</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2008610/124485.html" 
+        target=_blank>Lucene的使用与优化 </A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200847/108502.html" 
+        target=_blank>java api 帮助文档 chm 1.5 1.6 中文版英文版.</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200856/114777.html" 
+        target=_blank>Lucene的原理和应用</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200853/112275.html" 
+        target=_blank>java集合框架整理</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/20071111/85266.html" 
+        target=_blank>Java环境设置（windows平台）</A></LI></UL></TD></TR></TBODY></TABLE></DIV></DIV></FORM></DIV>
+<DIV class=mc_blue></DIV>
+<DIV class=rc_blue>
+<DIV class=ad_f6 id=ad_f6>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f6.js"></SCRIPT>
+</DIV>
+<DIV class=split></DIV>
+<DIV class=Part_M_1>
+<DIV class=title>
+<H2>最新新闻</H2></DIV>
+<DIV class=content>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/list.js"></SCRIPT>
+</DIV></DIV>
+<DIV class=split></DIV>
+<DIV class=fixedBLK>
+<DIV class=title>
+<H2>相关教程文章</H2></DIV>
+<DIV class=content>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <UL>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75925.html">如何知道装的eclipse插件已经正确安装</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75924.html">解释一个struts2抛出的异常</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75923.html">hibernate 
+        annotation中joined继承方式支持jpa规范不完整</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75922.html">全新java初学者实践教程14(java 
+        SE5.0版)－－－－垃圾收集器 </A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75921.html">全新java初学者实践教程16(java 
+        SE5.0版)－－－－基本语法5</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75920.html">安装Trac 
+        0.10.4</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75919.html">安装TracWebAdmin</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75918.html">安装TracAccountManager插件</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75917.html">安装TracXMLRpc插件</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75916.html">一个普通但常用的sesion问题</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75915.html">Tomcat5.5Mysql5.0连接池配置</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75914.html">Tomcat配置全攻略(特设)</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75913.html">Tomcat配置全攻略(详解)</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75912.html">J2EE面试集绵(附答案)</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75911.html">JAVA程序员面试32问</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75910.html">IT电子教育视频笔记</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75909.html">Java验证码资料精粹</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75908.html">一个JSP代码中传中文参数的问题</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75907.html">常用SQL语句集锦</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75906.html">Spring学习网址</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75905.html">How 
+        to use json-lib</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75904.html">Json-taglib教程</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75903.html">使用Jbuilder引用外部jar包制作的jar文件，运行时的问题</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75902.html">JSP页面显示乱码二、表单提交中文时出现乱码三、数据库连 
+        </A></LI></UL></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class=ad_f7 id=ad_f7>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f7.js"></SCRIPT>
+</DIV>
+<DIV class=split></DIV>
+<DIV class=fixedBLK>
+<DIV class=title>
+<H2>本栏目热门教程</H2></DIV>
+<DIV class=content>
+<TABLE cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <UL>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007114/83457.html" 
+        target=_blank>为tomcat6配置数据源</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007923/73110.html" 
+        target=_blank>用JAVA 实现“生产者－消费者”问题</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007917/71613.html" 
+        target=_blank>eclipse生成javadoc</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007104/75881.html" 
+        target=_blank>Java程序员面试宝典</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2007917/71713.html" 
+        target=_blank>如何安装JDK</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2008116/96535.html" 
+        target=_blank>利用bat反编译jar包生成源码jar包 </A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/2008325/107306.html" 
+        target=_blank>JBPM工作流引擎内核设计思想及构架</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/20071018/77898.html" 
+        target=_blank>Tomcat5.5连接池配置（oracle / mysql / sqlserver2000）</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200797/70041.html" 
+        target=_blank>MyEclipse学习笔记之二：MyEclipse下开发Web Service(Axis)</A></LI>
+        <LI><A 
+        href="http://www.diybl.com/course/3_program/java/javajs/200797/70146.html" 
+        target=_blank>Ant入门教程</A></LI></UL></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class=split></DIV>
+<DIV class=fixedBLK>
+<DIV class=title>
+<H2>频道地图</H2></DIV>
+<DIV class=content>
+<DIV class=map><A href="http://www.diybl.com/course/3_program/java/" 
+target=_blank>Java</A><BR>　<A 
+href="http://www.diybl.com/course/3_program/java/javaxl/" 
+target=_blank>Java系列教程</A><BR>　<A 
+href="http://www.diybl.com/course/3_program/java/javashl/" 
+target=_blank>Java实例教程</A><BR>　<A 
+href="http://www.diybl.com/course/3_program/java/javajs/" 
+target=_blank>Java技术文章</A><BR><A href="http://www.diybl.com/course/3_program/c/" 
+target=_blank>C</A><BR><A href="http://www.diybl.com/course/3_program/c++/" 
+target=_blank>C++</A><BR><A href="http://www.diybl.com/course/3_program/java/" 
+target=_blank>Java</A><BR><A href="http://www.diybl.com/course/3_program/vb/" 
+target=_blank>VB</A><BR><A href="http://www.diybl.com/course/3_program/delphi/" 
+target=_blank>Delphi</A><BR><A 
+href="http://www.diybl.com/course/3_program/rfoxpro/" 
+target=_blank>Foxpro</A><BR><A href="http://www.diybl.com/course/3_program/hb/" 
+target=_blank>汇编语言</A><BR><A href="http://www.diybl.com/course/3_program/game/" 
+target=_blank>游戏开发</A><BR><A href="http://www.diybl.com/course/3_program/jdkf/" 
+target=_blank>移动开发</A><BR><A href="http://www.diybl.com/course/3_program/gcs/" 
+target=_blank>软件工程师</A><BR><A href="http://www.diybl.com/course/3_program/rg/" 
+target=_blank>软工与管理</A><BR><A href="http://www.diybl.com/course/3_program/vc/" 
+target=_blank>VC</A><BR><A href="http://www.diybl.com/course/3_program/shell/" 
+target=_blank>shell编程</A></DIV></DIV></DIV>
+<DIV class=ad_f8 id=ad_f8>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f8.js"></SCRIPT>
+</DIV>
+<DIV class=blank></DIV></DIV></DIV>
+<DIV class=footer align=center><A href="http://www.diybl.com/guest.html" 
+target=_blank>DIY部落意见反馈留言板</A>　QQ：258622672　email：diybl@163.com　　欢迎批评指正<BR><BR><A 
+href="http://www.diybl.com/info_c.html">DIY部落简介</A> | <A 
+href="http://www.diybl.com/info_e.html">About DIY部落</A> | <A 
+href="javascript:openadinfo();">广告联系</A> | <A 
+href="javascript:openadinfo();">联系我们</A> | <A 
+href="javascript:window.external.addFavorite('http://www.diybl.com/','DIY部落');">收藏本站</A> 
+| <A href="http://www.diybl.com/link/index.asp">友情链接</A> | <A 
+href="http://www.diybl.com/map.html">网站地图</A> | <A 
+href="http://www.diybl.com/user/register.asp">会员注册</A> | <A 
+href="http://blog.diybl.com/space.php?uid=1">站长主页</A><BR><BR>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/art_bot.js"></SCRIPT>
+<BR><BR>陕ICP备06011157号　DIY部落 <A href="http://www.miibeian.gov.cn/">版权所有</A>
+<SCRIPT language=JavaScript 
+src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/stat.htm" 
+charset=gb2312></SCRIPT>
+ 
+<DIV class=ad_f9 id=ad_f9>
+<SCRIPT src="Tomcat配置全攻略(详解)-(2)_Java技术文章_Java_软件编程.files/ad_f9.js"></SCRIPT>
+</DIV></DIV></DIV></LABEL></BODY></HTML>

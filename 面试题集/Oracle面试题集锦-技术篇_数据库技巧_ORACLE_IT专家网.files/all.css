@@ -1,0 +1,1056 @@
+BODY {
+	FONT: 12px arial,simsun,sans-serif; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TD {
+	TEXT-ALIGN: left
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+H1 {
+	DISPLAY: none
+}
+LEGEND {
+	DISPLAY: none
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+FIELDSET {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+A:link {
+	COLOR: #16387c; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #16387c; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.mod EM {
+	FONT-STYLE: normal
+}
+.fl {
+	FLOAT: left
+}
+.fr {
+	FLOAT: right
+}
+.fn {
+	FLOAT: none
+}
+.cb {
+	CLEAR: both
+}
+.db {
+	DISPLAY: block
+}
+.navigation LI STRONG A:link {
+	COLOR: #ff3300
+}
+.navigation LI STRONG A:visited {
+	COLOR: #ff3300
+}
+.navigation LI STRONG A:hover {
+	COLOR: #ff3300
+}
+.navigation LI STRONG A:active {
+	COLOR: #ff3300
+}
+.header {
+	CLEAR: both; MARGIN: 0px auto 10px; WIDTH: 950px
+}
+.main {
+	CLEAR: both; MARGIN: 0px auto; WIDTH: 950px
+}
+.leaderboard {
+	CLEAR: both; MARGIN: 0px auto 10px; WIDTH: 950px; TEXT-ALIGN: center
+}
+.floor {
+	CLEAR: both; MARGIN: 0px auto; WIDTH: 950px
+}
+#topo {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; COLOR: #fff; PADDING-TOP: 4px; ZOOM: 1; TEXT-ALIGN: left
+}
+#topo .top_lefto {
+	FLOAT: left; COLOR: #fff
+}
+#topo .top_righto A {
+	MARGIN-LEFT: 0.25em
+}
+#topo .top_lefto A {
+	MARGIN-LEFT: 0.25em
+}
+#topo .top_righto {
+	FLOAT: right; MARGIN-RIGHT: 16px
+}
+#topo .login {
+	FONT-WEIGHT: bold; COLOR: #fff; MARGIN-RIGHT: 3px
+}
+#topo .top_lefto A:link {
+	COLOR: #fff
+}
+#topo .top_lefto A:visited {
+	COLOR: #fff
+}
+#topo .top_lefto A:active {
+	COLOR: #fff
+}
+#top {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 4px; COLOR: #a9b8c2; PADDING-TOP: 4px; ZOOM: 1; TEXT-ALIGN: left
+}
+#top .top_left {
+	FLOAT: left; COLOR: #06588a
+}
+#top .top_right A {
+	MARGIN-LEFT: 0.25em
+}
+#top .top_left A {
+	MARGIN-LEFT: 0.25em
+}
+#top .top_right {
+	FLOAT: right
+}
+#top .login {
+	FONT-WEIGHT: bold; COLOR: #a20000; MARGIN-RIGHT: 3px
+}
+#master {
+	CLEAR: both; ZOOM: 1; TEXT-ALIGN: left
+}
+#master:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+#master {
+	BORDER-RIGHT: #cad5db 1px solid; BORDER-TOP: #cad5db 0px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/hd_bg_a.gif) #eef3f6 repeat-x 0px 0px; BORDER-LEFT: #cad5db 1px solid; BORDER-BOTTOM: #cad5db 1px solid
+}
+#logo {
+	FLOAT: left
+}
+#srh {
+	FLOAT: left
+}
+#logo SPAN {
+	DISPLAY: block
+}
+.lg {
+	MARGIN-TOP: 0.5em; MARGIN-LEFT: 2.08em
+}
+#srh {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0.4em; WIDTH: 57.5em; PADDING-TOP: 0.4em
+}
+#ie_srh_form_bg {
+	DISPLAY: none; WIDTH: 100%; POSITION: absolute; HEIGHT: 100%
+}
+#srh_form_bg {
+	DISPLAY: none; WIDTH: 100%; POSITION: absolute; HEIGHT: 100%
+}
+.srh-frm {
+	MARGIN-LEFT: 2.17em; WIDTH: 710px; POSITION: relative; HEIGHT: 67px
+}
+#ie_srh_form_bg {
+	DISPLAY: block; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=http://www.ctocio.com.cn/w/share/817/search_bar.png); HEIGHT: 67px
+}
+#srh FORM {
+	PADDING-RIGHT: 22px; PADDING-LEFT: 22px; PADDING-BOTTOM: 22px; PADDING-TOP: 22px; POSITION: absolute
+}
+#v_srh_box STRONG A {
+	FONT-SIZE: 1.34em
+}
+#v_srh_box STRONG A:hover {
+	TEXT-DECORATION: none
+}
+#v_srh_box INPUT {
+	BORDER-TOP-WIDTH: 0px; PADDING-LEFT: 1px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.34em; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 30em; HEIGHT: 1.2em; BORDER-RIGHT-WIDTH: 0px
+}
+#v_srh_box SPAN {
+	FLOAT: left
+}
+#v_srh_box .srh_tit {
+	MARGIN: 0px 0.5em 0px 2em; LINE-HEIGHT: 1.85em
+}
+#v_srh_box .srh_bn_n {
+	BORDER-RIGHT: #7c7c7c 0px solid; BORDER-TOP: #7c7c7c 0px solid; VERTICAL-ALIGN: middle; BORDER-LEFT: #7c7c7c 0px solid; BORDER-BOTTOM: #7c7c7c 0px solid
+}
+#v_srh_box .srh_inp {
+	BORDER-RIGHT: #7c7c7c 0px solid; BORDER-TOP: #7c7c7c 0px solid; VERTICAL-ALIGN: middle; BORDER-LEFT: #7c7c7c 0px solid; BORDER-BOTTOM: #7c7c7c 0px solid
+}
+#v_srh_box .srh_inp {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 1px; BACKGROUND: #c3c3c3; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 1.5em; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+#v_srh_box .srh_bn_n {
+	BORDER-RIGHT: #878988 0px solid; PADDING-RIGHT: 1px; BORDER-TOP: #878988 0px solid; PADDING-LEFT: 1px; BACKGROUND: #c3c3c3; PADDING-BOTTOM: 1px; BORDER-LEFT: #878988 0px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #878988 0px solid; POSITION: relative
+}
+#v_srh_box .srh_bn_n BUTTON {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1.17em; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1_a.gif) #f2f6f9 0px 150px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 8em; COLOR: #06588a; HEIGHT: 1.5em; BORDER-RIGHT-WIDTH: 0px
+}
+#v_srh_box .srh_bn_n {
+	MARGIN-RIGHT: 0.5em
+}
+#v_srh_box .srh_bn_n BUTTON {
+	WIDTH: 6em
+}
+#srh .pd {
+	MARGIN-LEFT: 2em
+}
+#srh .pd STRONG {
+	MARGIN-TOP: 2px; FONT-WEIGHT: normal; BACKGROUND: #878988; FLOAT: left; WIDTH: 5em; MARGIN-RIGHT: 0.4em
+}
+#srh .pd EM {
+	DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 1.17em; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bn_bg.gif) #e0ebf2 0px 0px; COLOR: #fff; HEIGHT: 1.45em
+}
+#srh .pd EM A {
+	BORDER-RIGHT: #878988 1px solid; BORDER-TOP: #878988 1px solid; DISPLAY: block; PADDING-LEFT: 1.4em; FONT-SIZE: 12px; BORDER-LEFT: #878988 1px solid; COLOR: #fff; LINE-HEIGHT: 1.6em; BORDER-BOTTOM: #878988 1px solid
+}
+.navigation {
+	CLEAR: both; BORDER-RIGHT: #dde1e4 1px solid; BORDER-TOP: #dde1e4 1px solid; PADDING-LEFT: 6px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/navigation1_bg.gif) -7px 50%; MARGIN: 0px auto 10px; BORDER-LEFT: #dde1e4 1px solid; WIDTH: 929px; PADDING-TOP: 6px; BORDER-BOTTOM: #dde1e4 1px solid; HEIGHT: 34px
+}
+.navigation UL {
+	HEIGHT: 17px
+}
+.leftsidebar {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; WIDTH: 88px; PADDING-TOP: 0px
+}
+.leftsidebar DL {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bd_bg_a.gif) #eef1f5 0px 0px; FLOAT: left; MARGIN-BOTTOM: 5px; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 88px; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.leftsidebar IMG {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.leftsidebar DT {
+	CLEAR: both; DISPLAY: block; PADDING-LEFT: 4px; FONT-WEIGHT: bold; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1_a.gif) #f2f6f9 repeat-x; COLOR: #06588a; PADDING-TOP: 3px; BORDER-BOTTOM: #fbfff3 1px solid; HEIGHT: 16px; TEXT-ALIGN: left
+}
+.leftsidebar DD {
+	CLEAR: both; DISPLAY: block; PADDING-LEFT: 8px; FLOAT: left; WIDTH: 80px; LINE-HEIGHT: 22px; HEIGHT: 16px; TEXT-ALIGN: left
+}
+.mainblock {
+	FLOAT: right; WIDTH: 850px
+}
+.content {
+	FLOAT: left; WIDTH: 500px
+}
+.rightcontent {
+	FLOAT: right; WIDTH: 340px
+}
+.rightcontent2 {
+	FLOAT: right; WIDTH: 296px
+}
+.leftcontent {
+	FLOAT: left; WIDTH: 644px
+}
+#news .leftcontent {
+	FLOAT: left; WIDTH: 600px
+}
+.mod {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 0px solid; BACKGROUND: #fff; MARGIN-BOTTOM: 10px; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.mod .bd {
+	PADDING-RIGHT: 1.25em; PADDING-LEFT: 1.25em; PADDING-BOTTOM: 0.84em; PADDING-TOP: 0.84em; ZOOM: 1
+}
+.mod .bd_a {
+	BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/dot.gif) repeat-x 50% bottom; MARGIN-BOTTOM: 0.7em; PADDING-BOTTOM: 0.5em
+}
+#crm .rightcontent .mod .bd_a {
+	BACKGROUND: repeat-x 50% bottom; MARGIN-BOTTOM: 0.2em; PADDING-BOTTOM: 0.2em
+}
+#erp .rightcontent .mod .bd_a {
+	BACKGROUND: repeat-x 50% bottom; MARGIN-BOTTOM: 0.7em; PADDING-BOTTOM: 0.5em
+}
+.mod .bd_a {
+	CLEAR: both; ZOOM: 1
+}
+.mod .bd_b {
+	CLEAR: both; ZOOM: 1
+}
+.mod LI {
+	LINE-HEIGHT: 1.6em
+}
+.mod .hd {
+	LINE-HEIGHT: 1.58em; ZOOM: 1; HEIGHT: 21px
+}
+.mod .hd H2 {
+	DISPLAY: inline; FONT-SIZE: 12px; FLOAT: left; MARGIN-LEFT: 1em; COLOR: #06588a
+}
+.mod .hd H3 {
+	DISPLAY: inline; FONT-SIZE: 12px; FLOAT: left; MARGIN-LEFT: 1em; COLOR: #06588a
+}
+.comments H2 {
+	DISPLAY: inline; FONT-SIZE: 12px; COLOR: #06588a
+}
+.mod .hd H2 A {
+	MARGIN: 0px 0.25em
+}
+.mod .hd EM {
+	FLOAT: right; MARGIN-RIGHT: 1.17em
+}
+.mod .hd EM LI {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FLOAT: left; MARGIN-LEFT: 0.4em; LIST-STYLE-TYPE: none; HEIGHT: 21px
+}
+#whitepaper .mod .hd EM LI {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/s_d2.gif) no-repeat 0px -14px; FLOAT: left; MARGIN-LEFT: 0.5em; LIST-STYLE-TYPE: none; HEIGHT: 21px
+}
+#pa .hd {
+	BORDER-TOP: #a5b5c0 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1.gif) #e0ebf2 repeat-x 0px 0px; BORDER-BOTTOM: #fff 1px solid
+}
+.mod .hd {
+	BORDER-TOP: #a5b5c0 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1.gif) repeat-x 0px 0px; BORDER-BOTTOM: #fff 1px solid
+}
+.comments {
+	BORDER-TOP: #a5b5c0 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1.gif) repeat-x 0px 0px; BORDER-BOTTOM: #fff 1px solid
+}
+#space_block .bd LI {
+	FLOAT: left; LIST-STYLE-TYPE: none
+}
+#space_block .bd .bd_a LI {
+	WIDTH: 30%; LINE-HEIGHT: 2em; TEXT-ALIGN: center
+}
+#space_block .bd .bd_b LI {
+	WIDTH: 49.9%
+}
+.headlines {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 5px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ccc 1px solid; WIDTH: 488px; PADDING-TOP: 5px; BORDER-BOTTOM: #ccc 1px solid; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+#space_block .bd {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.cell {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; DISPLAY: inline; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 8px 5px 0px 3px; OVERFLOW: hidden; BORDER-LEFT: #eee 1px solid; WIDTH: 102px; PADDING-TOP: 5px; BORDER-BOTTOM: #eee 1px solid; HEIGHT: 112px; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+.thumb {
+	HEIGHT: 80px
+}
+.thumb IMG {
+	MARGIN: 0px auto
+}
+.thumb A IMG {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+.thumb A:hover IMG {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.people {
+	DISPLAY: block; FONT-SIZE: 12px; OVERFLOW: hidden; HEIGHT: 65px
+}
+#features #space_block .bd {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+#webcast #space_block .bd {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#features .cell {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; DISPLAY: inline; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 0px 5px 10px 0px; OVERFLOW: hidden; BORDER-LEFT: #eee 1px solid; WIDTH: 127px; PADDING-TOP: 5px; BORDER-BOTTOM: #eee 1px solid; HEIGHT: 116px; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+#features .thumb {
+	HEIGHT: 80px
+}
+#features H3 {
+	FONT-SIZE: 14px
+}
+#features .mod {
+	BORDER-RIGHT: #6f6f6f 1px solid; BORDER-TOP: #6f6f6f 0px solid; BACKGROUND: #fff; MARGIN-BOTTOM: 10px; BORDER-LEFT: #6f6f6f 1px solid; BORDER-BOTTOM: #6f6f6f 1px solid
+}
+#features .mod .hd {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #6f6f6f; FLOAT: none; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; HEIGHT: 20px
+}
+#features .mod .hd H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 2px; FONT: bold 14px 宋体; COLOR: #fff; PADDING-TOP: 4px
+}
+#features .mod .hd H2 A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 0px; FONT: bold 14px 宋体; COLOR: #fff; PADDING-TOP: 3px
+}
+#features .mod .hd H2 A:link {
+	TEXT-DECORATION: underline
+}
+#features .mod .hd H2 A:visited {
+	TEXT-DECORATION: underline
+}
+#features .mod .hd H2 A:hover {
+	TEXT-DECORATION: none
+}
+#features .mod .hd H2 A:active {
+	TEXT-DECORATION: none
+}
+#webcast .story .mod .bd {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#webcast .story OL LI {
+	FONT-WEIGHT: normal; BACKGROUND: no-repeat -5px 8px; MARGIN-BOTTOM: 4px; MARGIN-LEFT: 5px; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: disc
+}
+#webcast .story UL LI {
+	FONT-WEIGHT: normal; BACKGROUND: no-repeat -5px 8px; MARGIN-BOTTOM: 4px; MARGIN-LEFT: 5px; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: disc
+}
+.topCont IMG {
+	BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; FLOAT: left; MARGIN: 5px; BORDER-LEFT: #000 1px solid; BORDER-BOTTOM: #000 1px solid
+}
+.topCont .Cont {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FLOAT: left; PADDING-BOTTOM: 10px; MARGIN: 5px 0px 0px 5px; WIDTH: 180px; WORD-BREAK: break-all; PADDING-TOP: 0px
+}
+.picTit {
+	FLOAT: left; MARGIN: 4px; TEXT-ALIGN: center
+}
+.picTit IMG {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 3px; MARGIN-BOTTOM: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: #eee 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #eee 1px solid
+}
+.picTit01 {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 7px; BORDER-TOP: #eee 1px solid; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 7px; MARGIN: 5px; BORDER-LEFT: #eee 1px solid; COLOR: #000; PADDING-TOP: 7px; BORDER-BOTTOM: #eee 1px solid; HEIGHT: 160px; TEXT-ALIGN: left
+}
+.picTit01 IMG {
+	MARGIN-BOTTOM: 3px
+}
+.picTit01 DIV {
+	WIDTH: 120px
+}
+.focus {
+	FLOAT: left; WIDTH: 110px; LINE-HEIGHT: 12px; MARGIN-RIGHT: 1em; TEXT-ALIGN: center
+}
+.focus IMG {
+	BORDER-RIGHT: #a5b5c0 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #a5b5c0 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #a5b5c0 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.mod .focus IMG {
+	MARGIN-TOP: 0em; MARGIN-BOTTOM: 0.3em
+}
+.mod .focus DIV {
+	LINE-HEIGHT: 13px
+}
+#home .rightcontent .mod .focus DIV {
+	MARGIN-TOP: 2px; OVERFLOW: hidden; WIDTH: 130px; LINE-HEIGHT: 13px; PADDING-TOP: 2px; HEIGHT: 28px
+}
+.list {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 178px; LINE-HEIGHT: 1.6em; HEIGHT: 98px; TEXT-ALIGN: left
+}
+#webservices .list {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 178px; LINE-HEIGHT: 1.6em; HEIGHT: 60px; TEXT-ALIGN: left
+}
+.list H3 {
+	FONT-SIZE: 12px
+}
+.list P {
+	MARGIN: 0.2em 0px
+}
+.list LI {
+	CLEAR: both; OVERFLOW: hidden; LIST-STYLE-TYPE: none; HEIGHT: 1.75em; TEXT-ALIGN: left
+}
+.list LI EM {
+	COLOR: #000
+}
+.list LI A {
+	MARGIN-RIGHT: 0.2em
+}
+.module_list0 LI {
+	LIST-STYLE-POSITION: inside; FONT-SIZE: 14px; OVERFLOW: hidden; LINE-HEIGHT: 21px; LIST-STYLE-TYPE: disc; HEIGHT: 24px; TEXT-ALIGN: left
+}
+.module_list0 LI STRONG {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: right; OVERFLOW: hidden; WIDTH: 65px; COLOR: #aaa
+}
+#news .module_list0 LI STRONG {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: right; OVERFLOW: hidden; WIDTH: 100px; COLOR: #aaa
+}
+.module_list0 LI EM {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #bbb
+}
+.module_list0 LI EM A:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #bbb
+}
+.module_list0 LI EM A:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #bbb
+}
+.module_list0 LI EM A:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #bbb
+}
+.module_list0 LI EM A:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #bbb
+}
+.module_list0 LI STRONG A:link {
+	COLOR: #aaa
+}
+.module_list0 LI STRONG A:visited {
+	COLOR: #aaa
+}
+.module_list LI {
+	LIST-STYLE-POSITION: inside; FONT-SIZE: 12px; OVERFLOW: hidden; LINE-HEIGHT: 21px; LIST-STYLE-TYPE: disc; HEIGHT: 24px; TEXT-ALIGN: left
+}
+.module_list LI STRONG {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: right; OVERFLOW: hidden; WIDTH: 65px; COLOR: #aaa
+}
+#news .module_list LI STRONG {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: right; OVERFLOW: hidden; WIDTH: 100px; COLOR: #aaa
+}
+.module_list LI STRONG A:link {
+	COLOR: #aaa
+}
+.module_list LI STRONG A:visited {
+	COLOR: #aaa
+}
+.floor {
+	CLEAR: both; WIDTH: 950px
+}
+.floor DIV {
+	CLEAR: both; BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; MARGIN-BOTTOM: 10px; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 948px; BORDER-BOTTOM: #a5b5c0 1px solid; HEIGHT: 28px
+}
+.floor SPAN {
+	CLEAR: both; DISPLAY: block; BACKGROUND: #eef1f5; WIDTH: 948px; COLOR: #666666; PADDING-TOP: 7px; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.floor SPAN A:link {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.floor SPAN A:visited {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: none
+}
+.floor SPAN A:active {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: underline
+}
+.floor SPAN A:hover {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; TEXT-DECORATION: underline
+}
+.floor_1 {
+	CLEAR: both; PADDING-BOTTOM: 10px; WIDTH: 948px; COLOR: #656565; LINE-HEIGHT: 23px; TEXT-ALIGN: center
+}
+.floor_1 A:link {
+	FONT-SIZE: 12px; COLOR: #656565; FONT-FAMILY: "宋体","Arial"; TEXT-DECORATION: none
+}
+.floor_1 A:visited {
+	FONT-SIZE: 12px; COLOR: #656565; FONT-FAMILY: "宋体","Arial"; TEXT-DECORATION: none
+}
+.floor_1 A:active {
+	FONT-SIZE: 12px; COLOR: #656565; FONT-FAMILY: "宋体","Arial"; TEXT-DECORATION: underline
+}
+.floor_1 A:hover {
+	FONT-SIZE: 12px; COLOR: #656565; FONT-FAMILY: "宋体","Arial"; TEXT-DECORATION: underline
+}
+#footlogo {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; WIDTH: 200px; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.bq {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_1.gif) #e0ebf2 repeat-x 0px 0px; BORDER-LEFT: #a5b5c0 1px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #a5b5c0 1px; ZOOM: 1; HEIGHT: 20px
+}
+.bq UL {
+	WIDTH: 100%; POSITION: relative
+}
+.bq UL LI {
+	DISPLAY: block; FLOAT: left; WIDTH: 49.8%; COLOR: #06588a; BORDER-BOTTOM: #a5b5c0 1px solid; POSITION: relative
+}
+.bq LI.on {
+	BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_11.gif); WIDTH: 49.5%; BORDER-BOTTOM: #fff 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.leftcontent .on {
+	BORDER-RIGHT: #a5b5c0 1px solid; BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_11.gif); BORDER-LEFT: #a5b5c0 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.content .on {
+	BORDER-RIGHT: #a5b5c0 1px solid; BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_11.gif); BORDER-LEFT: #a5b5c0 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.rightcontent .on {
+	BORDER-RIGHT: #a5b5c0 1px solid; BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_11.gif); BORDER-LEFT: #a5b5c0 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+#mainContainer .on {
+	BORDER-RIGHT: #a5b5c0 1px solid; BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_11.gif); BORDER-LEFT: #a5b5c0 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.bq LI A {
+	DISPLAY: block
+}
+.rightcontent2 .mod .hd {
+	BORDER-TOP: #cd9f63 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_2.gif) #e0ebf2 repeat-x 0px 0px; BORDER-BOTTOM: #fff 1px solid
+}
+.rightcontent2 .mod {
+	BORDER-RIGHT: #cd9f63 1px solid; BORDER-TOP: #cd9f63 0px solid; BORDER-LEFT: #cd9f63 1px solid; BORDER-BOTTOM: #cd9f63 1px solid
+}
+.rightcontent2 .bq {
+	BORDER-RIGHT: #cd9f63 1px solid; BORDER-TOP: #cd9f63 1px solid; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bar_bg_2.gif) #e0ebf2 repeat-x 0px 0px; BORDER-LEFT: #cd9f63 1px solid; LINE-HEIGHT: 20px; BORDER-BOTTOM: #cd9f63 1px; ZOOM: 1; HEIGHT: 20px
+}
+.rightcontent2 .bq UL {
+	WIDTH: 100%; POSITION: relative
+}
+.rightcontent2 .bq UL LI {
+	DISPLAY: block; FLOAT: left; WIDTH: 49.8%; BORDER-BOTTOM: #cd9f63 1px solid; POSITION: relative
+}
+.rightcontent2 .bq LI.on {
+	BACKGROUND-POSITION: 0px 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(http://www.ctocio.com.cn/w/share/817/bar_bg_21.gif); BORDER-BOTTOM: #fff 1px solid; BACKGROUND-REPEAT: repeat-x
+}
+.rightcontent2 .leftcontent .on {
+	FONT-WEIGHT: bold
+}
+.rightcontent2 .bq LI A {
+	DISPLAY: block
+}
+#ContentArea {
+	CLEAR: both; WIDTH: 644px; HEIGHT: auto
+}
+.column376 {
+	WIDTH: 317px
+}
+#whitepaper #ContentArea {
+	CLEAR: both; WIDTH: 950px; HEIGHT: auto
+}
+#ContentArea_cio {
+	CLEAR: both; WIDTH: 950px; HEIGHT: auto
+}
+.column310 {
+	WIDTH: 310px
+}
+#dragableBoxesColumn1 {
+	MARGIN: 0px
+}
+#dragableBoxesColumn3 {
+	MARGIN: 0px
+}
+#dragableBoxesColumn2 {
+	MARGIN-LEFT: 10px
+}
+.areabot {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 310px; BORDER-BOTTOM: #a5b5c0 1px solid; HEIGHT: 10px
+}
+#home .rightcontent2 #l42 LI {
+	OVERFLOW: hidden; WIDTH: 248px
+}
+#vir .rightcontent #l41 .list {
+	WIDTH: 170px
+}
+#whatis {
+	BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/whatis.gif); OVERFLOW: hidden; HEIGHT: 136px
+}
+#whatisweek {
+	FLOAT: left; MARGIN: 14px 0px 0px 13px; OVERFLOW: hidden; WIDTH: 328px; HEIGHT: 72px
+}
+#whatisweek .db {
+	TEXT-ALIGN: left
+}
+#whatisweek SPAN {
+	DISPLAY: block; OVERFLOW: hidden; WIDTH: 320px; HEIGHT: 28px
+}
+#whatisweek .title {
+	DISPLAY: block; FONT: bold 12px 宋体; OVERFLOW: hidden; WIDTH: 320px; HEIGHT: 16px; TEXT-ALIGN: left
+}
+#whatisweek .title A {
+	OVERFLOW: hidden; WIDTH: 320px; HEIGHT: 16px
+}
+#whatislist {
+	FLOAT: right; MARGIN: 18px 3px 0px 20px; OVERFLOW: hidden; WIDTH: 550px; LINE-HEIGHT: 18px; HEIGHT: 72px
+}
+#whatislist UL {
+	FLOAT: left; WIDTH: 550px
+}
+#whatislist LI {
+	PADDING-LEFT: 8px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/bullet.gif) no-repeat 2px 4px; FLOAT: left; FONT: 12px 宋体; OVERFLOW: hidden; WIDTH: 100px; HEIGHT: 16px; TEXT-ALIGN: left
+}
+#whatislist2 LI {
+	PADDING-LEFT: 4px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/bullet.gif) no-repeat -1px 4px; FLOAT: left; FONT: 12px 宋体; OVERFLOW: hidden; WIDTH: 100px; HEIGHT: 16px; TEXT-ALIGN: left
+}
+#whatis_new LI {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/bullet.gif) no-repeat 2px 5px; FLOAT: left; FONT: 12px 宋体; OVERFLOW: hidden; WIDTH: 90px; HEIGHT: 15px; TEXT-ALIGN: left
+}
+#browse {
+	MARGIN-TOP: 14px; FLOAT: left; MARGIN-LEFT: 0px; WIDTH: 940px; HEIGHT: 25px; TEXT-ALIGN: center
+}
+#browse A {
+	FONT: bold 13px Arial
+}
+#browse SPAN {
+	MARGIN: 0px 10px
+}
+.story {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 598px; TEXT-ALIGN: left
+}
+.story .leftcontent {
+	FLOAT: left; WIDTH: 598px
+}
+.story .leftcontent .mod {
+	FLOAT: left; MARGIN-BOTTOM: 0px; WIDTH: 292px
+}
+.story .leftcontent .fl {
+	FLOAT: left
+}
+.story .leftcontent .fr {
+	FLOAT: right
+}
+.story .leftcontent .mod STRONG {
+	DISPLAY: none
+}
+.story H1 {
+	MARGIN-TOP: 10px; DISPLAY: block; FONT-SIZE: 22px
+}
+.story H5 {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #ccc 1px solid; DISPLAY: block; PADDING-LEFT: 8px; FONT-WEIGHT: normal; FONT-SIZE: 14px; BACKGROUND: #eee; MARGIN-BOTTOM: 16px; PADDING-BOTTOM: 8px; BORDER-LEFT: #ccc 1px solid; COLOR: #a20000; LINE-HEIGHT: 20px; PADDING-TOP: 8px; BORDER-BOTTOM: #ccc 1px solid
+}
+.posted {
+	DISPLAY: inline; FONT-SIZE: 12px; COLOR: #000; FONT-FAMILY: 宋体,Tahoma,Arial,Helvetica,sans-serif
+}
+.story P {
+	MARGIN-TOP: 0px; FONT-SIZE: 14px; MARGIN-BOTTOM: 16px; LINE-HEIGHT: 20px
+}
+.story OL LI {
+	FONT-WEIGHT: normal; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat 15px 8px; MARGIN-BOTTOM: 16px; MARGIN-LEFT: 15px; LINE-HEIGHT: 20px; LIST-STYLE-TYPE: none
+}
+.story UL LI {
+	FONT-WEIGHT: normal; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat 15px 8px; MARGIN-BOTTOM: 16px; MARGIN-LEFT: 15px; LINE-HEIGHT: 20px; LIST-STYLE-TYPE: none
+}
+.story .leftcontent .module_list0 LI {
+	FONT-WEIGHT: normal; LIST-STYLE-POSITION: inside; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0.5em; OVERFLOW: hidden; LINE-HEIGHT: 21px; LIST-STYLE-TYPE: disc; HEIGHT: 24px; TEXT-ALIGN: left
+}
+.story .topic_l .module_list3 LI {
+	FONT-WEIGHT: normal; LIST-STYLE-POSITION: inside; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0.5em; OVERFLOW: hidden; LINE-HEIGHT: 21px; LIST-STYLE-TYPE: disc; HEIGHT: 24px; TEXT-ALIGN: left
+}
+.story .topic_r .module_list3 LI {
+	FONT-WEIGHT: normal; LIST-STYLE-POSITION: inside; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0.5em; OVERFLOW: hidden; LINE-HEIGHT: 21px; LIST-STYLE-TYPE: disc; HEIGHT: 24px; TEXT-ALIGN: left
+}
+#topic .topic_l {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; MARGIN: 5px 0px; OVERFLOW: hidden; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 295px; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+#topic .topic_r {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; MARGIN: 5px 0px; OVERFLOW: hidden; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 295px; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.story .dots {
+	MARGIN-TOP: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/dot.gif) repeat-x 50% bottom; MARGIN-BOTTOM: 15px; PADDING-BOTTOM: 7px; TEXT-ALIGN: left
+}
+#product .dots {
+	MARGIN-TOP: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/dot.gif) repeat-x 50% bottom; MARGIN-BOTTOM: 15px; PADDING-BOTTOM: 7px; TEXT-ALIGN: left
+}
+#askexpert .dots {
+	MARGIN-TOP: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/dot.gif) repeat-x 50% bottom; MARGIN-BOTTOM: 15px; PADDING-BOTTOM: 7px; TEXT-ALIGN: left
+}
+.story .mod .bd .module_list .dots SPAN {
+	DISPLAY: block; MARGIN-BOTTOM: 5px; OVERFLOW: hidden; LINE-HEIGHT: 18px; HEIGHT: 52px; TEXT-ALIGN: left
+}
+#product .mod .bd .module_list .dots SPAN {
+	DISPLAY: block; MARGIN-BOTTOM: 5px; OVERFLOW: hidden; LINE-HEIGHT: 18px; HEIGHT: 52px; TEXT-ALIGN: left
+}
+#askexpert .mod .bd .module_list .dots SPAN {
+	DISPLAY: block; MARGIN-BOTTOM: 5px; OVERFLOW: hidden; LINE-HEIGHT: 18px; HEIGHT: 52px; TEXT-ALIGN: left
+}
+#product .mod .bd .module_list .dots .fr IMG {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+.story .mod .bd {
+	PADDING-RIGHT: 0.25em; PADDING-LEFT: 0.25em; PADDING-BOTTOM: 0.84em; PADDING-TOP: 0.84em; ZOOM: 1
+}
+DIV#textpage {
+	PADDING-LEFT: 10px; FONT-SIZE: 12px; MARGIN-BOTTOM: 8px; MARGIN-LEFT: 10px; WIDTH: 500px; TEXT-ALIGN: left
+}
+DIV#textpage UL {
+	MARGIN: 0px 4px 2px 10px; LIST-STYLE-TYPE: none; TEXT-ALIGN: left
+}
+DIV#textpage LI {
+	LIST-STYLE: disc url(http://www.yesky.com/TLimages/newcontent/y_newcontent42.gif) inside
+}
+DIV#textpage A:link {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+DIV#textpage A:visited {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+DIV#textpage A:active {
+	FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+DIV#textpage A:hover {
+	FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+#numpage {
+	FLOAT: right; MARGIN-BOTTOM: 10px
+}
+#numpage A {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-SIZE: 12px; BACKGROUND: #e7e7e7; PADDING-BOTTOM: 8px; MARGIN: 0px; COLOR: #06588a; PADDING-TOP: 8px; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+#numpage A {
+	COLOR: #06588a; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+#numpage A:link {
+	COLOR: #06588a; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+#numpage A:visited {
+	COLOR: #06588a; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+#numpage A:hover {
+	BACKGROUND: #0000cc; COLOR: #fff; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+#numpage A SPAN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #ff7f00; PADDING-TOP: 0px; FONT-FAMILY: sans-serif; TEXT-DECORATION: none
+}
+.story .keywords {
+	DISPLAY: block; WIDTH: 600px
+}
+.story .keywords LI {
+	PADDING-LEFT: 2px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; FONT: bold 14px 宋体; OVERFLOW: hidden; LIST-STYLE-TYPE: none; HEIGHT: 16px; TEXT-ALIGN: left
+}
+.story .keywords LI A {
+	COLOR: #a20000
+}
+#comm {
+	MARGIN-TOP: 10px
+}
+#comm LI {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat -1px 4px; MARGIN-BOTTOM: 5px; FONT: 14px/18px 宋体; OVERFLOW: hidden; HEIGHT: 16px; TEXT-ALIGN: left
+}
+UNKNOWN {
+	FONT-WEIGHT: normal; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat -10px 8px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 50px; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: none
+}
+#askexpert .mod DL {
+	FLOAT: left; HEIGHT: 50px; TEXT-ALIGN: left
+}
+#askexpert .mod DT {
+	FONT-WEIGHT: bold
+}
+#askexpert .mod DD {
+	PADDING-LEFT: 6px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/s_d2.gif) no-repeat 0px -14px
+}
+#contentAdv {
+	FLOAT: left
+}
+#span_ad1 {
+	DISPLAY: none
+}
+#span_ad2 {
+	DISPLAY: none
+}
+#span_ad3 {
+	DISPLAY: none
+}
+.leaderboard TD {
+	
+}
+.leaderboard IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.leaderboard FIELDSET {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.leaderboard A:link {
+	FONT-SIZE: 12px; COLOR: #16387c; TEXT-DECORATION: none
+}
+.leaderboard A:visited {
+	FONT-SIZE: 12px; COLOR: #16387c; TEXT-DECORATION: none
+}
+.leaderboard A:hover {
+	FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.leaderboard .border2 TD {
+	OVERFLOW: hidden; LINE-HEIGHT: 14px; HEIGHT: 10px
+}
+.user_nav {
+	MARGIN-TOP: 10px; PADDING-LEFT: 20px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/tab_bg.jpg) 0px 0px; MARGIN-BOTTOM: 10px; HEIGHT: 36px
+}
+.user_nav .on {
+	FONT-WEIGHT: bold; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/tab_active.jpg) 0px 0px; FLOAT: left; WIDTH: 101px; COLOR: #fff; PADDING-TOP: 8px; HEIGHT: 22px
+}
+.user_nav LI {
+	BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/tab_inactive.jpg) 0px 0px; FLOAT: left; WIDTH: 101px; COLOR: #333; PADDING-TOP: 10px; HEIGHT: 20px
+}
+.user_nav .on A:link {
+	FONT-WEIGHT: bold; COLOR: #fff
+}
+.user_nav .on A:visited {
+	FONT-WEIGHT: bold; COLOR: #fff
+}
+.user_nav LI A:link {
+	COLOR: #333
+}
+.user_nav LI A:visited {
+	COLOR: #333
+}
+#topic .story .module_list LI {
+	PADDING-LEFT: 8px; LIST-STYLE-POSITION: inside; FONT-SIZE: 12px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat 0px 8px; MARGIN-BOTTOM: 3px; MARGIN-LEFT: 5px; OVERFLOW: hidden; LINE-HEIGHT: 18px; LIST-STYLE-TYPE: disc; HEIGHT: 19px; TEXT-ALIGN: left
+}
+#z .module_list LI {
+	LIST-STYLE-POSITION: inside; FLOAT: left; WIDTH: 270px; LIST-STYLE-TYPE: disc
+}
+#z .list {
+	WIDTH: 450px
+}
+#z1 {
+	FLOAT: left; WIDTH: 290px; MARGIN-RIGHT: 10px
+}
+#z2 {
+	FLOAT: left; WIDTH: 290px
+}
+#z1 .module_list LI {
+	LIST-STYLE-POSITION: inside; FLOAT: left; WIDTH: 250px; LIST-STYLE-TYPE: disc
+}
+#z2 .module_list LI {
+	LIST-STYLE-POSITION: inside; FLOAT: left; WIDTH: 250px; LIST-STYLE-TYPE: disc
+}
+#z1 .list {
+	WIDTH: 150px
+}
+#z2 .list {
+	WIDTH: 150px
+}
+#dialog {
+	WIDTH: 280px
+}
+#dialog FORM DIV {
+	MARGIN-TOP: 10px
+}
+#dialog .bd {
+	BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/mem_bg.gif) #fff repeat-x
+}
+#dialog .input_default {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; WIDTH: 150px; BORDER-BOTTOM: #a5b5c0 1px solid; HEIGHT: 20px
+}
+#dialog LABEL {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px
+}
+#updata .bd LI {
+	PADDING-LEFT: 8px; BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/bullet2.gif) no-repeat 0px 9px; FLOAT: left; WIDTH: 290px
+}
+#career #space_block .bd {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#career .cell {
+	BORDER-RIGHT: #eee 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #eee 1px solid; DISPLAY: inline; PADDING-LEFT: 5px; FLOAT: left; PADDING-BOTTOM: 5px; MARGIN: 8px 5px 0px 3px; OVERFLOW: hidden; BORDER-LEFT: #eee 1px solid; WIDTH: 137px; PADDING-TOP: 5px; BORDER-BOTTOM: #eee 1px solid; HEIGHT: 130px; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+#career .thumb {
+	HEIGHT: 100px
+}
+#career .thumb IMG {
+	MARGIN: 0px auto
+}
+#career .thumb A IMG {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid
+}
+#career .thumb A:hover IMG {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+#career .people {
+	DISPLAY: block; FONT-SIZE: 12px; OVERFLOW: hidden; HEIGHT: 60px
+}
+#other #left {
+	FLOAT: left; WIDTH: 317px; MARGIN-RIGHT: 10px
+}
+#other #right {
+	FLOAT: left; WIDTH: 317px
+}
+.kuan460 {
+	FLOAT: left; MARGIN-BOTTOM: 10px; WIDTH: 468px; TEXT-ALIGN: left
+}
+.blue01:link {
+	FONT-SIZE: 14px; COLOR: #074495; TEXT-DECORATION: none
+}
+.blue01:visited {
+	FONT-SIZE: 14px; COLOR: #074495; TEXT-DECORATION: none
+}
+.blue01:active {
+	FONT-SIZE: 14px; COLOR: #074495; TEXT-DECORATION: underline
+}
+.blue01:hover {
+	FONT-SIZE: 14px; COLOR: #074495; TEXT-DECORATION: underline
+}
+#Carousel {
+	VISIBILITY: hidden; MARGIN-BOTTOM: 0px; WIDTH: 460px; HEIGHT: 225px
+}
+#Carousel .bg {
+	WIDTH: 460px; POSITION: absolute; HEIGHT: 225px
+}
+#Carousel .slide {
+	WIDTH: 460px; POSITION: absolute; HEIGHT: 225px
+}
+#Carousel .frame {
+	WIDTH: 460px; POSITION: absolute; HEIGHT: 225px
+}
+#Carousel .slide .text {
+	FONT-SIZE: 12px; FLOAT: left; MARGIN: 10px 0px 0px 18px; WIDTH: 250px; LINE-HEIGHT: 16px; FONT-FAMILY: arial; POSITION: absolute
+}
+#Carousel .slide .text H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 20px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 6px; LINE-HEIGHT: 22px; PADDING-TOP: 0px; FONT-FAMILY: "黑体",Arial Black,sans-serif
+}
+#Carousel .slide .text H1 A {
+	COLOR: #000; TEXT-DECORATION: none
+}
+#Carousel .slide .text A {
+	COLOR: #06c
+}
+#Carousel .slide .text H1 A:hover {
+	TEXT-DECORATION: underline
+}
+#Carousel .dark .text H1 A {
+	COLOR: #fff
+}
+#Carousel #music .text H1 A {
+	COLOR: #fff
+}
+#Carousel #music .text {
+	COLOR: #e3e3e3
+}
+#Carousel #music .text A {
+	COLOR: #fff
+}
+#Carousel .dark {
+	COLOR: #fff
+}
+#Carousel .dark .text A {
+	COLOR: #ffff00
+}
+#Carousel .slide .image {
+	MARGIN-TOP: 10px; FLOAT: right; WIDTH: 200px; TEXT-ALIGN: center
+}
+#Carousel .slide .screen {
+	MARGIN-TOP: 10px; WIDTH: 200px
+}
+#Carousel .slide .album {
+	MARGIN: 19px 0px 0px; WIDTH: 180px
+}
+#Carousel .slide .feature {
+	MARGIN-TOP: 30px
+}
+#Carousel #CaroLinks {
+	MARGIN-TOP: 112px; VISIBILITY: visible; MARGIN-LEFT: 9px; WIDTH: 460px; LINE-HEIGHT: 42px; POSITION: absolute
+}
+#CaroLinks .bubble .bbg {
+	POSITION: absolute
+}
+#CaroLinks .bubble {
+	FLOAT: left; WIDTH: 222px; HEIGHT: 42px
+}
+#CaroLinks .bubble#on A {
+	TEXT-DECORATION: underline
+}
+#CaroLinks .bubble A IMG {
+	MARGIN-TOP: 2px; FLOAT: left; MARGIN-RIGHT: 6px
+}
+#CaroLinks .bubble A SPAN {
+	MARGIN-TOP: 8px; DISPLAY: block; FLOAT: left; OVERFLOW: hidden; WIDTH: 158px; CURSOR: pointer; WHITE-SPACE: nowrap; TEXT-OVERFLOW: clip
+}
+#CaroLinks .bubble A {
+	MARGIN-TOP: 5px; DISPLAY: block; FONT-SIZE: 12px; MARGIN-LEFT: 10px; OVERFLOW: hidden; WIDTH: 200px; COLOR: #06c; LINE-HEIGHT: 15px; MARGIN-RIGHT: 5px; FONT-FAMILY: verdana; POSITION: absolute; HEIGHT: 30px; TEXT-OVERFLOW: clip; TEXT-DECORATION: none
+}
+#CaroLinks .bubble A:hover {
+	TEXT-DECORATION: underline
+}
+#story .mod#olympics {
+	BORDER-RIGHT: #a5b5c0 1px solid; BORDER-TOP: #a5b5c0 1px solid; BORDER-LEFT: #a5b5c0 1px solid; BORDER-BOTTOM: #a5b5c0 1px solid
+}
+#story .mod#olympics .hd {
+	BACKGROUND: url(http://www.ctocio.com.cn/w/share/817/olympics.gif) repeat-x 0px 0px; BORDER-TOP-STYLE: none; HEIGHT: 34px; BORDER-BOTTOM-STYLE: none
+}

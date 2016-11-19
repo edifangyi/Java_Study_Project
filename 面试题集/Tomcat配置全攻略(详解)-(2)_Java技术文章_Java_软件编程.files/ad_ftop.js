@@ -1,0 +1,1 @@
+document.writeln("<a href=\"http:\/\/www.zzy.cn\/count.php?id=206\" target=_blank><img src=\"http:\/\/img.diybl.com\/ad\/960x60.gif\" border=0 width=950><\/a>")

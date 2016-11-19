@@ -1,0 +1,1024 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0052)http://database.ctocio.com.cn/tips/408/7624408.shtml -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
+href="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/all.css" type=text/css 
+rel=stylesheet>
+<META content="本文是 ORACLE 技术问题的面试，答案仅供参考…… Oracle面试题集锦-技术篇" name=description>
+<META content=Oracle,技术,面试 name=keywords>
+<SCRIPT type=text/javascript>
+function change0(n)
+{
+	m=3;
+	for(i=1;i<m;i++)
+	{
+		eval("document.getElementById('h0"+i+"').className=''");
+	}
+	eval("document.getElementById('h0"+n+"').className='on'");
+	for(i=1;i<m;i++)
+		eval("document.getElementById('l0"+i+"').style.display='none'");
+	eval("document.getElementById('l0"+n+"').style.display='block'");
+}
+</SCRIPT>
+<LINK href="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/all.css" type=text/css 
+rel=stylesheet><LINK id=cssfile type=text/css rel=stylesheet>
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/function.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/ajax.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/prototype.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/dragdrop.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/effects.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY id=story><!-- header -->
+<DIV class=header>
+<DIV id=top>
+<H1>CTOCIO IT专家网</H1><SPAN class=top_left>
+<SCRIPT src="" type=text/javascript charset=gb2312></SCRIPT>
+<!--
+　　[ <a href="#"  onclick="javascript:this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ctocio.com.cn/')">设为首页</a> ] [ <a href="#"  onclick="window.external.addFavorite('http://www.ctocio.com.cn/','IT专家网')" >加到收藏夹</a> ]
+--></SPAN><SPAN class=top_right><SPAN class=f-FC0><A 
+href="http://www.tianjimedia.com/">天极传媒</A>：</SPAN> <A 
+href="http://www.chinabyte.com/" target=_self>比特网</A> | <A 
+href="http://www.yesky.com/" target=_self>天极网</A> | <A 
+href="http://www.ctocio.com.cn/" target=_self>IT专家网</A> | <A 
+href="http://www.it365.com/" target=_self>IT商网</A> | <A 
+href="http://www.52pk.com/">52PK游戏网</A> | <A 
+href="http://www.mostar.cn/">手机天极</A> | <A href="http://www.itcpn.net/">IT分众</A> 
+|
+<SCRIPT>siterss(location.hostname);</SCRIPT>
+ </SPAN></DIV>
+<DIV id=master>
+<DIV id=logo><SPAN class=lg><A href="http://www.ctocio.com.cn/"><IMG alt=IT专家网 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/logo.gif" border=0></A></SPAN> 
+</DIV>
+<DIV id=srh>
+<DIV class=srh-frm>
+<DIV id=ie_srh_form_bg></DIV><IMG id=srh_form_bg 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/srh_bg.png" width="100%"> 
+<FORM id=searchbox_006431706705204708706:pdaaf3ianwa name=f 
+action=http://search.ctocio.com.cn/search.html method=get><INPUT type=hidden 
+value=006431706705204708706:pdaaf3ianwa name=cx> <INPUT type=hidden 
+value=FORID:11 name=cof> <INPUT type=hidden value=GB2312 name=ie> <INPUT 
+type=hidden value=GB2312 name=oe> <INPUT type=hidden value=zh-CN name=hl> 
+<FIELDSET><LEGEND>IT专家网搜索</LEGEND>
+<DIV id=v_srh_box><SPAN class=srh_inp><INPUT onmouseover=this.focus() 
+onfocus=this.select() size=65 name=q></SPAN> <SPAN class=srh_bn_n><BUTTON 
+name=sa type=submit value="搜索">搜 索</BUTTON></SPAN> </DIV><!-- 
+<span class="pd">
+<script type="text/javascript" charset="gb2312" src="http://passport.yesky.com/cas/bar/bar22.jsp"></script>
+
+<strong><em><a href="http://check.ctocio.com.cn/ctocio/registerAll.jsp" target="_blank">注册</a></em></strong>
+<strong><em><a href="http://check.ctocio.com.cn/ctocio/login.jsp" target="_blank">登录</a></em></strong> 
+
+ </span>
+ --></FIELDSET> </FORM></DIV></DIV></DIV></DIV><!-- header end -->
+<DIV class=leaderboard><SPAN id=ad1></SPAN></DIV><!-- navigation -->
+<DIV class=navigation id=__topnav>
+<UL>
+  <LI id=n_home style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://www.ctocio.com.cn/" target=_self name=专家首页>专家首页</A> </LI>
+  <LI id=n_cio style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://cio.ctocio.com.cn/" target=_self name=CIO>CIO</A> </LI>
+  <LI id=n_smallbizit style="FLOAT: left; WIDTH: 85px"><A 
+  href="http://smallbizit.ctocio.com.cn/" target=_self name=中小企业IT>中小企业IT</A> 
+  </LI>
+  <LI id=n_erp style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://erp.ctocio.com.cn/" target=_self name=ERP>ERP</A> </LI>
+  <LI id=n_server style="FLOAT: left; WIDTH: 60px"><A 
+  href="http://server.ctocio.com.cn/" target=_self name=服务器>服务器</A> </LI>
+  <LI id=n_storage style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://storage.ctocio.com.cn/" target=_self name=存储>存储</A> </LI>
+  <LI id=n_security style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://security.ctocio.com.cn/" target=_self name=安全>安全</A> </LI>
+  <LI id=n_exchange style="FLOAT: left; WIDTH: 85px"><A 
+  href="http://exchange.ctocio.com.cn/" target=_self name=Exchange>Exchange</A> 
+  </LI>
+  <LI id=n_database style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://database.ctocio.com.cn/" target=_self name=数据库>数据库</A> </LI>
+  <LI id=n_career style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://career.ctocio.com.cn/" target=_self name=IT职场>IT职场</A> </LI>
+  <LI id=n_whitepaper style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://whitepaper.ctocio.com.cn/" target=_self name=白皮书>白皮书</A> </LI>
+  <LI id=n_whatis style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://whatis.ctocio.com.cn/" target=_self name=Whatis>Whatis</A> </LI>
+  <LI id=n_hyhd style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://www.ctocio.com.cn/hyhd/" target=_self name=会员活动>会员活动</A> </LI>
+  <LI id=n_bbs style="FLOAT: left; WIDTH: 47px"><A 
+  href="http://bbs.ctocio.com.cn/" target=_self name=BBS>BBS</A> </LI></UL>
+<UL>
+  <LI id=n_mobilecomputing style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://mobilecomputing.ctocio.com.cn/" target=_self name=移动计算>移动计算</A> 
+  </LI>
+  <LI id=n_networking style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://networking.ctocio.com.cn/" target=_self name=网络>网络</A> </LI>
+  <LI id=n_olympics style="FLOAT: left; WIDTH: 85px"><A 
+  href="http://cio.ctocio.com.cn/olympics/" target=_self name=奥运信息化>奥运信息化</A> 
+  </LI>
+  <LI id=n_crm style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://crm.ctocio.com.cn/" target=_self name=CRM>CRM</A> </LI>
+  <LI id=n_virtualization style="FLOAT: left; WIDTH: 60px"><A 
+  href="http://virtualization.ctocio.com.cn/" target=_self name=虚拟化>虚拟化</A> 
+</LI>
+  <LI id=n_datacenter style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://datacenter.ctocio.com.cn/" target=_self name=数据中心>数据中心</A> </LI>
+  <LI id=n_soa style="FLOAT: left; WIDTH: 48px"><A 
+  href="http://soa.ctocio.com.cn/" target=_self name=SOA>SOA</A> </LI>
+  <LI id=n_winsystem style="FLOAT: left; WIDTH: 85px"><A 
+  href="http://winsystem.ctocio.com.cn/" target=_self 
+  name=WinSystem>WinSystem</A> </LI>
+  <LI id=n_webservices style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://webservices.ctocio.com.cn/" target=_self name=Web服务>Web服务</A> 
+  </LI>
+  <LI id=n_news style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://news.ctocio.com.cn/" target=_self name=商业报道>商业报道</A> </LI>
+  <LI id=n_askexpert style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://askexpert.ctocio.com.cn/" target=_self name=IT专家库>IT专家库</A> </LI>
+  <LI id=n_webcast style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://webcast.ctocio.com.cn/" target=_self name=Webcast>Webcast</A> 
+  </LI>
+  <LI id=n_qa style="FLOAT: left; WIDTH: 72px"><A 
+  href="http://www.ctocio.com.cn/qa/" target=_self name=QA烧考坊>QA烧考坊</A> </LI>
+  <LI id=n_bbs style="FLOAT: left; WIDTH: 47px"><A 
+  href="http://blog.ctocio.com.cn/" target=_self name=Blog>Blog</A> 
+</LI></UL></DIV><!-- navigation end -->
+<H1><A href="http://database.ctocio.com.cn/" target=_blank>数据库</A> | <A 
+href="http://database.ctocio.com.cn/oracle/" target=_blank>Oracle</A> | <A 
+href="http://database.ctocio.com.cn/db2/" target=_blank>DB2 </A>| <A 
+href="http://database.ctocio.com.cn/sqlserverzq/" target=_blank>SQL Server</A> | 
+<A href="http://database.ctocio.com.cn/mysql/" target=_blank>MySQL</A> | <A 
+href="http://database.ctocio.com.cn/datawarehouse/tt-database-bibi/" 
+target=_blank>商业智能</A> | <A 
+href="http://database.ctocio.com.cn/datawarehouse/tt-database-bibi/" 
+target=_blank>BI</A>&nbsp;| <A 
+href="http://database.ctocio.com.cn/dbmanagement/tt-database-dcdba" 
+target=_blank>DBA</A> | <A href="http://database.ctocio.com.cn/sybasepb/" 
+target=_blank>Sybase</A>| <A href="http://database.ctocio.com.cn/sqlserverzq" 
+target=_blank>SQL Server 2008</A></H1><!-- main -->
+<DIV class=main>
+<DIV class=story>
+<DIV class=mod style="BORDER-BOTTOM-STYLE: none">
+<DIV class=hd>
+<H2>您现在的位置： <A href="http://www.ctocio.com.cn/" target=_self>IT专家网</A> &gt; <A 
+href="http://database.ctocio.com.cn/" target=_self>数据库子站</A> &gt; <A 
+href="http://database.ctocio.com.cn/tips" target=_self>数据库技巧</A> 
+</H2></DIV></DIV>
+<H1>Oracle面试题集锦-技术篇</H1>
+<DIV class=dots>作者: 小灵, 　出处:IT专家网社区,　责任编辑: 李书琴,　
+<DIV class=posted>2007-10-22 09:18</DIV></DIV>
+<H5 
+style="PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-WEIGHT: normal; PADDING-BOTTOM: 8px; LINE-HEIGHT: 20px; PADDING-TOP: 8px">　　本文是Oracle技术人员求职面试题集锦，答案仅供参考……</H5>
+<DIV id=content>
+<DIV class=guanggao><SPAN id=contentAdv></SPAN></DIV>
+<P>　　1. 解释冷备份和热备份的不同点以及各自的优点</P>
+<P>　　解答：热备份针对归档模式的数据库，在数据库仍旧处于工作状态时进行备份。而冷备份指在数据库关闭后，进行备份，适用于所有模式的数据库。热备份的优点在于当备份时，数据库仍旧可以被使用并且可以将数据库恢复到任意一个时间点。冷备份的优点在于它的备份和恢复操作相当简单，并且由于冷备份的数据库可以工作在非归档模式下,数据库性能会比归档模式稍好。(因为不必将archive 
+log写入硬盘)</P>
+<P>　　2. 你必须利用备份恢复数据库，但是你没有控制文件，该如何解决问题呢?</P>
+<P>　　解答：重建控制文件，用带backup control file 子句的recover 命令恢复</P>
+<P>　　数据库。</P>
+<P>　　3. 如何转换init.ora到spfile?</P>
+<P>　　解答：使用create spfile from pfile 命令.</P>
+<P>　　4. 解释data block , extent 和 segment的区别(这里建议用英文术语)</P>
+<P>　　解答：data block是数据库中最小的逻辑存储单元。当数据库的对象需要更多的物理存储空间时，连续的data block就组成了extent . 
+一个数据库对象</P>
+<P>　　拥有的所有extents被称为该对象的segment.</P>
+<P>　　5. 给出两个检查表结构的方法</P>
+<P>　　解答：1。DESCRIBE命令</P>
+<P>　　2. DBMS_METADATA.GET_DDL 包</P>
+<P>　　6. 怎样查看数据库引擎的报错</P>
+<P>　　解答：alert log.</P>
+<P>　　7. 比较truncate和delete 命令</P>
+<P>　　解答：两者都可以用来删除表中所有的记录。区别在于：truncate是DDL操作，它移动HWK，不需要 rollback segment 
+.而Delete是DML操作, 需要rollback segment 且花费较长时间.</P>
+<P>　　8. 使用索引的理由</P>
+<P>　　解答：快速访问表中的data block</P>
+<P>　　9. 给出在STAR SCHEMA中的两种表及它们分别含有的数据</P>
+<P>　　解答：Fact tables 和dimension tables. fact table 包含大量的主要的信息而 dimension tables 
+存放对fact table 某些属性描述的信息</P>
+<P>　　10. FACT Table上需要建立何种索引?</P>
+<P>　　解答：位图索引 (bitmap index)</P>
+<P>　　11. 给出两种相关约束?</P>
+<P>　　解答：主键和外键</P>
+<P>　　12. 如何在不影响子表的前提下，重建一个母表</P>
+<P>　　解答：子表的外键强制实效，重建母表，激活外键</P>
+<P>　　13. 解释归档和非归档模式之间的不同和它们各自的优缺点</P>
+<P>　　解答：归档模式是指你可以备份所有的数据库 
+transactions并恢复到任意一个时间点。非归档模式则相反，不能恢复到任意一个时间点。但是非归档模式可以带来数据库性能上的少许提高</P>
+<P>　　.</P>
+<P>　　14. 如何建立一个备份控制文件?</P>
+<P>　　解答：Alter database backup control file to trace.</P>
+<P>　　15. 给出数据库正常启动所经历的几种状态 ?</P>
+<P>　　解答：</P>
+<P>　　STARTUP NOMOUNT – 数据库实例启动</P>
+<P>　　STARTUP MOUNT - 数据库装载</P>
+<P>　　STARTUP OPEN – 数据库打开</P>
+<P>　　16. 哪个column可以用来区别V$视图和GV$视图?</P>
+<P>　　解答： INST_ID 指明集群环境中具体的 某个instance 。</P>
+<P>　　17. 如何生成explain plan?</P>
+<P>　　解答：运行utlxplan.sql. 建立plan 表</P>
+<P>　　针对特定SQL语句，使用 explain plan set statement_id = 'tst1' into plan_table</P>
+<P>　　运行utlxplp.sql 或 utlxpls.sql察看explain plan</P>
+<P>　　18. 如何增加buffer cache的命中率?</P>
+<P>　　解答：在数据库较繁忙时，适用buffer cache advisory 工具，查询v$db_cache_advice . 如果有必要更改，可以使用 
+alter system set db_cache_size 命令</P>
+<P>　　19. ORA-01555的应对方法?</P>
+<P>　　解答：具体的出错信息是snapshot too old within rollback seg , 通常可以通过</P>
+<P>　　增大rollback seg来解决问题。当然也需要察看一下具体造成错误的SQL文本</P>
+<P>　　20. 解释$ORACLE_HOME和$ORACLE_BASE的区别?</P>
+<P>　　解答：ORACLE_BASE是oracle的根目录，ORACLE_HOME是oracle产品</P>
+<P>　　的目录。</P>
+<P>　　21. 如何判断数据库的时区?</P>
+<P>　　解答：SELECT DBTIMEZONE FROM DUAL;</P>
+<P>　　22. 解释GLOBAL_NAMES设为TRUE的用途</P>
+<P>　　解答：GLOBAL_NAMES指明联接数据库的方式。如果这个参数设置为TRUE,在建立数据库链接时就必须用相同的名字连结远程数据库</P>
+<P>　　23。如何加密PL/SQL程序?</P>
+<P>　　解答：WRAP</P>
+<P>　　24. 解释FUNCTION,PROCEDURE和PACKAGE区别</P>
+<P>　　解答：function 和procedure是PL/SQL代码的集合，通常为了完成一个任务。procedure 
+不需要返回任何值而function将返回一个值在另一</P>
+<P>　　方面，Package是为了完成一个商业功能的一组function和proceudre的集合</P>
+<P>　　25. 解释TABLE Function的用途</P>
+<P>　　解答：TABLE Function是通过PL/SQL逻辑返回一组纪录，用于普通的表/视图。他们也用于pipeline和ETL过程。</P>
+<P>　　26. 举出3种可以收集three advisory statistics</P>
+<P>　　解答：Buffer Cache Advice, Segment Level Statistics, Timed Statistics</P>
+<P>　　27. Audit trace 存放在哪个oracle目录结构中?</P>
+<P>　　解答：unix $ORACLE_HOME/rdbms/audit Windows the event viewer</P>
+<P>　　28. 解释materialized views的作用</P>
+<P>　　解答：Materialized views 用于减少那些汇总，集合和分组的信息的集合数量。它们通常适合于数据仓库和DSS系统。</P>
+<P>　　29. 当用户进程出错，哪个后台进程负责清理它</P>
+<P>　　解答： PMON</P>
+<P>　　30. 哪个后台进程刷新materialized views?</P>
+<P>　　解答：The Job Queue Processes.</P>
+<P>　　31. 如何判断哪个session正在连结以及它们等待的资源?</P>
+<P>　　解答：V$SESSION / V$SESSION_WAIT</P>
+<P>　　32. 描述什么是 redo logs</P>
+<P>　　解答：Redo Logs 是用于存放数据库数据改动状况的物理和逻辑结构。可以用来修复数据库.</P>
+<P>　　33. 如何进行强制LOG SWITCH?</P>
+<P>　　解答：ALTER SYSTEM SWITCH LOGFILE;</P>
+<P>　　34. 举出两个判断DDL改动的方法?</P>
+<P>　　解答：你可以使用 Logminer 或 Streams</P>
+<P>　　35. Coalescing做了什么?</P>
+<P>　　解答：Coalescing针对于字典管理的tablespace进行碎片整理，将临近的小extents合并成单个的大extent.</P>
+<P>　　36. TEMPORARY tablespace和PERMANENT tablespace 的区别是?</P>
+<P>　　解答：A temporary tablespace 用于临时对象例如排序结构而 permanent 
+tablespaces用来存储那些'真实'的对象(例如表，回滚段等)</P>
+<P>　　37. 创建数据库时自动建立的tablespace名称?</P>
+<P>　　解答：SYSTEM tablespace.</P>
+<P>　　38. 创建用户时，需要赋予新用户什么权限才能使它联上数据库。</P>
+<P>　　解答：CONNECT</P>
+<P>　　39. 如何在tablespace里增加数据文件?</P>
+<P>　　解答：ALTER TABLESPACE ADD DATAFILE SIZE</P>
+<P>　　40. 如何变动数据文件的大小?</P>
+<P>　　解答：ALTER DATABASE DATAFILE RESIZE ;</P>
+<P>　　41. 哪个VIEW用来检查数据文件的大小?</P>
+<P>　　解答： DBA_DATA_FILES</P>
+<P>　　42. 哪个VIEW用来判断tablespace的剩余空间</P>
+<P>　　解答：DBA_FREE_SPACE</P>
+<P>　　43. 如何判断谁往表里增加了一条纪录?</P>
+<P>　　解答：auditing</P>
+<P>　　44. 如何重构索引?</P>
+<P>　　解答： ALTER INDEX REBUILD;</P>
+<P>　　45. 解释什么是Partitioning(分区)以及它的优点。</P>
+<P>　　解答：Partition将大表和索引分割成更小，易于管理的分区。</P>
+<P>　　46. 你刚刚编译了一个PL/SQL Package但是有错误报道，如何显示出错信息?</P>
+<P>　　解答：SHOW ERRORS</P>
+<P>　　47. 如何搜集表的各种状态数据?</P>
+<P>　　解答： ANALYZE</P>
+<P>　　The ANALYZE command.</P>
+<P>　　48. 如何启动SESSION级别的TRACE</P>
+<P>　　解答: DBMS_SESSION.SET_SQL_TRACE</P>
+<P>　　ALTER SESSION SET SQL_TRACE = TRUE;</P>
+<P>　　49. IMPORT和SQL*LOADER 这2个工具的不同点</P>
+<P>　　解答：这两个ORACLE工具都是用来将数据导入数据库的。</P>
+<P>　　区别是：IMPORT工具只能处理由另一个ORACLE工具EXPORT生成</P>
+<P>　　的数据。而SQL*LOADER可以导入不同的ASCII格式的数据源</P>
+<P>　　50。用于网络连接的2个文件?</P>
+<P>　　解答： TNSNAMES.ORA and SQLNET.ORA</P>
+<P>　　参考答案仅供参考!</P></DIV>
+<UL class=keywords>
+  <LI><B>本文关键词：</B> <!-- Error --></LI></UL><!--文章评论开始-->
+<SCRIPT language=JavaScript>
+<!--
+var aid = 7624408;
+var channelid = 20392;
+var tagname = "";
+//-->
+</SCRIPT>
+
+<DIV class="cb db"></DIV>
+<DIV class=mod id=comm>
+<DIV class=hd>
+<H2>最新评论</H2></DIV>
+<DIV class=bd id=commentmsg 
+style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px"><A 
+title=进入论坛查看更多精彩评论 
+href="http://bbs.ctocio.com.cn/forum-105-1.html">还没有评论，查看其他精彩评论</A> </DIV></DIV>
+<SCRIPT language=JavaScript>
+document.domain='ctocio.com.cn';
+var Msg_loopNum = 5;
+function showMsg() {        
+	var bar='';
+	if(typeof comments != 'undefined') {
+		if (!comments || comments.length < 1) return;
+		document.getElementById('commentmsg').innerHTML = comments;
+
+        if(comm_p) 
+		   bar+='<a href="#comm" target="_self" onclick="show_p('+(comm_p-1)+')">上一页</a>';
+        if(tids>(comm_p+1)*10)
+		   bar+='<a href="#comm" target="_self" onclick="show_p('+(comm_p+1)+')">下一页</a>';		
+		document.getElementById('show_t').innerHTML=bar;
+
+		span=document.getElementsByTagName('span');
+		for (i=0;i<span.length;i++)	{
+		   if(span[i].className=='comms')span[i].innerHTML=tids;
+		}          
+
+	}else{
+		if(Msg_loopNum > 0) {setTimeout(showMsg,100);Msg_loopNum--;}
+	}
+}
+function show_p(p){
+ url=("http://bbs.ctocio.com.cn/ask/commentshow.php?aid="+aid+"&p="+p).replace('p=0',Math.random());
+	s.src=url;
+	showMsg();
+}
+
+s=document.createElement("script");  
+s.type="text/javascript";  
+s.src="http://bbs.ctocio.com.cn/ask/commentshow.php?aid="+aid;
+var head=document.getElementsByTagName("head")[0];  
+head.appendChild(s);  
+s.onload=s.onreadystatechange=function() {      
+   if(this.readyState && this.readyState=="loading") return;
+   showMsg();  
+}
+s.onerror=function(){ 
+   head.removeChild(s);   
+   //alert('加载js有错误'); 
+} 
+</SCRIPT>
+
+<DIV class=mod id=comm_1>
+<DIV class=hd>
+<H2>网友评论</H2></DIV>
+<DIV class=bd>
+<CENTER>
+<FORM id=loginform style="DISPLAY: none" name=login method=post 
+target=_self><INPUT id=username tabIndex=1 maxLength=40 size=12 name=username> 
+<INPUT 
+onkeypress="if((event.keyCode ? event.keyCode : event.charCode) == 13) $('loginform').submit()" 
+id=password tabIndex=2 type=password size=10 name=password> &nbsp;<BUTTON 
+name=userlogin type=submit value="true">登录</BUTTON>&nbsp;<BUTTON 
+onclick="document.loginform.style.display='none';document.myform.style.display='block'">取消</BUTTON> 
+</FORM></CENTER><IFRAME id=post_it style="DISPLAY: none" name=post_it 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/database2_tlgg.htm" width=0 
+height=0></IFRAME>
+<FORM id=myform name=myform method=post target=post_it>
+<TABLE style="MARGIN-BOTTOM: 10px" cellSpacing=0 cellPadding=0 width="100%" 
+border=0>
+  <TBODY>
+  <TR>
+    <TD style="PADDING-LEFT: 10px" align=left height=30>笔名&nbsp;<INPUT 
+      onfocus=gotolog(); size=26 value=IT专家网网友 name=nickname> <INPUT onmouseover=log_bbs(); style="BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #ffffff 1px solid; BACKGROUND: #d9d9d9; BORDER-LEFT: #ffffff 1px solid; CURSOR: hand; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 22px" onclick="return myformcheck();" type=submit value=发表评论> 
+    </TD></TR><INPUT type=hidden name=subject> <INPUT type=hidden name=article> 
+  <INPUT type=hidden name=message> <INPUT type=hidden name=aid> 
+  <TR>
+    <TD style="PADDING-LEFT: 10px; PADDING-BOTTOM: 10px" align=left><TEXTAREA style="FONT-SIZE: 12px; WIDTH: 450px" onfocus="this.value='';" name=mes rows=5 wrap=VIRTUAL cols=88>请输入评论</TEXTAREA></TD></TR>
+  <TR>
+    <TD style="PADDING-LEFT: 10px; PADDING-BOTTOM: 10px" 
+      align=left>请您注意：遵守国家有关法律、法规，尊重网上道德，承担一切因您的行为而直接或间接引起的法律责任。&nbsp;&nbsp;&nbsp;&nbsp;IT专家网友拥有管理笔名和留言的一切权利。</TD></TR></TBODY></TABLE></FORM>
+<SCRIPT language=JavaScript>
+if(isLoginTemp) { 
+  n=document.myform.nickname;
+  n.value=nickname;  n.disabled=true;
+}
+
+function log_bbs() {
+  if(document.myform.message.value=="请输入评论"){document.myform.message.value='';return}
+  post_it.location.href='http://bbs.ctocio.com.cn/ask/log.php';
+}
+
+
+function myformcheck(){
+   var m=document.myform.mes.value;
+   if(m.length<4 || m.length>400){alert("留言不能少于4或者超出400的长度!");return false;}
+   m=m.replace(/\n/g,'').replace(/^\s+|\s+$/g,"");
+   document.myform.message.value=m;
+   document.myform.mes.value='';
+   document.myform.aid.value=aid;   
+   title=document.title.split('_')[0];   
+   document.myform.subject.value=title;
+   p='<p>'+document.getElementsByTagName('p')[0].innerHTML+'.....</p>';
+   try{p=document.getElementById('content').innerHTML;}catch(e){}
+   p=p.replace(/\/imagelist\//g,'http://www.ctocio.com.cn/imagelist/');
+   c='<div>'+p+'</div>';
+   url=location.href.replace(location.hash,'').replace(window.location.search,'');
+   document.myform.article.value=c+'<p>查看原文：<a href='+url+'>'+url+'</a></p>';
+   document.myform.action="http://bbs.ctocio.com.cn/ask/comment.php";
+   return true;
+}
+function gotolog() {
+   lg=document.loginform;
+   if(confirm("您还没有登陆，要登陆吗？\n\n登陆后发表评论能够获得论坛金币")) {
+      var url=encodeURIComponent(location.href);
+	  lg.action="http://passport.yesky.com/cas/login?service="+url+"&furl="+url+"%3F1";
+	  lg.style.display="block";
+	  lg.username.focus();
+	  document.myform.style.display="none";
+   }else{
+      document.myform.nickname.focus();
+   }
+}
+
+</SCRIPT>
+</DIV></DIV><!--文章评论结束-->
+<DIV class=leftcontent>
+<DIV class="mod fl">
+<DIV class=hd>
+<H2>相关文章</H2></DIV>
+<DIV class=bd>
+<UL class=module_list0 style="OVERFLOW: hidden; HEIGHT: 240px">
+  <LI><A 
+  href="http://news.ctocio.com.cn/168/7629168.shtml">Oracle入选“07中国通信业成功解决方案奖”</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/14/7624514.shtml">某名企数据库面试问题答案</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/493/7624493.shtml">数据库笔试题及答案</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/442/7624442.shtml">甲骨文Oracle技术笔试题</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/334/7623834.shtml">利用SQL的联接从多个表格中获取数据</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/269/7620269.shtml">怎样根据日期来导出Oracle数据</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/428/7618928.shtml">UNION查询里列名是否应该匹配</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/293/7618793.shtml">使用SQL 
+  CHECK限制条件来验证表格插入</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/150/7618150.shtml">PHP与Oracle数据库连接</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/253/7616253.shtml">采用SwingBench 
+  2.2的Oracle RAC标准测试</A> </LI></UL></DIV></DIV>
+<DIV class="mod fr">
+<DIV class=hd>
+<H2>最新文章</H2></DIV>
+<DIV class=bd>
+<UL class=module_list0 style="OVERFLOW: hidden; HEIGHT: 240px">
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/469/8330969.shtml">提高Oracle数据库安全性的几个建议</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/253/8328253.shtml">在SQL 
+  Server启动时自动执行存储过程</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/202/8328202.shtml">从一个目录的备份文件中自动产生SQL 
+  Server恢复脚本</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/218/8328718.shtml">Dataguard的switchover和failover</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/209/8327709.shtml">利用SSRS添加条件格式</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/120/8327620.shtml">Oracle列的Default属性</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/23/8327523.shtml">查询Oracle数据库表空间和数据文件方法</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/93/8327593.shtml">Oracle数据库常见真实问题处理步骤</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/tips/467/8327467.shtml">PL/SQL 
+  Developer导出分区索引脚本</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/343/8327343.shtml">重建SQL 
+  Server的master数据库（一）</A> </LI></UL></DIV></DIV></DIV>
+<DIV class="cb db"></DIV><!--问题开始-->
+<SCRIPT language=javascript>
+<!--
+if(typeof(aid) != "undefined") {
+url =escape(document.URL);
+  document.write('<IFRAME SRC="http://iask.ctocio.com.cn/userquest/xml/index.html?aid='+aid+'&url='+url+'" width="598" height="370" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR="#fff" name="wt"></IFRAME>');
+ }
+//-->
+</SCRIPT>
+<!--问题结束--></DIV>
+<DIV class=rightcontent>
+<DIV 
+style="PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 42px">
+<DIV style="FLOAT: left"><A 
+href="http://database.ctocio.com.cn/news/483/7609483.shtml"><IMG height=36 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/75m6axgt1ngx.jpg" width=92 
+border=0></A></DIV>
+<DIV style="FLOAT: left; MARGIN-LEFT: 17px"><A 
+href="mailto:lisq@ctocio.com.cn"><IMG height=36 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/q815i3dj0l8l.jpg" width=92 
+border=0></A></DIV>
+<DIV style="FLOAT: right"><A 
+href="msnim:chat?contact=susanli0709@hotmail.com"><IMG height=36 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/z12hz02msp5l.jpg" width=122 
+border=0></A></DIV></DIV>
+<DIV class=bq>
+<UL>
+  <LI class=on id=h01 onmouseover=change0(1) 
+  style="BORDER-RIGHT: #a5b5c0 1px solid">周排行榜 </LI>
+  <LI id=h02 onmouseover=change0(2)>月排行榜 </LI></UL></DIV>
+<DIV class=mod>
+<DIV class=bd style="BORDER-TOP: #fff 1px solid">
+<UL class=module_list id=l01>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/424/8321924.shtml">冗长的SQL 
+  Server查询将消耗你的CPU</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/286/8321786.shtml">Oracle：MOVE与SHRINK命令相比较</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/356/8321856.shtml">在SQL 
+  Server 2008中执行透明数据加密</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/253/8328253.shtml">在SQL 
+  Server启动时自动执行存储过程</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/23/8327523.shtml">查询Oracle数据库表空间和数据文件方法</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/343/8327343.shtml">重建SQL 
+  Server的master数据库（一）</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/425/8321925.shtml">冗长的SQL 
+  Server查询将消耗你的CPU</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/93/8327593.shtml">Oracle数据库常见真实问题处理步骤</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/tips/384/8325884.shtml">在SQL Server 
+  2005中使用xp_ReadErrorLog读取错误日志</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/433/8321933.shtml">语言集成查询（LINQ）简介及如何使用</A> 
+  </LI></UL>
+<UL class=module_list id=l02 style="DISPLAY: none">
+  <LI><A 
+  href="http://database.ctocio.com.cn/analysis/342/8284842.shtml">BI新世界：四强争霸，鹿死谁手？</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/407/8286407.shtml">使用ERWin设计数据库</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/475/8290975.shtml">Oracle数据库的备份与恢复</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/284/8291784.shtml">Mondrian入门介绍之schema 
+  manager</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/234/8303734.shtml">Oracle物化视图：创建最简单物化视图</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/365/8292865.shtml">常用SQL语句详解</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/290/8288790.shtml">数据库名词解释</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/tips/362/8288862.shtml">Oracle与SQL 
+  Server在企业应用中的比较</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/226/8286726.shtml">VC用ADO访问数据库全攻略</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/457/8286457.shtml">Oracle的同义词（synonyms）总结</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=mod id=olympics>
+<DIV class=hd></DIV>
+<DIV class=bd>
+<UL class=module_list>
+  <LI><A href="http://in.yesky.com/118/8333618.shtml">全球最具创意的50张图片(精选)</A> </LI>
+  <LI><A href="http://in.yesky.com/142/8333642.shtml">魅力中文，只能看不能读的文章</A> </LI>
+  <LI><A href="http://in.yesky.com/blt9/">今后您还会不会买三鹿奶粉？</A> </LI>
+  <LI><A href="http://in.yesky.com/176/8333676.shtml">世界真奇妙 怪异的世界纪录</A> </LI>
+  <LI><A href="http://in.yesky.com/239/8333739.shtml">超唯美韩国插画壁纸下载</A> </LI>
+  <LI><A href="http://in.yesky.com/203/8333703.shtml">购买本本十大必杀技</A> </LI>
+  <LI><A href="http://in.yesky.com/blt8/">取消十一长假，您同意吗？</A> </LI>
+  <LI><A 
+  href="http://in.yesky.com/hero/Samsung_dreams/">三星体验活动“打出你的财富梦”大奖等你拿</A> </LI>
+  <LI><A href="http://spec.52pk.com/jinling/">为52PK投票赢取心动大奖</A> </LI>
+  <LI><A href="http://in.yesky.com/426/8320426.shtml">“三星眼力大比拼”第二部手机 花落成都</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2>邮件订阅</H2></DIV>
+<DIV class=bd>
+<DIV class=module_list style="TEXT-ALIGN: left">
+<FORM name=newsletter onsubmit="return datacheck();" 
+action=http://check.ctocio.com.cn/ctocio/quickSubscribe.do target=blank><INPUT 
+type=hidden value=3 name=siteid> <INPUT type=hidden value=31 name=newsletters> 
+<INPUT style="WIDTH: 200px" 
+onclick="if &#13;&#10;(this.value==this.defaultValue) this.value=''" 
+value=这里输入你的Email name=email><BR><INPUT class=submit type=submit size=10 value=订阅 name=button>&nbsp;&nbsp;<INPUT class=submit onclick="window.open('http://check.ctocio.com.cn/ctocio/registerAll.jsp');" type=button size=10 value=注册 name=button>&nbsp;&nbsp;<INPUT class=submit onclick="window.open('http://database.ctocio.com.cn/weeklynewsletter/');" type=button size=10 value=往期查询 name=button> 
+</FORM></DIV></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2><A href="http://database.ctocio.com.cn/cc_zjdy/">专家答疑</A></H2></DIV>
+<DIV class=bd>
+<UL class=module_list style="OVERFLOW: hidden; HEIGHT: 190px">
+  <LI><STRONG>2008-09-28 08:40</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/253/8328253.shtml">在SQL 
+  Server启动时自动执行存储过程</A></LI>
+  <LI><STRONG>2008-09-28 08:06</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/202/8328202.shtml">从一个目录的备份文件中自动产生SQL 
+  Server恢复脚本</A></LI>
+  <LI><STRONG>2008-09-27 10:57</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/209/8327709.shtml">利用SSRS添加条件格式</A></LI>
+  <LI><STRONG>2008-09-27 09:21</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/343/8327343.shtml">重建SQL 
+  Server的master数据库（一）</A></LI>
+  <LI><STRONG>2008-09-26 06:50</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/38/8322038.shtml">SQL Server 
+  7.0到2005的安全漏洞会允许登录权限提高？</A></LI>
+  <LI><STRONG>2008-09-25 07:03</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/433/8321933.shtml">语言集成查询（LINQ）简介及如何使用</A></LI>
+  <LI><STRONG>2008-09-25 05:05</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/425/8321925.shtml">冗长的SQL 
+  Server查询将消耗你的CPU</A></LI>
+  <LI><STRONG>2008-09-24 11:40</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/357/8321857.shtml">在SQL 
+  Server 2008中执行透明数据加密</A></LI>
+  <LI><STRONG>2008-09-24 07:50</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/427/8318427.shtml">如何使用SSIS程序包中的事务管理</A></LI>
+  <LI><STRONG>2008-09-24 07:23</STRONG><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/284/8318284.shtml">怎样使用PPS 
+  2007中Time Intelligence Post Formula Filter Template</A> </LI></UL></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2><A href="http://database.ctocio.com.cn/cc_bps/">白皮书</A></H2></DIV>
+<DIV class=bd>
+<UL class=module_list style="OVERFLOW: hidden; HEIGHT: 190px">
+  <LI><STRONG>2008-08-26 10:04</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/21/8278021.shtml">Panorama商务智能分析解决方案</A></LI>
+  <LI><STRONG>2008-08-20 08:32</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/440/8268940.shtml">中海油基于IBM 
+  FileNet P8构筑海外业务管理系统</A></LI>
+  <LI><STRONG>2008-08-20 08:25</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/437/8268937.shtml">交通银行构建流程银行体系下的ECM平台</A></LI>
+  <LI><STRONG>2008-08-20 08:20</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/412/8268912.shtml">迈进集约之路--泰康人寿ECM平台助力集约化经营</A></LI>
+  <LI><STRONG>2008-07-21 11:04</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/330/8225830.shtml">SQL Server 
+  2008用在零售行业的预测分析</A></LI>
+  <LI><STRONG>2008-06-17 10:10</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/111/8166111.shtml">SQL Server 
+  2008与Oracle Database 11g相比较</A></LI>
+  <LI><STRONG>2008-06-11 10:20</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/97/8158097.shtml">SQL 
+  Server集成服务用于Oracle Database 10g</A></LI>
+  <LI><STRONG>2008-04-30 09:50</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/153/8098653.shtml">使用SQL Server 
+  2008进行预测分析</A></LI>
+  <LI><STRONG>2008-04-29 09:46</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/462/8096962.shtml">Microsoft SQL 
+  Server 2008分析服务概览</A></LI>
+  <LI><STRONG>2008-04-23 07:04</STRONG><A 
+  href="http://database.ctocio.com.cn/wpsummary/197/8088697.shtml">SQL Server 
+  2008集成服务详解</A> </LI></UL></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2><A href="http://webcast.ctocio.com.cn/">Webcast</A></H2></DIV>
+<DIV class=bd 
+style="PADDING-RIGHT: 0px; BORDER-TOP: #fff 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px">
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/CreateFlashCode.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript> 
+
+<!--   
+plylst          = "http://www.ctocio.com.cn/imagelist/2008/099/hetdx5183w83.xls";    
+swfSrc          = "http://www.ctocio.com.cn/w/inc/wdfeng_h.swf";   
+w                       = "325";   
+h                       = "201";   
+bg                      = "#ffffff";   
+wmode           = "transparent";   
+flashVars       = "plylst=" + plylst;   
+
+if ( MM_FlashCanPlay ) {   
+        document.write('<ul>');   
+        document.write('');   
+        CreateFlashCode(swfSrc, w, h, bg, wmode, flashVars);   
+        document.write('</ul>');}   
+//--></SCRIPT>
+</DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2><A href="http://bbs.ctocio.com.cn/">BBS</A></H2></DIV>
+<DIV class=bd>
+<UL class=module_list style="OVERFLOW: hidden; HEIGHT: 190px">
+  <UL>
+    <SCRIPT language=JavaScript 
+    src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/javascript.htm"></SCRIPT>
+  </UL></UL></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2>该文章的读者还阅读了</H2></DIV>
+<DIV class=bd>
+<UL class=module_list style="OVERFLOW: hidden; HEIGHT: 190px">
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/442/7624442.shtml">甲骨文Oracle技术笔试题</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/334/7623834.shtml">利用SQL的联接从多个表格中获取数据</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/269/7620269.shtml">怎样根据日期来导出Oracle数据</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/428/7618928.shtml">UNION查询里列名是否应该匹配</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/dbzjdysummary/293/7618793.shtml">使用SQL 
+  CHECK限制条件来验证表格插入</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/150/7618150.shtml">PHP与Oracle数据库连接</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/253/7616253.shtml">采用SwingBench 
+  2.2的Oracle RAC标准测试</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/tips/49/7616049.shtml">Oracle 
+  11g新技术－数据库常驻连接池</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/106/7615606.shtml">生成Oracle用户密码的通用小程序</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/tips/231/7615231.shtml">DB2中实现Oracle相关功能</A> 
+  </LI></UL></DIV></DIV>
+<DIV class=mod>
+<DIV class=hd>
+<H2><A href="http://whatis.ctocio.com.cn/">Whatis</A></H2></DIV>
+<DIV class=bd id=whatislist2>
+<UL>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/290/8288790.shtml">数据库名词解释</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/396/8283896.shtml">Oracle约束</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/342/8281842.shtml">数据库范式</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/55/8144055.shtml">LINQ</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/463/7541463.shtml">联机公共检索目录</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/473/7541473.shtml">OPAC</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/486/7541486.shtml">Online 
+  Public Access Catalog</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/352/7496352.shtml">COD</A></LI>
+  <LI><A href="http://database.ctocio.com.cn/whatis/325/7496325.shtml">capacity 
+  on demand</A></LI>
+  <LI><A 
+  href="http://database.ctocio.com.cn/whatis/314/7496314.shtml">按需扩容</A></LI>
+  <LI><A href="http://whatis.ctocio.com.cn/searchwhatis/46/7485546.shtml">Fixed 
+  Data</A></LI>
+  <LI><A href="http://whatis.ctocio.com.cn/searchwhatis/270/6092770.shtml">Topic 
+  Map Query Language</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/388/6026388.shtml">Python</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/293/5949293.shtml">80</A></LI>
+  <LI><A href="http://whatis.ctocio.com.cn/searchwhatis/288/5949288.shtml">6 
+  Sigma</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/287/5949287.shtml">5GL</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/283/5949283.shtml">4GL</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/280/5949280.shtml">404</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/279/5949279.shtml">3NF</A></LI>
+  <LI><A 
+  href="http://whatis.ctocio.com.cn/searchwhatis/278/5949278.shtml">3GL</A></LI></UL></DIV></DIV></DIV></DIV><!-- main end --><!--文件尾-->
+<DIV class=floor>
+<DIV><SPAN><A class=f-FFF href="http://www.tianjimedia.com/ar/">天极服务</A> | <A 
+class=f-FFF href="http://www.tianjimedia.com/gsjj/">关于我们</A> | <A class=f-FFF 
+href="http://www.tianjimedia.com/attorney/">网站律师</A> | <A class=f-FFF 
+href="http://www.tianjimedia.com/invitation/">加入我们</A> | <A class=f-FFF 
+href="http://www.tianjimedia.com/contact/">联系我们</A> | <A class=f-FFF 
+href="http://www.ctocio.com.cn/web/mediakits/">广告业务</A> | <A class=f-FFF 
+href="http://www.ctocio.com.cn/web/link/">友情链接</A> | <A style="CURSOR: hand" 
+onclick=javascript:submitFeedback();>我要挑错</A> </SPAN></DIV></DIV>
+<DIV class=floor_1><!--版权声明 开始-->
+<DIV id=footlogo><A href="http://www.tianjimedia.com/"><IMG height=52 alt=IT尽在天极 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/tmg.gif" width=120 border=0></A> 
+</DIV>
+<DIV class=fl style="WIDTH: 520px">All Rights Reserved, Copyright 2004-2008, 
+Ctocio.com.cn<BR><A 
+href="http://www.yesky.com/cpcwd/74590868828323840/20030805/1719074.shtml">渝ICP证B2-20030003号</A> 
+<A href="mailto:webmaster@chinabyte.com">如有意见请与我们联系</A> <A 
+href="http://www.chinabyte.net/">powered by 天极内容管理平台CMS4i </A></DIV>
+<DIV class=fr><A 
+href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001012000005"><IMG 
+height=48 src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/zhuce.gif" width=40 
+border=0></A></DIV>
+<DIV class="cb db"></DIV><!--版权声明 结束--></DIV><!--我要挑错　-->
+<FORM id=feedbackForm name=feedbackForm 
+action=http://feedback.yesky.com/reader/user/doWelcome.view target=_blank><INPUT 
+id=refurl type=hidden name=refurl> <INPUT id=reftitle type=hidden name=reftitle> 
+</FORM>
+<SCRIPT language=JavaScript 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/o_code.js"></SCRIPT>
+<!-- 
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2650663-1";
+urchinTracker();
+</script> 
+--><!--广告---><SPAN id=span_ad1>
+<SCRIPT>
+	 switch (ifurl) {
+		
+		default :
+			document.write("<IFRAME SRC=\"http://www.ctocio.com.cn/ttfiles/ccimages/"+ifurl+"_tlgg.html\" width=\"945\" height=\""+iheight+"\" MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no BORDERCOLOR='#000'></IFRAME>");
+	}
+</SCRIPT>
+</SPAN>
+<SCRIPT>document.getElementById("ad1").innerHTML=document.getElementById("span_ad1").innerHTML;document.getElementById("span_ad1").innerHTML="";</SCRIPT>
+<SPAN id=span_ad3>
+<SCRIPT>
+document.write('<SCRIPT LANGUAGE="JavaScript" src='+jsurl+'><\/SCRIPT>');
+</SCRIPT>
+</SPAN>
+<SCRIPT>document.getElementById("contentAdv").innerHTML=document.getElementById("span_ad3").innerHTML;document.getElementById("span_ad3").innerHTML="";</SCRIPT>
+<SPAN id=span_text>
+<SCRIPT>
+document.write('<SCRIPT LANGUAGE="JavaScript" src='+texturl+'><\/SCRIPT>');
+</SCRIPT>
+</SPAN>
+<SCRIPT>document.getElementById("advTailValue").innerHTML=document.getElementById("span_text").innerHTML;document.getElementById("span_text").innerHTML="";</SCRIPT>
+<!--监控代码-->
+<DIV id=nav>
+<SCRIPT>siteid(window.location.href);</SCRIPT>
+</DIV>
+<SCRIPT language=Javascript>
+sitenav(window.location.href);
+
+function sitenav(articleurl)
+{
+	var articleurl;
+	var ename = "";
+	reg = /(\w+)\.(\w+)\.(\w+)\.(\w+)/;
+
+	if(reg.test(articleurl)) {
+		reg.exec(articleurl);
+		ename = RegExp.$1;
+	}
+	if(/cn\/qa\//.test(articleurl))ename="qa";
+	if(/cn\/olympics\//.test(articleurl))ename="olympics";
+	if(/cn\/hyhd\//.test(articleurl))ename="hyhd";
+//	if(/cn\/soa\//.test(articleurl))ename="soa";
+	 switch (ename) {
+		case 'webservices' :
+			ename = 'n_webservices'
+			break
+		case 'win2000' :
+			ename = 'n_winsystem'
+			break
+		case 'winsystem' :
+			ename = 'n_winsystem'
+			break
+		case 'database' :
+			ename = 'n_database'
+			break
+		case 'mobilecomputing' :
+			ename = 'n_mobilecomputing'
+			break
+		case 'security' :
+			ename = 'n_security'
+			break
+		case 'cio' :
+			ename = 'n_cio'
+document.write('<script type=text/javascript src=http://yeskyafp.allyes.com/main/adfshow?user=YESKYAFP|adtest|cc_cio_hp&db=yeskyafp&border=0&local=yes&js=ie><\/script>')
+			break
+		case 'storage' :
+			ename = 'n_storage'
+			break
+		case 'networking' :
+			ename = 'n_networking'
+			break
+		case 'exchange' :
+			ename = 'n_exchange'
+			break
+		case 'smallbizit' :
+			ename = 'n_smallbizit'
+			break
+             case 'windowssecurity' :
+			ename = 'n_windowssecurity'
+			break
+		case 'crm' :
+			ename = 'n_crm'
+			break
+		case 'erp' :
+			ename = 'n_erp'
+			break		
+		case 'server' :
+			ename = 'n_server'
+			break
+		case 'askexpert' :
+			ename = 'n_askexpert'
+			break
+		case 'hyhd' :
+			ename = 'n_hyhd'
+			break
+		case 'whatis' :
+			ename = 'n_whatis'
+			break
+		case 'whitepaper' :
+			ename = 'n_whitepaper'
+			break
+        case 'webcast' :
+			ename = 'n_webcast'
+			break
+		case 'qa' :
+			ename = 'n_qa'
+			break
+		case 'bbs' :
+			ename = 'n_bbs'
+			break
+		case 'news' :
+			ename = 'n_news'
+			break
+		case 'datacenter' :
+			ename = 'n_datacenter'
+			break
+		case 'career' :
+			ename = 'n_career'
+			break
+		case 'olympics' :
+			ename = 'n_olympics'
+			break
+		case 'virtualization' :
+			ename = 'n_virtualization'
+			break
+		case 'soa' :
+			ename = 'n_soa'
+			break
+		default :
+			ename = 'n_home'
+	}
+document.getElementById(ename).innerHTML=document.getElementById("nav").innerHTML;
+document.getElementById("nav").innerHTML="";
+}
+</SCRIPT>
+<!--计数器-->
+<SCRIPT language=Javascript>
+var now = new Date();
+document.write("<img src='http://counter.ctocio.com.cn/counter.shtml?CID=20579&amp;AID=7624408&amp;refer="+escape(document.referrer) + "&amp;rand="+ now.getTime()  +"&amp;cur="+escape(document.URL)+"' border='0' alt='' width='0' height='0'>");
+</SCRIPT>
+<NOSCRIPT><IMG height=0 
+src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/counter.shtml" width=0 border=0> 
+</NOSCRIPT>
+<SCRIPT language=JavaScript>
+//-------------设定Cookie值开始---------------
+//当用户的CustomerId不为-1时就写Cookie
+if(customerid > 0){
+ var today = new Date();
+ var expireDay = new Date();
+ //保存一年Cookie
+ var msPerYear = 365*24*3600*1000;
+ expireDay.setTime(today.getTime() + msPerYear);
+ document.cookie = "customerid=" + customerid + ";expires=" + expireDay.toGMTString()
+ + ";path=/;domain=ctocio.com.cn";
+}
+//-------------设定Cookie值结束---------------
+//跟踪
+			 var seconds = 0;
+			 setInterval("startCount()",1000);
+			 function startCount(){
+			  seconds++;
+			 }
+			 function getCookie(Key){
+			  var search = Key + "=";
+			  begin = document.cookie.indexOf(search);
+			  if(begin != -1){
+			   begin +=search.length;
+			   end = document.cookie.indexOf(";",begin);
+			   if(end == -1)
+				end = document.cookie.length;
+			   return document.cookie.substring(begin,end);
+			  }
+			 }
+			 var customerid=getCookie("customerid");
+			 if(customerid && customerid>0){
+			  document.write("<img src='http://219.239.88.47:8080/ttcounter/counter.html?customerId=" + customerid + "&amp;aid=7624408&amp;title=Oracle面试题集锦-技术篇&amp;referrer="+escape(document.referrer)+"&amp;url="+escape(document.URL)+"&amp;duration=" + seconds + "' border='0' alt='' width='0' height='0'>");  
+			 }
+//白皮书
+var wpath = location.pathname;
+var wename = "";
+reg = /\/(\w+)\/(\d+)\/(\S+)/;
+if(reg.test(wpath)) {
+	reg.exec(wpath);
+	wename = RegExp.$1;
+}
+switch (wename) {
+case "whitepapers" :
+       document.write("<img src='http://check.ctocio.com.cn/ttapps/counter.jsp?customerid="+customerid+"&amp;aid=7624408&amp;title=Oracle面试题集锦-技术篇' border='0' alt='' width='0' height='0'>");
+break
+case "askexperts" :
+       document.write("<img src='http://check.ctocio.com.cn/ttapps/counter.jsp?customerid="+customerid+"&amp;aid=7624408&amp;title=Oracle面试题集锦-技术篇' border='0' alt='' width='0' height='0'>");
+
+break
+}
+</SCRIPT>
+<!-- START Nielsen//NetRatings SiteCensus V5.2 --><!-- COPYRIGHT 2006 Nielsen//NetRatings -->
+<SCRIPT type=text/javascript>
+	var _rsCI="cn-yesky";	 
+	var _rsCG="0";	
+	var _rsDN="//secure-cn.imrworldwide.com/";	
+	var _rsCC=0;	
+	var _rsSE=1;	
+	var _rsSM=0.01;	 
+	var _rsSS=1500;	 
+</SCRIPT>
+
+<SCRIPT src="Oracle面试题集锦-技术篇_数据库技巧_ORACLE_IT专家网.files/v52.js" 
+type=text/javascript></SCRIPT>
+<NOSCRIPT><IMG alt="" src=""> </NOSCRIPT><!-- END Nielsen//NetRatings SiteCensus V5.2 --></BODY></HTML>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0557)http://cpro.baidu.com/cpro/ui/uijs.php?fv=9&tn=text_default_300_120&n=diybl_cpr&rsi1=120&rsi0=300&rad=&rss0=%23F5FAFE&rss1=%23F5FAFE&rss2=%23940F04&rss3=%23333333&rss4=%23333333&rss5=&rss6=%23e10900&rsi5=4&ts=1&at=7&cn=1&if=0&word=http%3A%2F%2Fwww.diybl.com%2Fcourse%2F3_program%2Fjava%2Fjavajs%2F2007104%2F75913_2.html&refer=http%3A%2F%2Fwww.diybl.com%2Fcourse%2F3_program%2Fjava%2Fjavajs%2F2007104%2F75913.html&ev=33554432&ch=8898&lmt=1221127524&csp=1024,768&ccd=32&chi=1&cja=true&cpl=0&cmi=0&cce=true&csl=zh-cn&rt=32&cad=1&aurl=&rss7=&cpa=1&dt=1223278237 -->
+<HTML><HEAD><TITLE>百度联盟会员管理系统</TITLE><!-- 0|8; -->
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE>BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BODY {
+	WORD-BREAK: break-all; WORD-WRAP: break-word
+}
+DIV {
+	WORD-BREAK: break-all; WORD-WRAP: break-word
+}
+TD {
+	PADDING-LEFT: 2px; VERTICAL-ALIGN: top
+}
+#main {
+	WIDTH: 300px; HEIGHT: 120px
+}
+#box {
+	FONT-SIZE: 12px; WIDTH: 100%; FONT-FAMILY: Arial
+}
+.tit {
+	FONT-SIZE: 14px; WIDTH: 100%; COLOR: #0033cc; LINE-HEIGHT: 18px
+}
+.tit A {
+	FONT-SIZE: 14px; WIDTH: 100%; COLOR: #0033cc; LINE-HEIGHT: 18px
+}
+.tit:hover {
+	TEXT-DECORATION: none
+}
+.cnt {
+	WIDTH: 100%; COLOR: #494949; LINE-HEIGHT: 16px; TEXT-DECORATION: none
+}
+.cnt A {
+	WIDTH: 100%; COLOR: #494949; LINE-HEIGHT: 16px; TEXT-DECORATION: none
+}
+.url {
+	FONT-SIZE: 10px; WIDTH: 100%; COLOR: #008000; LINE-HEIGHT: 11px; TEXT-DECORATION: none
+}
+.url A {
+	FONT-SIZE: 10px; WIDTH: 100%; COLOR: #008000; LINE-HEIGHT: 11px; TEXT-DECORATION: none
+}
+.urldiv {
+	MARGIN-TOP: 3px
+}
+.room {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.cpronormal {
+	HEIGHT: 12px; TEXT-ALIGN: right
+}
+.cprogongyi {
+	HEIGHT: 12px; TEXT-ALIGN: right
+}
+.cpro {
+	MARGIN-TOP: auto; FLOAT: right; VERTICAL-ALIGN: bottom; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+.cprologo {
+	DISPLAY: block; FLOAT: right; MARGIN: 0px 5px 1px 0px; WORD-SPACING: 80px; WIDTH: 79px; CURSOR: pointer; LINE-HEIGHT: 12px; HEIGHT: 12px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.main0 .titdiv {
+	TEXT-ALIGN: left
+}
+.main1 .titdiv {
+	TEXT-ALIGN: left
+}
+.main0 .cnt {
+	LINE-HEIGHT: 18px
+}
+.main1 .cnt {
+	LINE-HEIGHT: 18px
+}
+.main0 .cprogongyi {
+	LINE-HEIGHT: 16px
+}
+.main0 .cprogongyi .cprologo {
+	MARGIN-TOP: 3px; WIDTH: 85px
+}
+.main1 .cprogongyi {
+	DISPLAY: none
+}
+.main0 .cpronormal {
+	DISPLAY: none
+}
+</STYLE>
+
+<SCRIPT>
+var
+path="http://cpro.baidu.com/img/",
+_ct='#940F04',
+_cd='#333333',
+_cu='#333333',
+_cb='#F5FAFE',
+_bg='#F5FAFE',
+_cl='#000000',
+adType = '8';
+var _bold=1;try{if(1!=null)_bold=1;}catch(ex){}
+function dynamicLogo(isGY){
+var w=path+"cpro_wh.png";
+var b=path+"cpro_bk.png";
+if(isGY){
+	w=path+"cpro_gy_wh.png";
+	b=path+"cpro_gy_bk.png";
+}
+if(adType == 4096){
+	w=path+"cpro_cpa_wh.png";
+	b=path+"cpro_cpa_bk.png";
+}
+if(_bg=="#trans" || _bg == "#") return b;
+var str=new Array();
+str.push(_bg.charAt(1));
+str.push(_bg.charAt(3));
+str=str.toString();
+if(str.match(/[d-f]/ig)) return b;
+return w;
+}
+
+function ss(w){
+w=w.replace(/http:\/\//ig,"");
+var wi = w.indexOf("/"); 
+if(wi != -1)  w=w.substring(0,wi);
+if(w != "") w = "链接至 " + w;
+window.top.status=w;
+return true;
+}
+function colorMatch(color){
+	if(color.toLowerCase() == _bg.toLowerCase()){
+		var str=new Array();
+		str.push(color.charAt(1));
+		str.push(color.charAt(3));
+		str=str.toString();
+		if(str.match(/[d-f]/ig))return "#000000";
+		return "#FFFFFF";
+	}else 
+		return color;
+}
+_ct = colorMatch(_ct);
+_cu = colorMatch(_cu);
+_cd = colorMatch(_cd);
+var cs='<style type="text/css">#main .tit{color:'+_ct+';}';
+if(_bold>0)cs+='a.tit{font-weight:bold;}';
+cs+='.cnt,.cnt a{color:'+_cd+';}.url,.url a{color:'+_cu+';}#cpro{color:'+_cl+';}#cpro a{color:'+_cl+';}';
+if(_cb.toLowerCase() != "#trans") {
+cs+='#box{border-top:1px solid '+_cb+';border-bottom:1px solid '+_cb+';}';
+}
+if(_bg.toLowerCase() != "#trans") {
+cs+='#main{background:'+_bg+'; }';
+}
+cs+='.cpronormal .cprologo{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=none, src="'+dynamicLogo()+'");background:url('+dynamicLogo()+') no-repeat left top;_background:none;}';
+cs+='.cprogongyi .cprologo{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=none, src="'+dynamicLogo(true)+'");background:url('+dynamicLogo(true)+') no-repeat left top;_background:none;}';
+cs+='</style>';
+document.write(cs); 
+function gongyi(){
+	return false;
+}
+function stateBarUrl(){
+	var url = document.body.getElementsByTagName("td");
+	for (var i = 0;i<url.length;i++){
+		if(url[i].getAttribute("url")){
+			url[i].onmouseover=function (){return ss(this.getAttribute("url"));}
+		}
+		url[i].onmouseout=function() {return ss('');}
+	}
+}
+if(adType == 3 || adType == 1024){
+	gongyi = function(){document.getElementById("main").className="main0";}
+}
+window.onload = function (){
+	stateBarUrl();
+	gongyi();
+	
+} 
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: transparent">
+<DIV class=main1 id=main>
+<TABLE id=box height="100%" cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR class=cprogongyi id=cprogongyi vAlign=top>
+    <TD><A class=cprologo href="http://cpro.baidu.com/" 
+      target=_blank>&nbsp;</A> </TD></TR>
+  <TR vAlign=top>
+    <TD class=room id=room0 url="www.si58.cn">
+      <DIV><A class=tit id=tit0 
+      href="http://www.baidu.com/cpro.php?CY_K000ybvOB9NtH481SVUDHvF-w42kqjfD2dphMir_aLPEiMURtDAlElvhkCAwsgjbEKQ19bzbOAJK8hSErE_pocvlAncms1TdvhhY.DD_aPSeuzfwELUcn--hz1xuYvfUuStUqvz1G_yFB4SBSWzs346" 
+      target=_blank>潜能开发DIY时尚手工坊 赚钱好...</A> </DIV>
+      <DIV><A class=cnt id=cnt0 
+      href="http://www.baidu.com/cpro.php?CY_K000ybvOB9NtH481SVUDHvF-w42kqjfD2dphMir_aLPEiMURtDAlElvhkCAwsgjbEKQ19bzbOAJK8hSErE_pocvlAncms1TdvhhY.DD_aPSeuzfwELUcn--hz1xuYvfUuStUqvz1G_yFB4SBSWzs346" 
+      target=_blank>潜能开发慧聪馆,创业,加盟首选项目,留言可获创业基金! </A></DIV>
+      <DIV class=urldiv><A class=url id=url0 
+      href="http://www.baidu.com/cpro.php?CY_K000ybvOB9NtH481SVUDHvF-w42kqjfD2dphMir_aLPEiMURtDAlElvhkCAwsgjbEKQ19bzbOAJK8hSErE_pocvlAncms1TdvhhY.DD_aPSeuzfwELUcn--hz1xuYvfUuStUqvz1G_yFB4SBSWzs346" 
+      target=_blank>http://www.baidu.com/cpro.php?CY_K000ybvOB9NtH481SVUDHvF-w42kqjfD2dphMir_aLPEiMURtDAlElvhkCAwsgjbEKQ19bzbOAJK8hSErE_pocvlAncms1TdvhhY.DD_aPSeuzfwELUcn--hz1xuYvfUuStUqvz1G_yFB4SBSWzs346</A> 
+      </DIV></TD></TR>
+  <TR class=cpronormal id=cpronormal>
+    <TD><A class=cprologo href="http://cpro.baidu.com/" 
+      target=_blank>&nbsp;</A> </TD></TR></TBODY></TABLE></DIV></BODY></HTML>

@@ -1,0 +1,630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0042)http://www.mscto.com/jobinfo/27561503.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn"><HEAD><TITLE>J2EE面试题以及参考答案 - 软件开发网 - 提供编程开发资料的编程网</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META 
+content="一、基础问答 1.下面哪些类可以被继承? java.lang.Thread (T) java.lang.Number (T) java.lang.Double (F) java.lang.Math (F) java.lang.Void (F) java.lang.Class (F) java.lang.ClassLoader (T) 2.抽象类和class=t_tag接口的区别 (1)接口可以被多重implements,抽象类" 
+name=description>
+<META content=答案 name=keywords int final static String public 面试 以及 参考><LINK 
+media=screen href="j2ee面试题.files/main.css" type=text/css rel=stylesheet><LINK 
+media=screen href="j2ee面试题.files/css.css" type=text/css rel=stylesheet><LINK 
+media=screen href="j2ee面试题.files/home.css" type=text/css rel=stylesheet>
+<SCRIPT src="j2ee面试题.files/external.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="j2ee面试题.files/js.htm" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript src="j2ee面试题.files/prototype.js"></SCRIPT>
+
+<SCRIPT language=javascript src="j2ee面试题.files/moo.fx.js"></SCRIPT>
+
+<SCRIPT language=javascript>
+function wo_ding(num_id)
+{
+url = "/plus/wo_ding.php?aid="+num_id+"&post=vote&m=" + Math.random();
+new ajax(url, {method: 'get', onComplete:return_review});
+}
+function return_review(ajax)
+{
+str_error_num = ajax.responseText
+if(str_error_num==0)
+{
+  alert("好像你刚拍过了哦，发个新文章让其他人拍到首页吧！");
+}
+else
+{
+  alert("感谢您的投票,谢谢...^_^你也可以发布自己的文章让其他人拍到首页哦！")
+  $("s_ding").innerHTML = str_error_num;
+}
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY><LINK media=screen href="j2ee面试题.files/style47.css" type=text/css 
+rel=stylesheet>
+<SCRIPT src="j2ee面试题.files/script.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="j2ee面试题.files/JSDateFunction.js" type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript src="j2ee面试题.files/killErrors.js" 
+type=text/javascript></SCRIPT>
+
+<DIV id=hdtp>
+<DIV id=tpad><!--AdForward Begin:--><!--AdForward End--></DIV></DIV>
+<DIV id=pfc>
+<UL>
+  <LI class=adtxt>软件开发的家园,编程爱好者的天地. </LI>
+  <LI class=datefull>帮助程序员及编程开发者提高技术的编程网. </LI>
+  <LI class=addfav><IMG src="j2ee面试题.files/hot1.gif"> <A 
+  onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.mscto.com');return false;" 
+  href="http://www.mscto.com/jobinfo/27561503.html#">设为首页</A> | <A 
+  onclick="bookmarkit();return false;" 
+  href="http://www.mscto.com/jobinfo/27561503.html#">加入收藏夹</A> 
+  <DIV class=cl></DIV></LI></UL></DIV>
+<DIV id=sr>
+<DIV id=lg></DIV>
+<DIV class=lfb></DIV>
+<DIV class=ccon>
+<UL id=srtab>
+  <LI class=cur id=stab0 onclick=setsrch(this)><A title=搜索网页 
+  href="javascript:void(0);" target=_self>网页</A></LI>
+  <LI id=stab1 onclick=setsrch(this)><A title=搜索软件 href="javascript:void(0);" 
+  target=_self>软件</A></LI>
+  <LI id=stab2 onclick=setsrch(this)><A class=last title=搜索源码 
+  href="javascript:void(0);" target=_self>源码</A></LI></UL>
+<DIV id=stablive><FONT color=#ffffff><B>百度搜索</B></FONT></DIV>
+<FORM class=simple6 id=srchfrm name=search_form 
+action=http://www.baidu.com/baidu method=get target=_blank><LABEL 
+for=f1>搜索：</LABEL><INPUT id=f1 title=选择搜索类别 accessKey=S onclick=this.select() 
+maxLength=250 size=75 name=word> <INPUT type=hidden value=bdwxl_111094ahm_pg 
+name=tn></INPUT> <INPUT type=hidden name=ct> <INPUT type=hidden name=lm> <INPUT 
+type=hidden name=z> <INPUT type=hidden name=rn><BUTTON 
+type=submit></BUTTON></FORM>
+<SCRIPT src="j2ee面试题.files/rand.js" type=text/javascript></SCRIPT>
+
+<DIV class=cl></DIV>
+<UL class=twhi id=kwl></UL></DIV>
+<DIV class=lfr></DIV>
+<DIV id=messenger_logo style="WIDTH: 80px">
+<DIV id=messengerlogo><A href="http://www.mscto.com/"></A></DIV></DIV>
+<DIV id=messenger_logo>
+<DIV id=messengerlogo><A href="http://www.mscto.com/plus/rssmap.html"><IMG 
+src="j2ee面试题.files/messenger2.jpg"></A></DIV></DIV></DIV>
+<DIV class=row>
+<UL id=ww>
+  <LI class=textc>【软件开发网】为您服务! </LI>
+  <LI class=wea>
+  <SCRIPT language=JavaScript src="j2ee面试题.files/time.js"></SCRIPT>
+  </LI>
+  <LI class=wad><A href="http://www.mscto.com/" rel=external>本站首页</A> | <A 
+  href="http://www.mscto.com/plus/rssmap.html" rel=external>信息订阅</A> | <A 
+  title=广告服务 href="http://www.mscto.com/jobinfo/adver.html">广告服务</A> | <A 
+  title=技术论坛 
+  href="javascript:alert('软件开发QQ群:389322【已满】\n%20软件开发二群:8088288');">技术论坛</A>
+  <DIV class=cl></DIV></LI></UL>
+<DIV>
+<DIV id=mymenu>
+<DIV class=conm><B><FONT color=#ffffff><A class=STYLE5 title=软件开发网首页 
+href="http://www.mscto.com/">首页</A> <FONT color=#000000>|</FONT> <A 
+title=Java软件开发 href="http://www.mscto.com/Java/index.html">Java</A> <FONT 
+color=#000000>|</FONT> <A title=Asp.Net软件开发 
+href="http://www.mscto.com/Asp_Net/index.html">Asp.Net</A> <FONT 
+color=#000000>|</FONT> <A title=C/C++/VC软件开发 
+href="http://www.mscto.com/cppvc/index.html">C/C++/VC</A> <FONT 
+color=#000000>|</FONT> <A title=Delphi软件开发 
+href="http://www.mscto.com/Delphi/index.html">Delphi</A> <FONT 
+color=#000000>|</FONT> <A title=数据库软件开发 
+href="http://www.mscto.com/data/index.html">数据库</A> <FONT color=#000000>|</FONT> 
+<A title=WEB开发软件开发 href="http://www.mscto.com/web/index.html">WEB开发</A> <FONT 
+color=#000000>|</FONT> <A title=嵌入式软件开发 
+href="http://www.mscto.com/embedded/index.html">嵌入式</A> <FONT 
+color=#000000>|</FONT> <A title=软件工程软件开发 
+href="http://www.mscto.com/softee/index.html">软件工程</A> <FONT 
+color=#000000>|</FONT> <A title=汇编语言软件开发 
+href="http://www.mscto.com/huibian/index.html">汇编语言</A> <FONT 
+color=#000000>|</FONT> <A title=软件测试软件开发 
+href="http://www.mscto.com/testing/index.html">软件测试</A> <FONT 
+color=#000000>|</FONT> <A title=操作系统软件开发 
+href="http://www.mscto.com/system/index.html">操作系统</A> <FONT 
+color=#000000>|</FONT> <A title=面试题软件开发 
+href="http://www.mscto.com/jobinfo/index.html">面试题</A> <FONT 
+color=#000000>|</FONT> <A title=其他软件开发 
+href="http://www.mscto.com/qitayuyan/index.html">其他</A> <FONT 
+color=#000000>|</FONT> </FONT></B></DIV></DIV></DIV></DIV>
+<DIV id=containertow>
+<DIV id=content>
+<DIV id=navbox><SPAN class=bold></SPAN>您现在正在浏览：<!--empire.url--><A 
+href="http://www.mscto.com/">主页</A>&gt;<A 
+href="http://www.mscto.com/jobinfo/index.html">面试题</A>&gt;<!--empire.url--></DIV>
+<DIV id=mainleftlist>
+<DIV class=newslist>
+<CENTER><SPAN id=alimama_text></SPAN><SPAN id=span_alimama_text>
+<SCRIPT src="j2ee面试题.files/alimama468x60.htm" type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>alimama_text.innerHTML=span_alimama_text.innerHTML;span_alimama_text.innerHTML="";</SCRIPT>
+</CENTER></DIV></DIV>
+<DIV id=mainleftlist>
+<DIV class=newslist>
+<DIV id=entrytitle>
+<H1>J2EE面试题以及参考答案</H1>
+<DIV id=entrymeta><STRONG>时间</STRONG>:2008-03-27 12:39:52 <STRONG>来源</STRONG>: 
+<STRONG>作者</STRONG>: <STRONG>点击量:</STRONG>
+<SCRIPT language=javascript src="j2ee面试题.files/count.htm"></SCRIPT>
+ [
+<SCRIPT language=javascript src="j2ee面试题.files/lan.js"></SCRIPT>
+ ]</DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=entrybody>
+<DIV id=entryadbox></DIV><SPAN id=google_text><IMG height=32 alt=广告载入中 src="" 
+width=32></SPAN> <SPAN id=span_google_text>
+<SCRIPT src="j2ee面试题.files/text_link.js" type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>google_text.innerHTML=span_google_text.innerHTML;span_google_text.innerHTML="";</SCRIPT>
+<BR>
+<DIV 
+style="PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 8px; MARGIN: 0px 5px; PADDING-TOP: 0px">
+<DIV id=entryad style="WIDTH: auto; HEIGHT: auto"><SPAN 
+id=google3_text></SPAN><SPAN id=span_google3_text>
+<SCRIPT src="j2ee面试题.files/body300x250.js" type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>google3_text.innerHTML=span_google3_text.innerHTML;span_google3_text.innerHTML="";</SCRIPT>
+</SPAN></DIV>
+<STYLE>.Paf790 {
+	DISPLAY: none
+}
+</STYLE>
+一、基础问答<BR>　　1.下面哪些类可以被继承?<BR>　　　java.lang.Thread (T)<BR>　　　java.lang.Number 
+(T)<BR>　　　java.lang.Double (F)<BR>　　　java.lang.Math (F)<BR>　　　java.lang.Void 
+(F)<BR>　　　java.lang.Class (F)<BR>　　　java.lang.ClassLoader 
+(T)<BR><BR>　　2.抽象类和class="t_tag"&gt;接口的区别<BR><BR>　　(1)接口可以被多重implements,抽象类只能被单一extends<BR>　　(2)接口只有定义,抽象类可以有定义和实现<BR><BR>　　(3)接口的字段定义默认为:public 
+static final, 
+抽象类字段默认是"friendly"(本包可见)<BR><BR>　　3.Hashtable的原理,并说出HashMap与Hashtable的区别<BR><BR>　　HashTable的原理:通过节点的关键码确定节点的存储位置,即给定节点的关键码k,通过一定的函数关系H(散列函数),得到函数值H(k),将此值解释为该节点的存储地址.<BR>HashMap 
+与Hashtable很相似,但HashMap 
+是非同步(unsynchronizded)和可以以null为关键码的.<BR><BR>　　4.forward和redirect的区别<BR><BR>　　forward: 
+an internal transfer in servlet<BR>　　redirect: 
+重定向,有2次request,第2次request将丢失第一次的attributs/parameters等 
+<DIV 
+class=Paf790></DIV><BR><BR>　　5.什么是Web容器?<BR><BR>　　实现J2EE规范中web协议的应用.该协议定义了web程序的运行时环境,包括:并发性,安全性,生命周期管理等等.<BR><BR>　　6.解释下面关于J2EE的名词<BR><BR>　　(1)JNDI:Java 
+Naming &amp; Directory 
+Interface,JAVA命名目录服务.主要提供的功能是：提供一个目录系统，让其它各地的应用程序在其上面留下自己的索引，从而满足快速查找和定位分布式应用程序的功能.<BR>　　(2)JMS：Java 
+Message Service,JAVA消息服务.主要实现各个应用程序之间的通讯.包括点对点和广播.<BR>　　(3)JTA：Java Transaction 
+API,JAVA事务服务.提供各种分布式事务服务.应用程序只需调用其提供的接口即可.<BR>　　(4)JAF: Java Action 
+FrameWork,JAVA安全认证框架.提供一些安全控制方面的框架.让开发者通过各种部署和自定义实现自己的个性安全控制策略.<BR>　　(5)RMI:Remote 
+Method Interface,远程方法调用<BR><BR>　　7.EJB是基于哪些技术实现的？并说 
+出SessionBean和EntityBean的区别，StatefulBean和StatelessBean的区别.<BR><BR>　　EJB包括Session 
+Bean、Entity Bean、Message Driven 
+Bean，基于JNDI、RMI、JAT等技术实现.<BR><BR>　　SessionBean在J2EE应用程序中被用来完成一些服务器端的业务操作，例如访问数据库、调用其他EJB组件.EntityBean被用来代表应用系统中用到的数据.对于客户机，SessionBean是一种非持久性对象，它实现某些在服务器上运行的业务逻辑;EntityBean是一种持久性对象，它代表一个存储在持久性存储器中的实体的对象视图，或是一个由现有企业应用程序实现的实体. 
+<FONT color=#ffffff></FONT><BR><BR>　　Session Bean 还可以再细分为 Stateful Session Bean 
+与 Stateless Session Bean .这两种的 Session Bean都可以将系统逻辑放在 method之中执行，不同的是 Stateful 
+Session Bean 可以记录呼叫者的状态，因此通常来说，一个使用者会有一个相对应的 Stateful Session Bean 的实体.Stateless 
+Session Bean 虽然也是逻辑组件，但是他却不负责记录使用者状态，也就是说当使用者呼叫 Stateless Session Bean 的时候，EJB 
+Container 并不会找寻特定的 Stateless Session Bean 的实体来执行这个 method.换言之，很可能数个使用者在执行某个 
+Stateless Session Bean 的 methods 时，会是同一个 Bean 的 Instance 在执行.从内存方面来看， Stateful 
+Session Bean 与 Stateless Session Bean 比较， Stateful Session Bean 会消耗 J2EE Server 
+较多的内存，然而 Stateful Session Bean 
+的优势却在于他可以维持使用者的状态.<BR><BR>　　8.XML的解析方法<BR><BR>　　Sax,DOM,JDOM<BR><BR>　　9.什么是Web 
+Service?<BR><BR>　　Web Service就是为了使原来各孤立的站点之间的信息能够相互通信、共享而提出的一种接口。<BR>Web 
+Service所使用的是Internet上统一、开放的标准，如HTTP、XML、SOAP（简单对象访问协议）、WSDL等，所以Web 
+Service可以在任何支持这些标准的环境（Windows,Linux）中使用。 <SPAN 
+class=Paf790></SPAN><BR><BR>　　注：SOAP协议（Simple Object Access 
+Protocal,简单对象访问协议）,它是一个用于分散和分布式环境下网络信息交换的基于XML的通讯协议。在此协议下，软件组件或应用程序能够通过标准的HTTP协议进行通讯。它的设计目标就是简单性和扩展性，这有助于大量异构程序和平台之间的互操作性，从而使存在的应用程序能够被广泛的用户访问。<BR><BR>　　优势：<BR><BR>　　(1).跨平台。<BR>　　(2).SOAP协议是基于XML和HTTP这些业界的标准的，得到了所有的重要公司的支持。<BR>　　(3).由于使用了SOAP，数据是以ASCII文本的方式而非二进制传输，调试很方便；并且由于这样，它的数据容易通过防火墙，不需要防火墙为了程序而单独开一个“漏洞”。<BR>　　(4).此外，WebService实现的技术难度要比CORBA和DCOM小得多。<BR>　　(5).要实现B2B集成，EDI比较完善与比较复杂；而用WebService则可以低成本的实现，小公司也可以用上。<BR>　　(6).在C/S的程序中，WebService可以实现网页无整体刷新的与服务器打交道并取数。<BR><BR>　　缺点：<BR><BR>　　(1).WebService使用了XML对数据封装，会造成大量的数据要在网络中传输。<BR>　　(2).WebService规范没有规定任何与实现相关的细节，包括对象模型、编程语言，这一点，它不如CORBA。 
+
+<P 
+class=Paf790></P><BR><BR>　　10.多线程有几种实现方法,都是什么?同步有几种实现方法,都是什么?<BR><BR>　　答：多线程有两种实现方法，分别是继承Thread类与实现Runnable接口<BR>　　同步的实现方面有两种，分别是synchronized,wait与notify<BR><BR>　　11.JSP中动态INCLUDE与静态INCLUDE的区别？<BR><BR>　　动态INCLUDE用jsp:include动作实现<BR><BR>&lt;jsp:include 
+page="included.jsp" 
+flush="true"/&gt;<BR><BR>　　它总是会检查所含文件中的变化，适合用于包含动态页面，并且可以带参数<BR><BR>　　静态INCLUDE用include伪码实现,定不会检查所含文件的变化，适用于包含静态页面<BR><BR>　　&lt;%@ 
+include file="included.htm" 
+%&gt;<BR><BR>二、Java编程与程序运行结果<BR><BR>　　1.Java编程,打印昨天的当前时刻<BR><BR>public class 
+YesterdayCurrent{<BR>public void main(String[] args){<BR>Calendar cal = 
+Calendar.getInstance();<BR>cal.add(Calendar.DATE, 
+-1);<BR>System.out.println(cal.getTime());<BR>}<BR>}<BR>　　2.文件读写,实现一个计数器<BR><BR>public 
+int getNum(){<BR>int i = -1;<BR>try{ 
+<DIV class=Paf790></DIV><BR>String stri="";<BR>BufferedReader in = new 
+BufferedReader(new FileReader(f));<BR>while((stri=in.readLine())!=null){<BR>i = 
+Integer.parseInt(stri.trim());<BR>}<BR>in.close();<BR>}catch(Exception 
+e){<BR>e.printStackTrace();<BR>}<BR>return 
+i;<BR>}<BR><BR><BR>更多相关面试题请参阅这里：<BR>.Net面试题集(最全最新)<BR>一道有趣的C#考试题目<BR>某公司招收.net高级程序员的试卷<BR>Google：21道能力倾向测试面试题<BR>GOOGLE面试题<BR>Google的面试题，你能做出多少？<BR>据说是阿尔卡特（中国）的面试题目(C)<BR>成为编程高手的基础素养<BR>微软面试题——微软的智力题——三个灯泡<BR>Java面试题汇总及c/c++面试题(最新最全)<BR>J2EE面试题集(附答案)<BR>Java面试题集(欢迎大家踊跃提供)<BR>更多相关面试试题请点击左侧的相关内容主题……<BR><BR>public 
+void setNum(){<BR>int i = getNum();<BR>i++;<BR>try{<BR>PrintWriter out=new 
+PrintWriter(new BufferedWriter(new 
+FileWriter(f,false)));<BR>out.write(String.valueOf(i)); 
+//可能是编码的原因，如果直接写入int的话，将出现java编码和windows编码的混乱，因此此处写入的是String 
+<P class=Paf790></P><BR>out.close() ;<BR>}catch(Exception 
+e){<BR>e.printStackTrace();<BR>}<BR>}<BR>　　3. 指出下面程序的运行结果:<BR><BR>class 
+A{<BR>static{<BR>System.out.print("1");<BR>}<BR>public 
+A(){<BR>System.out.print("2");<BR>}<BR>}<BR>class B extends 
+A{<BR>static{<BR>System.out.print("a");<BR>}<BR>public 
+B(){<BR>System.out.print("b");<BR>}<BR>}<BR>public class Hello{<BR>public static 
+void main(String[] ars){<BR>A ab = new B(); //执行到此处,结果: 1a2b<BR>ab = new B(); 
+//执行到此处,结果: 1a2bab<BR>}<BR>}<BR>　　注:类的static 
+代码段,可以看作是类首次加载(被虚拟机加载)执行的代码,而对于类的加载,首先要执行其基类的构造,再执行其本身的构造<BR><BR>　　4.写一个Singleton模式的例子<BR><BR>public 
+class Singleton{<BR>private static Singleton single = new 
+Singleton();<BR>private Singleton(){}<BR>public Singleton 
+getInstance(){<BR>return 
+single;<BR>}<BR>}<BR>三、数据库<BR><BR>　　1.删除表的重复记录<BR><BR>　　如果记录完全相同才算重复记录,那么: (sql 
+server2000下测试通过) <SPAN class=Paf790></SPAN><BR><BR>select distinct * into #tmpp 
+from tid<BR>delete from tid<BR>insert into tid select * from #tmpp<BR>drop table 
+#tmpp<BR>　　如果有id主键(数字,自增1的那种),那么:(sql server2000下测试通过)<BR><BR>delete from tableA 
+where id not in<BR>(select id = min(id) from tableA group by name)<BR>　　2.delete 
+from tablea &amp; truncate table tablea的区别<BR><BR>　　truncate 
+语句执行速度快,占资源少,并且只记录页删除的日志；<BR>　　delete 
+对每条记录的删除均需要记录日志<BR><BR><BR>JAVA编程题<BR>1．现在输入n个数字，以逗号，分开；然后可选择升或者降序排序；按提交键就在另一页面显示按什么排序，结果为，提供reset<BR>显示被隐藏内容 
+显示被隐藏内容<BR>import java.util.*;<BR>public class bycomma{<BR>public static 
+String[] splitStringByComma(String 
+source){<BR>if(source==null||source.trim().equals(""))<BR>return 
+null;<BR>StringTokenizer commaToker = new 
+StringTokenizer(source,",");<BR>String[] result = new 
+String[commaToker.countTokens()];<BR>int 
+i=0;<BR>while(commaToker.hasMoreTokens()){ 
+<DIV class=Paf790></DIV><BR>result = 
+commaToker.nextToken();<BR>i++;<BR>}<BR>return result;<BR>}<BR>public static 
+void main(String args[]){<BR>String[] s = 
+splitStringByComma("5,8,7,4,3,9,1");<BR>int[] ii = new int[s.length];<BR>for(int 
+i = 0;i&lt;s.length;i++){<BR>ii 
+=Integer.parseInt(s);<BR>}<BR>Arrays.sort(ii);<BR>//asc<BR>for(int 
+i=0;i&lt;s.length;i++){<BR>System.out.println(ii);<BR>}<BR>//desc<BR>for(int 
+i=(s.length-1);i&gt;=0;i--){<BR>System.out.println(ii);<BR>}<BR>}<BR>}<BR><BR>2．金额转换，阿拉伯数字的金额转换成中国传统的形式如：（￥1011）－&gt;（一千零一拾一元整）输出。<BR>显示被隐藏内容 
+显示被隐藏内容<BR>package test.format;<BR>import java.text.NumberFormat;<BR>import 
+java.util.HashMap;<BR>public class SimpleMoneyFormat {<BR>public static final 
+String EMPTY = "";<BR>public static final String ZERO = "零";<BR>public static 
+final String ONE = "壹";<BR>public static final String TWO = "贰";<BR>public 
+static final String THREE = "叁"; <FONT color=#ffffff></FONT><BR>public static 
+final String FOUR = "肆";<BR>public static final String FIVE = "伍";<BR>public 
+static final String SIX = "陆";<BR>public static final String SEVEN = 
+"柒";<BR>public static final String EIGHT = "捌";<BR>public static final String 
+NINE = "玖";<BR>public static final String TEN = "拾";<BR>public static final 
+String HUNDRED = "佰";<BR>public static final String THOUSAND = "仟";<BR>public 
+static final String TEN_THOUSAND = "万";<BR>public static final String 
+HUNDRED_MILLION = "亿";<BR>public static final String YUAN = "元";<BR>public 
+static final String JIAO = "角";<BR>public static final String FEN = 
+"分";<BR>public static final String DOT = ".";<BR><BR>private static 
+SimpleMoneyFormat formatter = null;<BR>private HashMap chineseNumberMap = new 
+HashMap();<BR>private HashMap chineseMoneyPattern = new HashMap();<BR>private 
+NumberFormat numberFormat = NumberFormat.getInstance(); 
+<P class=Paf790></P><BR><BR>private SimpleMoneyFormat() 
+{<BR>numberFormat.setMaximumFractionDigits(4);<BR>numberFormat.setMinimumFractionDigits(2);<BR>numberFormat.setGroupingUsed(false);<BR><BR>chineseNumberMap.put("0", 
+ZERO);<BR>chineseNumberMap.put("1", ONE);<BR>chineseNumberMap.put("2", 
+TWO);<BR>chineseNumberMap.put("3", THREE);<BR>chineseNumberMap.put("4", 
+FOUR);<BR>chineseNumberMap.put("5", FIVE);<BR>chineseNumberMap.put("6", 
+SIX);<BR>chineseNumberMap.put("7", SEVEN);<BR>chineseNumberMap.put("8", 
+EIGHT);<BR>chineseNumberMap.put("9", NINE);<BR>chineseNumberMap.put(DOT, 
+DOT);<BR><BR>chineseMoneyPattern.put("1", TEN);<BR>chineseMoneyPattern.put("2", 
+HUNDRED);<BR>chineseMoneyPattern.put("3", 
+THOUSAND);<BR>chineseMoneyPattern.put("4", 
+TEN_THOUSAND);<BR>chineseMoneyPattern.put("5", 
+TEN);<BR>chineseMoneyPattern.put("6", HUNDRED); <FONT 
+color=#ffffff></FONT><BR>chineseMoneyPattern.put("7", 
+THOUSAND);<BR>chineseMoneyPattern.put("8", HUNDRED_MILLION);<BR>}<BR><BR>public 
+static SimpleMoneyFormat getInstance() {<BR>if (formatter == null)<BR>formatter 
+= new SimpleMoneyFormat();<BR>return formatter;<BR>}<BR><BR>public String 
+format(String moneyStr) {<BR>checkPrecision(moneyStr);<BR>String 
+result;<BR>result = convertToChineseNumber(moneyStr);<BR>result = 
+addUnitsToChineseMoneyString(result);<BR>return result;<BR>}<BR><BR>public 
+String format(double moneyDouble) {<BR>return 
+format(numberFormat.format(moneyDouble));<BR>}<BR><BR>public String format(int 
+moneyInt) {<BR>return format(numberFormat.format(moneyInt));<BR>}<BR><BR>public 
+String format(long moneyLong) {<BR>return 
+format(numberFormat.format(moneyLong));<BR>}<BR><BR>public String format(Number 
+moneyNum) {<BR>return format(numberFormat.format(moneyNum));<BR>}<BR><BR>private 
+String convertToChineseNumber(String moneyStr) {<BR>String result; 
+<DIV class=Paf790></DIV><BR>StringBuffer cMoneyStringBuffer = new 
+StringBuffer();<BR>for (int i = 0; i &lt; moneyStr.length(); i++) 
+{<BR>cMoneyStringBuffer.append(chineseNumberMap.get(moneyStr.substring(i, i + 
+1)));<BR>}<BR>//拾佰仟万亿等都是汉字里面才有的单位，加上它们<BR>int indexOfDot = 
+cMoneyStringBuffer.indexOf(DOT);<BR>int moneyPatternCursor = 1;<BR>for (int i = 
+indexOfDot - 1; i &gt; 0; i--) {<BR>cMoneyStringBuffer.insert(i, 
+chineseMoneyPattern.get(EMPTY + moneyPatternCursor));<BR>moneyPatternCursor = 
+moneyPatternCursor == 8 ? 1 : moneyPatternCursor + 1;<BR>}<BR><BR>String 
+fractionPart = 
+cMoneyStringBuffer.substring(cMoneyStringBuffer.indexOf("."));<BR>cMoneyStringBuffer.delete(cMoneyStringBuffer.indexOf("."), 
+cMoneyStringBuffer.length());<BR>while (cMoneyStringBuffer.indexOf("零拾") != -1) 
+{<BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零拾"), 
+cMoneyStringBuffer.indexOf("零拾") + 2, ZERO);<BR>}<BR>while 
+(cMoneyStringBuffer.indexOf("零佰") != -1) { <SPAN 
+class=Paf790></SPAN><BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零佰"), 
+cMoneyStringBuffer.indexOf("零佰") + 2, ZERO);<BR>}<BR>while 
+(cMoneyStringBuffer.indexOf("零仟") != -1) 
+{<BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零仟"), 
+cMoneyStringBuffer.indexOf("零仟") + 2, ZERO);<BR>}<BR>while 
+(cMoneyStringBuffer.indexOf("零万") != -1) 
+{<BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零万"), 
+cMoneyStringBuffer.indexOf("零万") + 2, TEN_THOUSAND);<BR>}<BR>while 
+(cMoneyStringBuffer.indexOf("零亿") != -1) 
+{<BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零亿"), 
+cMoneyStringBuffer.indexOf("零亿") + 2, HUNDRED_MILLION);<BR>}<BR>while 
+(cMoneyStringBuffer.indexOf("零零") != -1) 
+{<BR>cMoneyStringBuffer.replace(cMoneyStringBuffer.indexOf("零零"), 
+cMoneyStringBuffer.indexOf("零零") + 2, ZERO);<BR>}<BR>if 
+(cMoneyStringBuffer.lastIndexOf(ZERO) == cMoneyStringBuffer.length() - 1) <SPAN 
+class=Paf790></SPAN><BR>cMoneyStringBuffer.delete(cMoneyStringBuffer.length() - 
+1, 
+cMoneyStringBuffer.length());<BR>cMoneyStringBuffer.append(fractionPart);<BR><BR>result 
+= cMoneyStringBuffer.toString();<BR>return result;<BR>}<BR><BR><BR>private 
+String addUnitsToChineseMoneyString(String moneyStr) {<BR>String 
+result;<BR>StringBuffer cMoneyStringBuffer = new StringBuffer(moneyStr);<BR>int 
+indexOfDot = 
+cMoneyStringBuffer.indexOf(DOT);<BR>cMoneyStringBuffer.replace(indexOfDot, 
+indexOfDot + 1, YUAN);<BR>11.<BR>interface Playable {<BR>&nbsp;&nbsp;&nbsp; void 
+play();<BR>}<BR>interface Bounceable {<BR>&nbsp;&nbsp;&nbsp; void 
+play();<BR>}<BR>interface Rollable extends Playable, Bounceable 
+{<BR>&nbsp;&nbsp;&nbsp; Ball ball = new Ball("PingPang");<BR>}<BR>class Ball 
+implements Rollable {<BR>&nbsp;&nbsp;&nbsp; private String 
+name;<BR>&nbsp;&nbsp;&nbsp; public String getName() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+name;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public Ball(String name) { 
+<FONT color=#ffffff>软件开发网 www.mscto.com</FONT> 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.name = 
+name;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp; public void play() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ball = new 
+Ball("Football");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+System.out.println(ball.getName());<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}<BR>这个错误不容易发现。<BR>答案: 错。"interface Rollable extends 
+Playable,Bounceable"没有问题。interface可继承多个interfaces，所以这里没错。问题出在 
+interfaceRollable里的"Ball ball = new 
+Ball("PingPang");"。任何在interface里声明的interfacevariable (接口变量，也可称成员变量)，默认为public 
+static final。也就是说"Ball ball = newBall("PingPang");"实际上是"public static final Ball 
+ball = newBall("PingPang");"。在Ball类的Play()方法中，"ball = 
+newBall("Football");"改变了ball的reference，而这里的ball来自Rollableinterface， Rollable 
+interface里的ball是public staticfinal的，final的object是不能被改变reference的。因此编译器将在"ball = 
+newBall("Football");"这里显示有错。 
+<DIV class=Paf790></DIV><BR><BR>8.<BR>public class Something 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String[] args) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Something s = new 
+Something();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+System.out.println("s.doSomething() returns " + 
+doSomething());<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public String 
+doSomething() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return "Do 
+something ...";<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR>看上去很完美。<BR>答案: 
+错。看上去在main里calldoSomething没有什么问题，毕竟两个methods都在同一个class里。但仔细看，main是static 
+的。staticmethod不能直接call non-staticmethods。可改成"System.out.println("s.doSomething() 
+returns " +s.doSomething());"。同理，static method不能访问non-static instant 
+variable。<BR>9.<BR>此处，Something类的文件名叫OtherThing.java<BR>class Something 
+{<BR>&nbsp;&nbsp;&nbsp; private static void main(String[] something_to_do) 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<P class=Paf790></P><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+System.out.println("Do something ...");<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}<BR>这个好像很明显。<BR>答案: 正确。从来没有人说过Java的Class名字必须和其文件名相同。但public 
+class的名字必须和文件名相同。<BR>10．<BR>interface&nbsp; A{<BR>&nbsp;&nbsp; int x = 
+0;<BR>}<BR>class B{<BR>&nbsp;&nbsp; int x =1;<BR>}<BR>class C extends B 
+implements A {<BR>&nbsp;&nbsp; public void 
+pX(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println(x);<BR>&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp; public static void main(String[] args) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new C().pX();<BR>&nbsp;&nbsp; 
+}<BR>}<BR>答案：错误。在编译时会发生错误(错误描述不同的JVM有不同的信息，意思就是未明确的x调用，两个x都匹配（就象在同时importjava.util和java.sql两个包时直接声明Date一样）。对于父类的变量,可以用super.x来明确，而接口的属性默认隐含为public 
+static final.所以可以通过A.x来明确。<BR>6.<BR>class Something {<BR>&nbsp;&nbsp;&nbsp; int 
+i;<BR>&nbsp;&nbsp;&nbsp; public void doSomething() { 
+<P class=Paf790>软件开发网 
+www.mscto.com</P><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+System.out.println("i = " + i);<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR>有什么错呢? 
+看不出来啊。<BR>答案: 正确。输出的是"i = 0"。int i属於instant variable (实例变量，或叫成员变量)。instant 
+variable有default value。int的default value是0。<BR>7.<BR>class Something 
+{<BR>&nbsp;&nbsp;&nbsp; final int i;<BR>&nbsp;&nbsp;&nbsp; public void 
+doSomething() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+System.out.println("i = " + i);<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}<BR>和上面一题只有一个地方不同，就是多了一个final。这难道就错了吗?<BR>答案: 错。final int i是个final的instant 
+variable (实例变量，或叫成员变量)。final的instantvariable没有default value，必须在constructor 
+(构造器)结束之前被赋予一个明确的值。可以修改为"finalint i = 0;"。<BR>JAVA代码查错<BR>1.<BR>abstract class 
+Name {<BR>private String name;<BR>public abstract boolean isStupidName(String 
+name) {}<BR>}<BR>大侠们，这有何错误?<BR>答案: 错。abstract method必须以分号结尾，且不带花括号。 
+<DIV class=Paf790></DIV><BR>2.<BR>public class Something {<BR>void doSomething 
+() {<BR>private String s = "";<BR>int l = s.length();<BR>}<BR>}<BR>有错吗?<BR>答案: 
+错。局部变量前不能放置任何访问修饰符 
+(private，public，和protected)。final可以用来修饰局部变量<BR>(final如同abstract和strictfp，都是非访问修饰符，strictfp只能修饰class和method而非variable)。<BR>3.<BR>abstract 
+class Something {<BR>private abstract String doSomething 
+();<BR>}<BR>这好像没什么错吧?<BR>答案: 
+错。abstract的methods不能以private修饰。abstract的methods就是让子类implement(实现)具体细节的，怎么可以用private把abstract<BR>method封锁起来呢? 
+(同理，abstract method前不能加final)。<BR>4.<BR>public class Something {<BR>public int 
+addOne(final int x) {<BR>return ++x;<BR>}<BR>}<BR>这个比较明显。<BR>答案: 错。int 
+x被修饰成final，意味着x不能在addOne method中被修改。<BR>5.<BR>public class Something {<BR>public 
+static void main(String[] args) {<BR>Other o = new Other();<BR>new 
+Something().addOne(o);<BR>}<BR>public void addOne(final Other o) { 
+<DIV class=Paf790></DIV><BR>o.i++;<BR>}<BR>}<BR>class Other {<BR>public int 
+i;<BR>}<BR>和上面的很相似，都是关于final的问题，这有错吗?<BR>答案: 正确。在addOne 
+method中，参数o被修饰成final。如果在addOne method里我们修改了o的reference<BR>(比如: o = new 
+Other();)，那么如同上例这题也是错的。但这里修改的是o的member 
+vairable<BR>(成员变量)，而o的reference并没有改变。</DIV><BR>
+<SCRIPT language=javascript 
+src="E:\csy\面试题集\j2ee面试题.files\count(1).htm"></SCRIPT>
+
+<DIV>
+<CENTER><SPAN id=google_adsense></SPAN><SPAN id=span_google_adsense>
+<SCRIPT src="j2ee面试题.files/firefox_image_468x60.js" 
+type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>google_adsense.innerHTML=span_google_adsense.innerHTML;span_google_adsense.innerHTML="";</SCRIPT>
+</CENTER></DIV></DIV><BR>
+<DIV class=clear></DIV><!-- 分页 -->
+<DIV>
+<CENTER></CENTER></DIV>
+<DIV class=clear></DIV>
+<DIV id=entryarchives>
+<H4>看完这篇文章有何感觉</H4>
+<DIV 
+style="MARGIN-LEFT: auto; WIDTH: 308px; MARGIN-RIGHT: auto; HEIGHT: 60px; TEXT-ALIGN: center">
+<DIV id=ding style="FLOAT: left">
+<P class=vote_show><A title=给我顶到首页推荐! href="javascript:wo_ding(5615);"><SPAN 
+id=s_ding>
+<SCRIPT language=javascript src="j2ee面试题.files/wo_ding.htm"></SCRIPT>
+</SPAN></A></P>
+<P class=vote_action align=center><A title=给我顶到首页推荐! 
+href="javascript:wo_ding(5615);">顶一下</A></P></DIV><!-- <div id="ding" style="float:left;margin-left:15px;">
+        <p class="vote_show"> <a href="http://www.mscto.com/" title="软件开发网"><span id="s_ding"><img src="http://www.mscto.com/iphone_images/1.gif" border="0" /></span></a></p>
+		<p class="vote_action"> <a href="http://www.mscto.com/" title="软件开发网">编程网</a></p>
+     </div>   -->
+<DIV id=ding style="FLOAT: left; MARGIN-LEFT: 15px">
+<SCRIPT language=javascript> 
+function copyToClipBoard(){ 
+var clipBoardContent=''; 
+clipBoardContent+=document.title+"\n"; 
+
+clipBoardContent+=window.location; 
+window.clipboardData.setData("Text",clipBoardContent); 
+alert("你已复制链接及标题，请粘贴到QQ|MSN等发给好友!"); 
+} 
+</SCRIPT>
+
+<P class=vote_show><A title=复制文章地址发送给朋友 
+href="javascript:copyToClipBoard()"><SPAN id=s_ding><IMG 
+src="j2ee面试题.files/down.png" border=0></SPAN></A></P>
+<P class=vote_action><A title=复制文章地址发送给朋友 
+href="javascript:copyToClipBoard()">复制</A></P></DIV>
+<DIV id=ding style="FLOAT: left; MARGIN-LEFT: 15px">
+<P class=vote_show><A title=我要到论坛灌水去! href="http://www.mscto.com/" 
+target=_blank><SPAN id=s_ding><IMG src="j2ee面试题.files/bbs.png" 
+border=0></SPAN></A></P>
+<P class=vote_action><A title=我要到论坛灌水去! href="http://www.mscto.com/" 
+target=_blank>到论坛</A></P></DIV>
+<DIV id=ding style="FLOAT: left; MARGIN-LEFT: 15px">
+<P class=vote_show><A title=返回首页! href="http://www.mscto.com/"><SPAN 
+id=s_ding><IMG src="j2ee面试题.files/return.png" border=0></SPAN></A></P>
+<P class=vote_action><A title=返回首页! 
+href="http://www.mscto.com/">回首页</A></P></DIV>
+<DIV class=clear></DIV></DIV></DIV>
+<DIV id=toollinks><A onclick=window.print(); 
+href="http://www.mscto.com/jobinfo/27561503.html#" rel=nofollow>打印本文</A><A 
+href="http://www.mscto.com/plus/recommend.php?arcID=5615" target=_blank 
+rel=nofollow>我要推荐</A><A href="http://bbs.mscto.com/" target=_blank>论坛讨论</A><A 
+href="javascript:window.close()">关闭此页</A></DIV>
+<DIV class=clear></DIV></DIV>
+<DIV id=otherentry>
+<DIV id=prv>上一篇：<A 
+href="http://www.mscto.com/jobinfo/27561403.html">Java常见面试题三</A> &nbsp; 下一篇：<A 
+href="http://www.mscto.com/jobinfo/27561603.html">Google的面试题</A> </DIV>
+<DIV id=next></DIV></DIV></DIV>
+<DIV id=relatedarticle>
+<H2>相关文章</H2>
+<UL>
+  <LI><SPAN>2008-03-27 12:39:52</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561403.html">Java常见面试题三</A> </LI>
+  <LI><SPAN>2008-03-27 12:43:18</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561603.html">Google的面试题</A> </LI>
+  <LI><SPAN>2008-03-27 12:38:45</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561303.html">Java常见面试题二</A> </LI>
+  <LI><SPAN>2008-03-27 12:44:32</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561703.html">微软面试 - 微软的智力题 - 三个灯泡</A> 
+  </LI>
+  <LI><SPAN>2008-03-27 12:34:00</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561103.html">Java面试笔试题一</A> </LI>
+  <LI><SPAN>2008-03-27 12:45:43</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27561903.html">微软面试-微软面试题(1)</A> </LI>
+  <LI><SPAN>2008-03-27 12:46:28</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27562003.html">微软面试-微软面试题(2)</A> </LI>
+  <LI><SPAN>2008-03-27 12:33:08</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27560903.html">雅虎公司C#笔试题</A> </LI>
+  <LI><SPAN>2008-03-27 12:32:09</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27560803.html">c#面试题目与参考答案(11)</A> </LI>
+  <LI><SPAN>2008-03-27 12:47:00</SPAN><A 
+  href="http://www.mscto.com/jobinfo/27562203.html">微软面试-微软面试题(3)</A> </LI></UL>
+<DIV class=clear></DIV></DIV></DIV>
+<DIV id=rail>
+<DIV class=rightlist>
+<H4>赞助商链接</H4>
+<UL>
+  <LI>
+  <SCRIPT src="j2ee面试题.files/firefox_text.htm" type=text/javascript></SCRIPT>
+  </LI>
+  <LI>
+  <SCRIPT src="j2ee面试题.files/picasa_text.js" type=text/javascript></SCRIPT>
+  </LI></UL>
+<DIV class=clear></DIV></DIV>
+<DIV id=search>
+<FORM name=formsearch action=/plus/search.php>
+<FIELDSET><INPUT type=hidden value=0 name=kwtype> <INPUT size=25 value=Java 
+name=keyword> <INPUT type=submit value="搜 索" name=sa> <INPUT onclick="location='http://www.mscto.com/plus/heightsearch.php';" type=button value=高级搜索> 
+</FIELDSET> </FORM></DIV>
+<DIV class=rightlist>
+<CENTER><SPAN id=google1></SPAN><SPAN id=span_google1>
+<SCRIPT src="j2ee面试题.files/first.js" type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>google1.innerHTML=span_google1.innerHTML;span_google1.innerHTML="";</SCRIPT>
+</CENTER></DIV>
+<DIV class=rightlist>
+<H4>推荐信息</H4>
+<UL></UL>
+<DIV class=clear></DIV></DIV>
+<DIV class=rightad style="HEIGHT: 60px">
+<SCRIPT src="j2ee面试题.files/right300x60.js" type=text/javascript></SCRIPT>
+</DIV>
+<DIV class=rightlist>
+<H4>24小时热门信息</H4>
+<UL></UL>
+<DIV class=clear></DIV></DIV>
+<DIV class=rightlist>
+<H4>最新信息</H4>
+<UL>
+  <LI><A href="http://www.mscto.com/jobinfo/26607604.html">C语言微软亚洲技术中心面试题</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/26607504.html">C语言惠通面试题</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/17588404.html">C/C++程序员应聘常见面试题讲解</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/11583804.html">.NET程序员的数据库面试题及答案</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27565103.html">Java面试题以及参考答案</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27565003.html">GOOGLE面试试题</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564903.html">微软面试试题以及参考答案</A> 
+</LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564803.html">C#应聘者与hr的精彩对话</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564603.html">java应聘者与hr的精彩对话</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564403.html">2道华为C++面试题</A> 
+</LI></UL>
+<DIV class=clear></DIV></DIV>
+<DIV class=rightad><SPAN id=uusee></SPAN><SPAN id=span_uusee>
+<SCRIPT src="j2ee面试题.files/uusee300.htm" type=text/javascript></SCRIPT>
+<!--GGADSENSE--></SPAN>
+<SCRIPT>uusee.innerHTML=span_uusee.innerHTML;span_uusee.innerHTML="";</SCRIPT>
+</DIV>
+<DIV class=rightlist>
+<H4>本栏随机推荐</H4>
+<UL>
+  <LI><A href="http://www.mscto.com/jobinfo/27562303.html">微软面试-微软面试题(4)</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27563603.html">微软亚洲技术中心C/C++面试题</A> 
+  </LI>
+  <LI><A 
+  href="http://www.mscto.com/jobinfo/27563003.html">Kingsoft金山公司C/C++笔试题</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564603.html">java应聘者与hr的精彩对话</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/17122401.html">微软测试人员的面试</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564003.html">腾讯公司的面试题</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27560803.html">c#面试题目与参考答案(11)</A> 
+  </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27564403.html">2道华为C++面试题</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27563303.html">华为C语言面试题以及参考答案 
+  深圳华为面</A> </LI>
+  <LI><A href="http://www.mscto.com/jobinfo/27561403.html">Java常见面试题三</A> 
+</LI></UL>
+<DIV class=clear></DIV></DIV></DIV></DIV>
+<DIV class=row>
+<DIV id=btmsrc style="POSITION: relative">
+<DIV class=cl></DIV>
+<DIV class=con>
+<FORM class=simple6 name=search_form action=http://www.baidu.com/baidu 
+target=_blank><LABEL for=f1>搜索：</LABEL><INPUT id=f2 title=选择搜索类别 accessKey=S 
+onclick=this.select() maxLength=250 size=75 name=word> <INPUT type=hidden 
+value=bdwxl_111094ahm_pg name=tn></INPUT> <INPUT type=hidden name=ct> <INPUT 
+type=hidden name=lm> <INPUT type=hidden name=z> <INPUT type=hidden 
+name=rn><BUTTON type=submit></BUTTON></FORM></DIV></DIV>
+<DIV id=foot>
+<UL>
+  <LI class=first><A href="http://www.mscto.com/about.htm">本站声明</A>·<A 
+  href="http://www.mscto.com/about.htm">使用条款</A>·<A 
+  href="http://www.mscto.com/adver.html">广告服务</A>·<A 
+  href="http://www.miibeian.gov.cn/">正在备案中</A> </LI>
+  <LI class=last><A href="http://www.mscto.com/about.htm">联系我们</A>·<A 
+  href="http://www.mscto.com/about.htm">使用帮助</A>·<A 
+  href="http://www.mscto.com/plus/sitemap.html">网站地图</A>·
+  <SCRIPT src="j2ee面试题.files/cnzz.js" type=text/javascript></SCRIPT>
+   </LI></UL>
+<DIV class=cl></DIV>
+<UL>
+  <LI><SPAN class=first 
+  style="PADDING-LEFT: 10px">网站模板归微软中国所有,本站内容来源网络收集,如有侵权,请<A 
+  href="mailto:mscto@msn.com?subject=文章侵权，请及时处理">联系我们</A>.</SPAN></LI></UL>
+<DIV class=copyright><SPAN>(C)2008 <STRONG><EM>X-City</EM></STRONG></SPAN><A 
+href="http://indexed.webmasterhome.cn/?domain=mscto.com|www.mscto.com" 
+target=_blank><IMG id=ftlogo height=20 alt=西城网络工作室 src="j2ee面试题.files/msft.gif" 
+width=123 align=absMiddle border=0 name=ftlogo></A></DIV></DIV></DIV>
+<DIV></DIV></BODY></HTML>
